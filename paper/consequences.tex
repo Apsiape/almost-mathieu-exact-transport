@@ -37,9 +37,59 @@ When the ratios $\beta_n$ converge, their limit is computable from $\mathbf 0'$,
 \begin{remark}
 All three parts of Theorem~\ref{thm:D} hold for every moment exponent: by Theorem~\ref{thm:A}, $\beta^+(p)=\au$ for every $p>0$ in parts~1--3. They also hold for packing dimensions, with the following phase conditions.
 
-In part~1, $\theta\in\Ga$. The first paragraph of the proof of Proposition~\ref{prop:packupper} gives $\dim_P^+(\mu_{\delta_0})\le\au$, and Theorem~\ref{thm:C}(1) gives $d^+_{\mu_{\delta_0}}\ge\au$ almost everywhere. So the spectral measure of $\delta_0$ has $\dim_P^-=\dim_P^+=\au$. For every nonzero spectral measure, Theorem~\ref{thm:C}(2) gives the same conclusion under the additional condition $\theta+\alpha\in\Ga$.
+In part~1, $\theta\in\Ga^*$. The first paragraph of the proof of Proposition~\ref{prop:packupper} gives $\dim_P^+(\mu_{\delta_0})\le\au$, and Theorem~\ref{thm:C}(1) gives $d^+_{\mu_{\delta_0}}\ge\au$ almost everywhere. So the spectral measure of $\delta_0$ has $\dim_P^-=\dim_P^+=\au$. For every nonzero spectral measure, Theorem~\ref{thm:C}(2) gives the same conclusion.
 
-In parts~2 and~3, $\theta=1/4$ and the denominators of $\alpha$ are eventually odd. Then $1/4\in\Ga$, as shown in the proof of part~2, and also $1/4\in\Ga-\alpha$: since $q_n\alpha=p_n+\delta_n$, we have $|\sin(2\pi q_n(1/4+\alpha))|=|\cos(2\pi\delta_n)|\ge1/2$ for large $n$. So, when $\beta(\alpha)<\infty$, Theorem~\ref{thm:C}(2) shows that the exponent is also the packing dimension of every nonzero spectral measure of $H_{2,\alpha,1/4}$. When $\beta(\alpha)=\infty$, the exponent is $1$, and so is every such packing dimension: Theorem~\ref{thm:C}(1) gives $d^+\ge1$ almost everywhere, and every finite Borel measure on $\R$ has upper packing dimension at most $1$, as noted after Theorem~\ref{thm:C}. Hence in parts~2 and~3 the packing dimensions of all nonzero spectral measures of $H_{2,\alpha,1/4}$ take exactly the values stated for $\au$. In particular the explicit operator of part~3 has spectral measures whose packing dimension has Turing degree $\mathbf 0''$.
+In parts~2 and~3, $\theta=1/4$ and the denominators of $\alpha$ are eventually odd. Then $1/4\in\Ga\subset\Ga^*$, as shown in the proof of part~2 and by Lemma~\ref{lem:Gastar}(1). So, when $\beta(\alpha)<\infty$, Theorem~\ref{thm:C}(2) shows that the exponent is also the packing dimension of every nonzero spectral measure of $H_{2,\alpha,1/4}$. When $\beta(\alpha)=\infty$, the exponent is $1$, and so is every such packing dimension: Theorem~\ref{thm:C}(1) gives $d^+\ge1$ almost everywhere, and every finite Borel measure on $\R$ has upper packing dimension at most $1$, as noted after Theorem~\ref{thm:C}. Hence in parts~2 and~3 the packing dimensions of all nonzero spectral measures of $H_{2,\alpha,1/4}$ take exactly the values stated for $\au$. In particular the explicit operator of part~3 has spectral measures whose packing dimension has Turing degree $\mathbf 0''$.
 \end{remark}
 
-The noncomputability concerns infinite-time asymptotics of an infinite system. Finite-volume propagator entries and finite-time probabilities, at computable times and with specified computable data, can be approximated effectively to any prescribed accuracy. The theorem says that the long-time exponent cannot be extracted by any algorithm, even one with access to the halting problem.
+The noncomputability concerns infinite-time asymptotics of an infinite system. Finite-volume propagator entries and finite-time probabilities, at computable times and with specified computable data, can be approximated effectively to any prescribed accuracy. For the explicit operator in Theorem~\ref{thm:D}(3), however, no algorithm can compute the long-time exponent, even with an oracle for the halting problem.
+
+\subsection{The degree persists under changes of coupling}\label{subsec:coupling}
+The noncomputable exponent is not tied to a single coupling value.
+
+\begin{corollary}\label{cor:degreecoupling}
+There exists one computable irrational $\alpha$, with eventually odd convergent denominators, such that for every computable $\lambda\in(1,2^{23/12})$ and phase $\theta=1/4$, every upper moment exponent and both packing dimensions of every nonzero spectral measure have Turing degree $\mathbf0''$. The same is true of $D_{\mu_{\delta_0}}^+(r)$ for each $0<r<1$.
+\end{corollary}
+\begin{proof}
+Use the frequency in Theorem~\ref{thm:D}(3). Its resonance parameter is
+$\beta=s\log2$, where $s\in[23/12,2]$ has degree $\mathbf0''$.
+Since $\log\lambda<\tfrac{23}{12}\log2\le\beta$, the exponent is positive for every indicated coupling and equals
+$\gamma_\lambda=1-\log\lambda/\beta$.
+The computable positive number $\log\lambda$ gives reductions in both directions:
+$\gamma_\lambda=1-\log\lambda/\beta$ and
+$\beta=\log\lambda/(1-\gamma_\lambda)$.
+The phase conditions do not depend on $\lambda$, and Theorem~\ref{thm:renyi} supplies the last assertion.
+\end{proof}
+
+\begin{remark}\label{rem:couplingthreshold}
+For the frequency of Corollary~\ref{cor:degreecoupling} the set of computable couplings for which the exponent has degree $\mathbf0''$ is exactly the set of computable $\lambda\in(1,2^{s})$, where $s\in[23/12,2]$ is the number of Theorem~\ref{thm:D}(3). Indeed, for computable $\lambda\ge2^{s}$ the exponent is $\max\{0,1-\log\lambda/\beta\}=0$; and $\lambda=2^s$ is impossible for computable $\lambda$, since $s$ is not computable. So the dynamical transition in the coupling occurs at a threshold $2^s$ of degree $\mathbf0''$. Replacing $2$ by an integer $M\ge2$ in the definition of $s$ (that is, $s_M=M-\sum_{e\in K_2}4^{-(e+2)}$; the digit argument of Theorem~\ref{thm:D}(3) is unchanged) gives, for each $M$, one computable frequency for which every computable $\lambda\in(1,2^{M-1/12})$ yields exponents of degree $\mathbf0''$. No single frequency can serve every $\lambda>1$, since the exponent vanishes for $\lambda\ge e^{\beta(\alpha)}$ when $\beta(\alpha)<\infty$ and equals $1$ when $\beta(\alpha)=\infty$.
+\end{remark}
+
+The numerical exponent varies with $\lambda$. The corollary concerns its computability degree, and only computable coupling changes.
+
+\subsection{Every finite frequency prefix admits every allowed exponent}
+
+\begin{corollary}\label{cor:dense}
+Fix $\lambda=2$ and $\theta=1/4$.
+For each real $\gamma\in[0,1]$ that is right-c.e.\ relative to $\mathbf0'$, and each finite continued-fraction prefix, there is a computable irrational continuation with eventually odd denominators whose upper transport exponents equal $\gamma$.
+In particular, every such exponent is realized densely among computable frequencies.
+\end{corollary}
+\begin{proof}
+Consecutive convergent denominators are coprime and hence not both even.
+Starting with their parities, append at most two positive partial quotients to obtain two consecutive odd denominators. Subsequent even partial quotients keep them odd.
+
+For $0<\gamma<1$, the proof of Theorem~\ref{thm:D} supplies a bounded computable rational sequence $v_n\ge1$ with
+$\limsup v_n=(1-\gamma)^{-1}$.
+Continue with $a_{n+1}=2^{\lceil v_nq_n\rceil}$.
+Then
+\[
+\frac{\log q_{n+1}}{q_n}=(\log2)v_n+o(1).
+\]
+A finite prefix does not affect the limsup, so Theorem~\ref{thm:A} gives $\gamma$.
+For $\gamma=0$ use an eventually constant even tail, and for $\gamma=1$ use
+$a_{n+1}=2^{q_n^2}$.
+The convergents provide a computable approximation to each continuation.
+Every open interval contains a continued-fraction cylinder, proving density.
+\end{proof}
+
+Combined with Proposition~\ref{prop:continuity}, this gives a precise limitation on inference from finite-time dynamics. Frequencies can be chosen arbitrarily close, with uniformly close predictions on any prescribed finite time interval, while their asymptotic upper exponents differ. Even the extreme values zero and one already have dense realizations by the known endpoint theorems. The present classification gives the full allowed range of computability-theoretic values.

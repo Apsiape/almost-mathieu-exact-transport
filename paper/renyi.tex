@@ -1,0 +1,66 @@
+\section{Generalized R\'enyi dimensions}\label{sec:renyi}
+
+The equality of every upper transport exponent is stronger than the packing statement alone. It determines an entire interval of generalized R\'enyi dimensions. These dimensions describe the spectral measure; they are not entanglement entropies.
+
+For a compactly supported probability measure $\mu$ and $0<r<1$, put
+\[
+I_\mu(r,\epsilon)=\int \mu([E-\epsilon,E+\epsilon])^{r-1}\,d\mu(E),
+\qquad
+D_\mu^\pm(r)=\limsup_{\epsilon\downarrow0}\!
+\frac{\log I_\mu(r,\epsilon)}{(r-1)\log\epsilon},
+\]
+where the $\limsup$ is replaced by $\liminf$ in the definition of $D_\mu^-(r)$.
+We use the integral convention of Barbaroux, Germinet and Tcheremchantsev~\cite{BGT2000}; for positive orders it agrees with the usual partition definition.
+
+\begin{lemma}\label{lem:renyipacking}
+Let $\mu$ be a nonzero finite Borel measure on $\R$ and $0<r<1$. Then $D^+_\mu(r)\ge\dim_P^+(\mu)$, where $\dim_P^+(\mu)$ is the $\mu$-essential supremum of $d^+_\mu$.
+\end{lemma}
+\begin{proof}
+Write $B(E,\rho)=[E-\rho,E+\rho]$ and $d=\dim_P^+(\mu)$; we may assume $d>0$. Fix $0<\kappa<d$. The set $A=\{E:d^+_\mu(E)>d-\kappa\}$ has $\mu(A)>0$. For $E\in A$ there are arbitrarily small $\epsilon$ with $\mu(B(E,\epsilon))<\epsilon^{d-\kappa}$; if $2^{-k-1}\le\epsilon\le2^{-k}$, then $\mu(B(E,\rho_k))\le(2\rho_k)^{d-\kappa}$ with $\rho_k=2^{-k-1}$. So $A\subset\limsup_kA_k$, where $A_k=\{E\in A:\mu(B(E,\rho_k))\le(2\rho_k)^{d-\kappa}\}$ is Borel. By the Borel--Cantelli lemma $\sum_k\mu(A_k)=\infty$, so $\mu(A_k)\ge k^{-2}$ for infinitely many $k$. For those $k$, since $r-1<0$,
+\[
+I_\mu(r,\rho_k)\ge\int_{A_k}\mu(B(E,\rho_k))^{r-1}\,d\mu(E)\ge k^{-2}(2\rho_k)^{(d-\kappa)(r-1)} ,
+\]
+and dividing $\log I_\mu(r,\rho_k)$ by $(r-1)\log\rho_k>0$ gives a quantity at least $(d-\kappa)\log(2\rho_k)/\log\rho_k-2\log k/((r-1)\log\rho_k)\to d-\kappa$. Hence $D^+_\mu(r)\ge d-\kappa$ for every $\kappa$.
+\end{proof}
+
+\begin{theorem}\label{thm:renyi}
+Let $\lambda>1$, let $\alpha$ be irrational, and let $\mu=\mu_{\delta_0}$.
+For every phase,
+\[
+D_\mu^-(r)=0\qquad(0<r<1).
+\]
+For $\theta\in\Ga^*$ when $\beta(\alpha)<\infty$, and for every phase when $\beta(\alpha)=\infty$,
+\[
+D_\mu^+(r)=\max\{0,1-\log\lambda/\beta(\alpha)\}
+\qquad(0<r<1),
+\]
+with the usual endpoint conventions.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+C_p(T)=\frac1T\int_0^T\sum_j|j|^p
+|\langle\delta_j,e^{-itH}\delta_0\rangle|^2\,dt.
+\]
+Theorem~1 of~\cite{BGT2000} and Lemma~\ref{lem:renyipacking} give, with $r=1/(1+p)$,
+\[
+D_\mu^\pm(r)\le
+\limsup_{T\to\infty}\frac{\log C_p(T)}{p\log T},
+\qquad
+D_\mu^+(r)\ge\dim_P^+(\mu),
+\]
+where the first $\limsup$ is replaced by $\liminf$ for the minus sign.
+The compact support of $\mu$ permits every $p>0$.
+On $0\le t\le T$, the Abel weight is at least $2e^{-2}/T$, so
+$C_p(T)\le(e^2/2)M_p(T)$. Hence
+\[
+\dim_P^+(\mu)\le D_\mu^+(r)\le\beta^+(p).
+\]
+For $\theta\in\Ga^*$ and $\beta(\alpha)<\infty$, Theorem~\ref{thm:A}(1) identifies the right side with $\gamma$. The first paragraph of the proof of Proposition~\ref{prop:packupper}, which holds for $\theta\in\Ga^*$, together with Theorem~\ref{thm:C}(1), identifies the left side with $\gamma$ as well. The shifted phase condition is unnecessary for this single canonical measure. The endpoint $\beta=\infty$ follows in the same way from Theorems~\ref{thm:A}(2) and~\ref{thm:C}(1).
+Finally, Damanik and Tcheremchantsev~\cite[Theorem~4]{DT2007} prove $\beta^-(p)=0$ for every supercritical almost Mathieu operator and every phase. The lower version of the same inequality gives
+$0\le D_\mu^-(r)\le\beta^-(p)=0$.
+\end{proof}
+
+The lower identity is an existing consequence of~\cite{DT2007,BGT2000}. The new upper transport and packing formulas supply the upper identity. We make no assertion of continuity at $r=0$ or $r=1$, and do not identify the upper dimensions for $r>1$.
+

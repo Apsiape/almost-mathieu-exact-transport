@@ -1,6 +1,6 @@
 \section{Every moment and the exact packing dimension}\label{sec:moments}
 
-The lower bound of Section~\ref{sec:lower} produces only a polynomially small mass at the critical distance. In this section we show that for the almost Mathieu operator a fixed fraction of the packet gets there. Two facts drive the proof. Under the spectral measure, the rational discriminant at the phase $\theta$ is asymptotically arcsine distributed, so most of the spectral mass sits at energies whose first $q$-blocks are elliptic with a definite margin (Lemma~\ref{lem:arcsine}). At such an energy, slightly above the real axis, the Weyl solution stays spread over a long run of consecutive $q$-blocks (Lemma~\ref{lem:run}). The same runs bound the spectral mass of small intervals, which gives the packing dimension. The dependencies are: Lemmas~\ref{lem:arcsine} and~\ref{lem:run} give Theorem~\ref{thm:fraction}, which gives Corollary~\ref{cor:moments} and Theorems~\ref{thm:A} and~\ref{thm:B}; Lemma~\ref{lem:run} gives Lemma~\ref{lem:localmass} and part~1 of Theorem~\ref{thm:C}; Theorem~\ref{thm:A} gives Proposition~\ref{prop:packupper} and part~2 of Theorem~\ref{thm:C}.
+The lower bound of Section~\ref{sec:lower} gives only a polynomially small Abel-averaged mass near the critical distance. For the almost Mathieu operator, along sufficiently large scales with $b_n\ge c>h>\log\lambda$, this section proves that the mass beyond $Te^{-hq_n}$ tends to one uniformly in phase and in $e^{hq_n}\le T\le|\delta_n|^{-1}$. Two facts drive the proof. First, the rational discriminant is asymptotically arcsine distributed under the single-site spectral measure, so most of that measure lies away from the parabolic band edges (Lemma~\ref{lem:arcsine}). Second, at such energies the square-summable half-line solution of the equation with energy $E+i/T$---the Weyl solution---remains spread over a long run of elliptic blocks (Lemma~\ref{lem:run}). These facts give Theorem~\ref{thm:fraction}, Theorem~\ref{thm:B} and the lower moment bounds. A diagonal resolvent estimate from the same runs gives the lower local-dimension bound; the upper transport bound gives the upper packing-dimension bound. The dependencies are: Lemmas~\ref{lem:arcsine} and~\ref{lem:run} give Theorem~\ref{thm:fraction}, which gives Corollary~\ref{cor:moments} and Theorems~\ref{thm:A} and~\ref{thm:B}; Lemma~\ref{lem:run} gives Lemma~\ref{lem:localmass} and part~1 of Theorem~\ref{thm:C}; Theorem~\ref{thm:A} gives Proposition~\ref{prop:packupper} and part~2 of Theorem~\ref{thm:C}.
 
 Throughout, $\lambda>1$, $v(x)=2\lambda\cos2\pi x$ and $L=\log\lambda$, except in Subsection~\ref{sec:run}, where $v$ is any Lipschitz function. For a phase $\theta$ we write $\mu^\theta$ for the spectral measure of $\delta_0$ for $H_{\lambda,\alpha,\theta}$, and
 \[
@@ -50,8 +50,28 @@ So $\Delta_n(H)^k\delta_0=(D_k+F+R)^k\delta_0$ with $D_k=D\un_{[-kq,kq]}$. Put $
 \]
 Since $b_n\ge c>h>L$, both $q\lambda^q|\delta|=qe^{(L-b_n)q}$ and $q^{5/2}e^{hq}|\delta|=q^{5/2}e^{(h-b_n)q}$ tend to $0$, uniformly in $\theta$, so $\eps_n\to0$. Next, $F^k\delta_0=\sum_i\binom{k}{(k+i)/2}\delta_{iq}$, the sum running over $|i|\le k$ with $i\equiv k\pmod 2$, so $\langle\delta_0,F^k\delta_0\rangle=m_k$. Since $\int x^k\,d\nu_n=\langle\delta_0,\Delta_n(H)^k\delta_0\rangle$, we obtain $|\int x^k\,d\nu_n-m_k|\le(2+\eps_n)^k-2^k\to0$.
 
-The law $\sigma$ has compact support, so it is determined by its moments~\cite[Theorem~30.1]{Billingsley1995}, and convergence of all moments implies $\nu_n\Rightarrow\sigma$~\cite[Theorem~30.2]{Billingsley1995}. Since $\sigma$ has no atoms, weak convergence gives $\nu_n(J)\to\sigma(J)$ for every interval $J$. Take $J=[-2+\eta,2-\eta]$.
+The law $\sigma$ has compact support, so it is determined by its moments~\cite[Theorem~30.1]{Billingsley1995}, and convergence of all moments implies $\nu_n\Rightarrow\sigma$~\cite[Theorem~30.2]{Billingsley1995}. Since $\sigma$ has no atoms, weak convergence gives $\nu_n(J)\to\sigma(J)$ for every interval $J$. Take $J=[-2+\eta,2-\eta]$. The convergence is uniform in $\theta$: otherwise there would be $\eps_0>0$, indices $n_k\to\infty$ in $\mathcal N$ and phases $\theta_k$ with $|\nu^{\theta_k}_{n_k}(J)-\sigma(J)|\ge\eps_0$; but the moments of $\nu^{\theta_k}_{n_k}$ still converge to $m_j$ for every $j$, so $\nu^{\theta_k}_{n_k}\Rightarrow\sigma$ and $\nu^{\theta_k}_{n_k}(J)\to\sigma(J)$, a contradiction.
 \end{proof}
+
+\begin{lemma}[Uniform arcsine bound]\label{lem:arcsineunif}
+Let $c$ and $\mathcal N$ be as in Lemma~\ref{lem:arcsine}, and let $0\le\eta<2$. Then
+\[
+\liminf_{n\in\mathcal N}\ \inf_{\theta\in\T}\ \mu^\theta\bigl(\{E:|\Delta_n(E)|\le2-\eta\}\bigr)\ge\frac2\pi\arcsin\Bigl(1-\frac\eta2\Bigr).
+\]
+\end{lemma}
+
+\begin{proof}
+Put $a=2-\eta$ and fix $\tau\in(0,a)$. Let $f$ be the continuous function that equals $1$ on $[-a+\tau,a-\tau]$, vanishes outside $(-a,a)$ and is linear on the two remaining intervals, so $0\le f\le\un_{[-a,a]}$. By the Weierstrass theorem there is a polynomial $p_0$ with $|p_0-f|\le\tau$ on $[-3,3]$. Let $d$ be its degree and $A$ a constant with $|p_0(x)|\le A(|x|/3)^d$ for $|x|\ge3$. For an integer $K$ with $2K\ge d$ put
+\[
+p(x)=p_0(x)-\tau-A(x/3)^{2K}.
+\]
+Then $p\le\un_{[-a,a]}$ on $\R$: on $[-3,3]$ we have $p\le p_0-\tau\le f\le\un_{[-a,a]}$, and for $|x|\ge3$ we have $p(x)\le|p_0(x)|-A(|x|/3)^{2K}\le0$. Hence, with $\nu_n=\nu_n^\theta$ the image of $\mu^\theta$ under $\Delta_n$,
+\[
+\mu^\theta\bigl(\{|\Delta_n|\le a\}\bigr)=\int\un_{[-a,a]}\,d\nu_n\ge\int p\,d\nu_n .
+\]
+The right side is a fixed finite combination of the moments $\int x^k\,d\nu_n$, which converge to $m_k$ uniformly in $\theta$ by the proof of Lemma~\ref{lem:arcsine}. So $\liminf_n\inf_\theta\mu^\theta(\{|\Delta_n|\le a\})\ge\int p\,d\sigma\ge\int f\,d\sigma-2\tau-A(2/3)^{2K}\ge\sigma([-a+\tau,a-\tau])-2\tau-A(2/3)^{2K}$, since $\sigma$ lives on $[-2,2]$. Let $K\to\infty$ ($A$ does not depend on $K$), then $\tau\to0$, and use $\sigma([-a,a])=\frac2\pi\arcsin(a/2)$.
+\end{proof}
+
 
 The proof uses no condition on the phase. The only arithmetic input is $b_n\ge c>L$, which makes the residual $\eps_n$ small on the sites that $k$ steps from the origin can reach.
 
@@ -107,7 +127,7 @@ Write $G=\frac S2I+gF_\phi$ with $F_\phi=\begin{pmatrix}\cos\phi&\sin\phi\\\sin\
 
 The point of Lemma~\ref{lem:pair} is that it holds for every polarization $\Phi$. A single block may carry little mass, for instance when the solution is a standing wave with a node there, but two adjacent blocks cannot both do so.
 
-\begin{lemma}[An elliptic run]\label{lem:run}
+\begin{lemma}[Elliptic propagation]\label{lem:run}
 Let $0<\eta\le1$ and assume $|\tr A_q(E,x_0)|\le2-\eta$. Let $B_0\in SL(2,\R)$ map $i$ to the fixed point of $A_q(E,x_0)$ in the upper half-plane, and put
 \[
 S_0=\sum_{r=0}^{q-1}\|e_1^{\mathsf T}A_r(E,x_0)B_0\|^2,\qquad\Phi_0=B_0^{-1}\Psi_0,
@@ -126,7 +146,7 @@ If $m_*\ge8$, then:
 \end{enumerate}
 \end{lemma}
 
-By Lemma~\ref{lem:blocks}(1), $S_0=|\partial_E\tr A_q(E,x_0)|/|\sin\varrho_0|$, where $\varrho_0$ is the rotation angle of $A_q(E,x_0)$. The run consists of $m_*$ blocks, about $q/(\xi S_0)$ sites. Its length is set by the larger of the damping $\eps$ and the drift $|\delta|$; it is not a fixed function of the scale. When $\eps\ge|\delta|$, the total mass in part~3 is at most $3(\mathrm{Lip}(v)+1)\|\Phi_0\|^2/\xi$, so part~2 says that the far half of the run carries a fixed fraction of the mass of $g$ on $\Z_{>0}$. No arithmetic condition on $\theta$ enters, and nothing is assumed about the solution beyond the run.
+By Lemma~\ref{lem:blocks}(1), $S_0=|\partial_E\tr A_q(E,x_0)|/|\sin\varrho_0|$, where $\varrho_0$ is the rotation angle of $A_q(E,x_0)$. For fixed $\eta$, the run consists of $m_*$ blocks and has length comparable to $q/(\xi S_0)$, with comparison constants depending on $\eta$. Its length is set by the larger of the damping $\eps$ and the drift $|\delta|$; it is not a fixed function of the scale. When $\eps\ge|\delta|$, the total mass in part~3 is at most $3(\mathrm{Lip}(v)+1)\|\Phi_0\|^2/\xi$, so part~2 says that the far half of the run carries a fixed fraction of the mass of $g$ on $\Z_{>0}$. No arithmetic condition on $\theta$ enters, and nothing is assumed about the solution beyond the run.
 
 \begin{proof}
 \emph{Frames.} Write $A_m=A_q(E,x_m)$ for the real-energy block monodromies. Suppose $A_m$ is elliptic and $B_m\in SL(2,\R)$ maps $i$ to its fixed point, so that $B_m^{-1}A_mB_m=R_{\varrho_m}$ by Lemma~\ref{lem:blocks}(4). Put
@@ -156,7 +176,7 @@ y_j\le4\xi S_0\le2^{-8}\eta^{3/2}\le s_0/8 .
 So the frames $B_1,\dots,B_m$ are defined. Summing the one-step estimates over $j<m$:
 \begin{itemize}
 \item $|\tr A_m-\tr A_0|\le2\sum_{j<m}y_j\le8m_*\xi S_0\le2^{-7}\eta^{3/2}\le\eta/2$, so $|\tr A_m|\le2-\eta/2$.
-\item $u_r^{(j+1)}=u_r^{(j)}\Pi^{(j)}_rN_j$, so $S_{j+1}/S_j\in[(1-y_j)^2e^{-d_j},(1+y_j)^2e^{d_j}]$ and $|\log(S_{j+1}/S_j)|\le3y_j+d_j\le27y_j/\sqrt\eta$. Hence $|\log(S_m/S_0)|\le108\,m_*\xi S_0/\sqrt\eta\le108\eta/2^{10}<\log2$.
+\item $u_r^{(j+1)}=u_r^{(j)}\Pi^{(j)}_rN_j$, so, since $\|u\Pi^{(j)}_r\|\ge\|u\|-\|u(\Pi^{(j)}_r-I)\|$ and $\|uN_j\|\ge\|u\|/\|N_j^{-1}\|$, $S_{j+1}/S_j\in[(1-y_j)^2e^{-d_j},(1+y_j)^2e^{d_j}]$ and $|\log(S_{j+1}/S_j)|\le3y_j+d_j\le27y_j/\sqrt\eta$. Hence $|\log(S_m/S_0)|\le108\,m_*\xi S_0/\sqrt\eta\le108\eta/2^{10}<\log2$.
 \item A $2\times2$ matrix of determinant one has $\|M^{-1}\|=\|M\|$, and $\|\Pi'_j\|\le e^{\eps S_j}$. So $|\log(\|\Phi_{j+1}\|/\|\Phi_j\|)|\le\eps S_j+d_j/2\le2\xi S_0+12y_j/\sqrt\eta\le50\xi S_0/\sqrt\eta$, and $|\log(\|\Phi_m\|/\|\Phi_0\|)|\le50\eta/2^{10}<\log2$.
 \end{itemize}
 This proves $(a_m)$.
@@ -195,7 +215,7 @@ If $(g(n+1),g(n))^{\mathsf T}=B\Phi$ with $B$ real and $\det B=1$, then $2|\oper
 For part~3, $\sum_{k\ge1}|g(k)|^2=\sum_{m<m_*}\mathcal M_m+\sum_{k>m_*q}|g(k)|^2$, and $16m_*S_0\le16XS_0=2^{-6}\eta^{3/2}/\xi\le1/\xi$. Finally $g(0)=e_2^{\mathsf T}\Psi_0=e_2^{\mathsf T}B_0\Phi_0$.
 \end{proof}
 
-\subsection{A fixed fraction at resonant times}
+\subsection{Almost all of the packet at resonant times}
 
 From now on $v(x)=2\lambda\cos2\pi x$ again, so $\mathrm{Lip}(v)=4\pi\lambda$. We first compare the traces of the actual $q$-blocks with the rational discriminant.
 
@@ -214,25 +234,21 @@ By Lemma~\ref{lem:chambers}, $P_q(E)-2\lambda^q\cos(2\pi qx)=\tr A^{(p/q)}_q(E,x
 and $qd\le4\pi\lambda$. The trace of a $2\times2$ matrix is at most twice its norm.
 \end{proof}
 
-\begin{theorem}[A fixed fraction moves out]\label{thm:fraction}
-Let $\lambda>1$, let $\alpha$ be irrational and let $\theta$ be any phase. Fix $h>L$, $c>h$ and $0<\eta\le1/4$, and put
+\begin{theorem}[Almost all of the packet moves out]\label{thm:fraction}
+Let $\lambda>1$, let $\alpha$ be irrational and let $\theta$ be any phase. Fix $h>L$, $c>h$ and $0<\eta\le1/4$. There are $C$ and $n_0$, depending only on $\lambda$, $\alpha$, $h$, $c$ and $\eta$, such that for every $n\ge n_0$ with $b_n\ge c$ and every $T$ with $e^{hq_n}\le T\le|\delta_n|^{-1}$,
 \[
-f_0=\frac{\eta^{5/2}}{2^{25}(4\pi\lambda+1)}.
-\]
-There is $n_0$, depending only on $\lambda$, $\alpha$, $h$, $c$ and $\eta$, such that for every $n\ge n_0$ with $b_n\ge c$ and every $T$ with $e^{hq_n}\le T\le|\delta_n|^{-1}$,
-\[
-P\bigl(Te^{-hq_n},T\bigr)\ge f_0\,\mu^\theta\bigl(\{E:|\Delta_n(E)|\le2-3\eta\}\bigr).
+P\bigl(Te^{-hq_n},T\bigr)\ge\bigl(1-Cq_ne^{-(h-L)q_n/2}\bigr)\,\mu^\theta\bigl(\{E:|\Delta_n(E)|\le2-3\eta\}\bigr).
 \]
 \end{theorem}
 
-If $b_n\ge c$ for infinitely many $n$, then along those $n$ the right side tends to $f_0\frac2\pi\arcsin(1-\frac{3\eta}2)$, by Lemma~\ref{lem:arcsine}. At the resonant time $T=|\delta_n|^{-1}=e^{b_nq_n}$ the distance is $e^{(b_n-h)q_n}=T^{1-h/b_n}$.
+If $b_n\ge c$ for infinitely many $n$, then along those $n$ the factor $\mu^\theta(\cdot)$ is at least $\frac2\pi\arcsin(1-\frac{3\eta}2)-o(1)$, uniformly in $\theta$, by Lemma~\ref{lem:arcsineunif}; since $\eta$ is arbitrary, the Abel-averaged probability beyond $Te^{-hq_n}$ tends to $1$ (Theorem~\ref{thm:B}). At the resonant time $T=|\delta_n|^{-1}=e^{b_nq_n}$ the distance is $e^{(b_n-h)q_n}=T^{1-h/b_n}$. The mechanism is visible in the proof: at an energy whose first $q$-blocks on both sides are elliptic, the resolvent $G(\cdot;E+i/T)$ has, on each side, comparable mass on every pair of adjacent blocks among at least $c'T/(qe^{h_0q})$ consecutive $q$-blocks, and at most $16S_0\|\Phi_0\|^2$ on each of them (Lemma~\ref{lem:run}(1)); so the at most $Te^{-hq}/q+1$ blocks within distance $Te^{-hq}$ carry only a fraction $O(qe^{-(h-h_0)q})$ of it, with $h_0=(L+h)/2$. The mass beyond the run, which the earlier version of this argument counted against the fraction, is itself beyond $Te^{-hq}$.
 
 \begin{proof}
 Let $h_0=(L+h)/2$ and $U=U_{h_0}$. By Lemma~\ref{lem:growth} and Proposition~\ref{prop:poly}(2) there is $C$ with $\|A_r(E,x)\|\le Ce^{h_0r}$ for real $E\in U$, all $x$ and $r\ge0$, and $\sup_U|P_q'|\le Cqe^{h_0q}$. Write $q=q_n$, $\delta=\delta_n$, $b=b_n$ and $\eps=1/T$, so that $|\delta|\le\eps\le e^{-hq}$, and put
 \[
 N=Te^{-hq},\qquad I=\{E\in U:\ |\Delta_n(E)|\le2-2\eta\}.
 \]
-Below, $C$ and $c'$ denote positive constants depending only on $\lambda$, $\alpha$, $h$ and $\eta$, and ``for large $n$'' means for $n$ beyond a threshold depending only on $\lambda$, $\alpha$, $h$, $c$ and $\eta$; nothing depends on $\theta$ or $T$.
+Below, $C$ and $c'$ denote positive constants depending only on $\lambda$, $\alpha$, $h$ and $\eta$, and ``for large $n$'' means for $n$ beyond a threshold depending only on $\lambda$, $\alpha$, $h$, $c$ and $\eta$; nothing depends on $\theta$ or $T$. Note that $h_0-h=-(h-L)/2$.
 
 \emph{Step 1: two elliptic first blocks.} Fix $E\in I$ and $z=E+i\eps$. For $k\ge0$ put $g_+(k)=G(k;z)$ and $g_-(k)=G(-k;z)$. Both lie in $\ell^2(\Z_{\ge0})$. The function $g_+$ satisfies~\eqref{eq:halfline} for the phase $\theta$. Since the cosine is even, $v(\theta-k\alpha)=v(-\theta+k\alpha)$, so $g_-$ satisfies~\eqref{eq:halfline} for the phase $-\theta$. The first blocks are $A_q(E,\pm\theta+\alpha)$. Since $q(\pm\theta+\alpha)=\pm q\theta+p+\delta$, Lemma~\ref{lem:blocktrace} and $|\cos(2\pi(\pm q\theta+\delta))-\cos(2\pi q\theta)|\le2\pi|\delta|$ give
 \[
@@ -240,43 +256,84 @@ Below, $C$ and $c'$ denote positive constants depending only on $\lambda$, $\alp
 \]
 The right side tends to $0$ because $b\ge c>h_0>L$. So for large $n$ both first blocks satisfy $|\tr A_q|\le2-\eta$.
 
-\emph{Step 2: two elliptic runs.} Apply Lemma~\ref{lem:run} to $g_\pm$, with this $\eta$, the damping $\eps$ and $\xi=(4\pi\lambda+1)\eps$, and let $B_0^\pm$, $S_0^\pm$, $\Phi_0^\pm$, $m_*^\pm$, $m_0^\pm$ be the corresponding data. From $|\tr A_q|\le2-\eta$ we get $|\sin\varrho_0^\pm|\ge\sqrt\eta/2$, and the product rule gives $|\partial_E\tr A_q(E,x)|\le2qC^2e^{h_0q}$. By Lemma~\ref{lem:blocks}(1), $S_0^\pm\le Cqe^{h_0q}$. Hence
+\emph{Step 2: the run is long and the near blocks are few.} Apply Lemma~\ref{lem:run} to $g_\pm$, with this $\eta$, the damping $\eps$ and $\xi=(4\pi\lambda+1)\eps$ (recall $\eps\ge|\delta|$), and let $B_0^\pm$, $S_0^\pm$, $\Phi_0^\pm$, $m_*^\pm$, $m_0^\pm$ be the corresponding data. From $|\tr A_q|\le2-\eta$ we get $|\sin\varrho_0^\pm|\ge\sqrt\eta/2$, and the product rule gives $|\partial_E\tr A_q(E,x)|\le2qC^2e^{h_0q}$. By Lemma~\ref{lem:blocks}(1), $S_0^\pm\le Cqe^{h_0q}$. Hence
 \[
 \frac{\eta^{3/2}}{2^{10}\xi S_0^\pm}\ge\frac{c'T}{qe^{h_0q}}\ge\frac{c'e^{(h-h_0)q}}{q},
 \]
-so for large $n$ we have $m_*^\pm\ge8$, and $m_0^\pm q\ge m_*^\pm q/2\ge c'Te^{-h_0q}/4\ge Te^{-hq}=N$. Lemma~\ref{lem:run} and $\eps\ge|\delta|$ give
+so for large $n$ we have $m_*^\pm\ge8$, and $m_0^\pm q\ge m_*^\pm q/2\ge c'Te^{-h_0q}/4\ge Te^{-hq}=N$.
+
+\emph{Far mass.} Lemma~\ref{lem:run}(2) and $m_0^\pm q\ge N$ give
+\begin{equation}\label{eq:farlower}
+\sum_{k>N}|g_\pm(k)|^2\ge\frac{\eta^{5/2}}{2^{22}}\cdot\frac{\|\Phi_0^\pm\|^2}{\xi}.
+\end{equation}
+
+\emph{Near mass.} The sites $1\le k\le N$ lie in the blocks $\{mq+1,\dots,mq+q\}$ with $0\le m\le(N-1)/q$, which are at most $N/q+1$ blocks, and $(N-1)/q<m_0^\pm\le m_*^\pm-1$ because $m_*^\pm\ge8$. So Lemma~\ref{lem:run}(1) applies to each of them, and with~\eqref{eq:farlower},
 \[
-\sum_{k>N}|g_\pm(k)|^2\ge\frac{\eta^{5/2}}{2^{22}}\cdot\frac{\|\Phi_0^\pm\|^2}{\xi},\qquad
-\sum_{k\ge1}|g_\pm(k)|^2\le\frac{3(4\pi\lambda+1)\|\Phi_0^\pm\|^2}{\xi} .
+\sum_{k=1}^N|g_\pm(k)|^2\le\Bigl(\frac Nq+1\Bigr)16S_0^\pm\|\Phi_0^\pm\|^2\le2^{26}\eta^{-5/2}\Bigl(\frac Nq+1\Bigr)S_0^\pm\xi\sum_{k>N}|g_\pm(k)|^2 .
 \]
-The site $0$ is negligible. By Lemma~\ref{lem:blocks}(4), $\|B_0^+\|^2=e^{d(i,z_+)}$, where $z_+$ is the fixed point of $\mathcal A=A_q(E,\theta+\alpha)$. The identity $\|\mathcal A\|_{\mathrm{HS}}^2=2+4\sinh^2(d(i,z_+))\sin^2\varrho_0^+$ from the proof of Lemma~\ref{lem:blocks}(4) gives $\|B_0^+\|^2\le1+4\|\mathcal A\|/\sqrt\eta\le Ce^{h_0q}$. With part~3 of Lemma~\ref{lem:run},
+Here, using $S_0^\pm\le Cqe^{h_0q}$, $\xi=(4\pi\lambda+1)/T$, $N=Te^{-hq}$ and $T\ge e^{hq}$,
 \[
-|G(0;z)|^2\le\|B_0^+\|^2\|\Phi_0^+\|^2\le Ce^{h_0q}\xi\sum_{k>N}|g_+(k)|^2,
+\Bigl(\frac Nq+1\Bigr)S_0^\pm\xi\le C(4\pi\lambda+1)\Bigl(e^{(h_0-h)q}+\frac{qe^{h_0q}}T\Bigr)\le C(4\pi\lambda+1)(1+q)e^{-(h-L)q/2}.
 \]
-and $e^{h_0q}\xi\le(4\pi\lambda+1)e^{(h_0-h)q}\to0$. Let $\mathcal F=\sum_{|k|>N}|G(k;z)|^2$, the left side of~\eqref{eq:farfraction} below. The two displays give $\sum_{k\ne0}|G(k;z)|^2\le3\cdot2^{22}(4\pi\lambda+1)\eta^{-5/2}\mathcal F$, and $|G(0;z)|^2\le o(1)\mathcal F$. Hence, for large $n$,
+
+\emph{The site $0$.} By Lemma~\ref{lem:blocks}(4), $\|B_0^+\|^2=e^{d(i,z_+)}$, where $z_+$ is the fixed point of $\mathcal A=A_q(E,\theta+\alpha)$. The identity $\|\mathcal A\|_{\mathrm{HS}}^2=2+4\sinh^2(d(i,z_+))\sin^2\varrho_0^+$ from the proof of Lemma~\ref{lem:blocks}(4) gives $\|B_0^+\|^2\le1+4\|\mathcal A\|/\sqrt\eta\le Ce^{h_0q}$. With part~3 of Lemma~\ref{lem:run} and~\eqref{eq:farlower},
+\[
+|G(0;z)|^2\le\|B_0^+\|^2\|\Phi_0^+\|^2\le Ce^{h_0q}\xi\sum_{k>N}|g_+(k)|^2\le C(4\pi\lambda+1)e^{-(h-L)q/2}\sum_{k>N}|g_+(k)|^2 .
+\]
+
+\emph{Conclusion of Step 2.} Since $g_+(k)=G(k;z)$ and $g_-(k)=G(-k;z)$ for $k\ge1$, adding the last three displays gives, for large $n$,
+\[
+\sum_{|k|\le N}|G(k;z)|^2\le\kappa_n\sum_{|k|>N}|G(k;z)|^2,\qquad\kappa_n=Cqe^{-(h-L)q/2},
+\]
+and therefore
 \begin{equation}\label{eq:farfraction}
-\sum_{|k|>N}|G(k;z)|^2\ge\frac{\eta^{5/2}}{2^{24}(4\pi\lambda+1)}\sum_{k\in\Z}|G(k;z)|^2=2f_0\sum_{k\in\Z}|G(k;z)|^2\qquad(E\in I).
+\sum_{|k|>N}|G(k;z)|^2\ge(1-\kappa_n)\sum_{k\in\Z}|G(k;z)|^2\qquad(E\in I).
 \end{equation}
 
 \emph{Step 3: Parseval.} By~\eqref{eq:parseval}, \eqref{eq:farfraction} and~\eqref{eq:poisson},
 \[
-P(N,T)=\frac1{\pi T}\int_\R\sum_{|k|>N}|G(k;E+i\eps)|^2\,dE\ge2f_0\int_I\frac1\pi\operatorname{Im}G(0;E+i\eps)\,dE ,
+P(N,T)=\frac1{\pi T}\int_\R\sum_{|k|>N}|G(k;E+i\eps)|^2\,dE\ge(1-\kappa_n)\int_I\frac1\pi\operatorname{Im}G(0;E+i\eps)\,dE ,
 \]
-and the right side equals $2f_0\int_\R\bigl(\int_IP_\eps(E-E')\,dE\bigr)\,d\mu^\theta(E')$.
+and the right side equals $(1-\kappa_n)\int_\R\bigl(\int_IP_\eps(E-E')\,dE\bigr)\,d\mu^\theta(E')$.
 
 \emph{Step 4: Poisson smoothing.} Let $r_*>0$ be the distance from $\Sigma$ to $\R\setminus U$, and $r=\min(r_*/2,\eta/\sup_U|P_q'|)$, so that $r\ge\eta/(Cqe^{h_0q})$ for large $n$. If $E'\in\Sigma$ and $|\Delta_n(E')|\le2-3\eta$, then $[E'-r,E'+r]\subset U$, and $\Delta_n'=P_q'$ gives $|\Delta_n|\le2-2\eta$ there. So $[E'-r,E'+r]\subset I$ and
 \[
 \int_IP_\eps(E-E')\,dE\ge\frac2\pi\arctan\frac r\eps\ge1-\frac{2\eps}{\pi r} .
 \]
-Since $\eps/r\le Cqe^{h_0q}/(\eta T)\le Cqe^{(h_0-h)q}/\eta\to0$ and $\mu^\theta$ is supported on $\Sigma$, we obtain $P(N,T)\ge2f_0(1-o(1))\,\mu^\theta(\{|\Delta_n|\le2-3\eta\})$, which is at least $f_0\,\mu^\theta(\{|\Delta_n|\le2-3\eta\})$ for large $n$.
+Since $\eps/r\le Cqe^{h_0q}/(\eta T)\le Cqe^{-(h-L)q/2}$ and $\mu^\theta$ is supported on $\Sigma$, we obtain $P(N,T)\ge(1-\kappa_n)(1-Cqe^{-(h-L)q/2})\,\mu^\theta(\{|\Delta_n|\le2-3\eta\})$, which is the claim after enlarging $C$.
 \end{proof}
 
+\begin{remark}[Where the old constant was lost]\label{rem:oldconstant}
+An earlier version compared the far mass~\eqref{eq:farlower} with the whole mass $\sum_{k\ge1}|g_\pm(k)|^2\le3(4\pi\lambda+1)\|\Phi_0^\pm\|^2/\xi$ of Lemma~\ref{lem:run}(3), which produced the factor $\eta^{5/2}2^{-24}/(4\pi\lambda+1)$, and then took $\eta=1/4$ and $\mu^\theta(\{|\Delta_n|\le5/4\})\ge1/4$, which gives $2^{-31}/(1+4\pi\lambda)$; an extra factor $1/2$, taken in the eventual Poisson-smoothing bound, produced $2^{-32}/(1+4\pi\lambda)$. The upper bound of Lemma~\ref{lem:run}(3) counts the mass beyond the run, but that mass is also beyond $N$. The flux identity, the Parseval step and the Poisson smoothing lose only factors $1-o(1)$; the only genuine loss is the spectral mass near the band edges, $1-\frac2\pi\arcsin(1-\frac{3\eta}2)\approx\frac2\pi\sqrt{3\eta}$, which disappears as $\eta\to0$.
+\end{remark}
+
 \begin{remark}[An annulus at strongly resonant scales]\label{rem:burst}
-Theorem~\ref{thm:fraction} has a matching upper half. Let $\theta\in\Ga$ and $\beta(\alpha)<\infty$, and fix $B_0>\beta(\alpha)$, $h>L$, $c>h$, $\eps>0$ and $M>0$. For large $n$ with $b_n\ge c$ we have $b_n\le B_0$. For every $T$ with $e^{hq_n}\le T\le|\delta_n|^{-1}$ put
+Theorem~\ref{thm:fraction} has a matching upper half. Let $\theta\in\Ga^*$ and $\beta(\alpha)<\infty$, and fix $B_0>\beta(\alpha)$, $h>L$, $c>h$, $\eps>0$ and $M>0$. Let $\zeta_1$ be given by Theorem~\ref{thm:window} for $\eta=c-L$, this $\eps$ and $M$, and $\Lambda=\max(1,B_0)$. For large $n$ with $b_n\ge c$ we have $b_n\le B_0$ and, since $\theta\in\Ga^*$, $|\sin(2\pi q_n\theta)|\ge e^{-\zeta_1q_n}$; this threshold in $n$ may depend on the fixed phase. For every $T$ with $e^{hq_n}\le T\le|\delta_n|^{-1}$ put
 \[
 N_-=Te^{-hq_n}=T\lambda^{-q_n}e^{-(h-L)q_n},\qquad N_+=e^{\eps q_n}\bigl(1+T\lambda^{-q_n}\bigr)\le2e^{\eps q_n}T\lambda^{-q_n}.
 \]
-Theorem~\ref{thm:window} with $\Lambda=\max(1,B_0)$ gives $P(N_+,T)\le Ce^{-Mq_n}$, and Theorem~\ref{thm:B}, which is deduced from Theorem~\ref{thm:fraction} in Section~\ref{sec:everymoment}, gives $P(N_-,T)\ge c_\lambda:=2^{-32}/(1+4\pi\lambda)$. So the annulus $N_-<|j|\le N_+$ carries Abel-averaged mass at least $c_\lambda-Ce^{-Mq_n}$. In words: a fixed positive fraction of the Abel-averaged packet lies at distance $T\lambda^{-q_n}$, up to the factors $e^{(h-L)q_n}$ and $2e^{\eps q_n}$, and the mass beyond $N_+$ is exponentially small. The exponent tolerances $h-L$ and $\eps$ can be fixed as small as we like before $n$ is taken large; this is the sense in which the factors are $e^{o(q_n)}$. The estimates say nothing about how the remaining mass, up to $1-c_\lambda$, is distributed inside $N_-$, and they do not locate a median of the packet. The window begins at $T=e^{hq_n}$, slightly after $\lambda^{q_n}$. All of this concerns time averages, not the instantaneous position of the packet.
+Theorem~\ref{thm:window}, whose time range contains $T\le|\delta_n|^{-1}\le e^{B_0q_n}$, gives $P(N_+,T)\le Ce^{-Mq_n}$, and Theorem~\ref{thm:B}, which is deduced from Theorem~\ref{thm:fraction} and Lemma~\ref{lem:arcsineunif} in Section~\ref{sec:everymoment}, gives $P(N_-,T)\ge1-o(1)$ as $n\to\infty$ with $b_n\ge c$, uniformly in $T$. So the annulus $N_-<|j|\le N_+$ carries Abel-averaged mass $1-o(1)$: asymptotically the whole Abel-averaged packet lies at distance $T\lambda^{-q_n}$, up to the factors $e^{(h-L)q_n}$ and $2e^{\eps q_n}$, whose exponents can be fixed as small as we like before $n$ is taken large. In particular, for each fixed $s\in(0,1)$, the $s$-quantile of the Abel-averaged distribution $j\mapsto a(j,T)$ of $|j|$ (the median for $s=1/2$) lies in $[N_-,N_+]$ for all large $n$ with $b_n\ge c$, uniformly in $T$. The window begins at $T=e^{hq_n}=\lambda^{q_n}e^{(h-L)q_n}$, later than $\lambda^{q_n}$ by the factor $e^{(h-L)q_n}$ for the fixed $h>L$, because Theorem~\ref{thm:fraction} requires $T\ge e^{hq_n}$. All of this concerns time averages, not the instantaneous position of the packet.
+\end{remark}
+
+\begin{remark}[Numerical illustration; not used in any proof]\label{rem:fractionnumerics}
+We propagated $\delta_0$ for $H_{\lambda,\alpha,\theta}$, $\alpha=p/q+\eta_\alpha$, by a Chebyshev expansion of $e^{-itH}$ on a box of half-width at least $6T\lambda^{-q}+300$ (the mass ever seen within $30$ sites of the box edge was below $10^{-150}$), and computed $a(j,T)$ by the trapezoid rule in $t$ on $[0,7T]$ with step $25$ (the neglected Abel weight is $e^{-14}$; the computed total mass was within $1.3\cdot10^{-3}$ of $1$). With $\delta=q\alpha-p$ and $\ell=T\lambda^{-q}$ we found:
+\begin{center}
+\begin{tabular}{cccccccc}
+$\lambda$&$p/q$&$\theta$&$T$&$P(0.01\ell,T)$&$P(0.1\ell,T)$&$P(\ell,T)$&median of $|j|$\\\hline
+$1.5$&$2/5$&$0.2137$&$|\delta|^{-1}=2000$&$0.945$&$0.674$&$0.049$&$0.21\,\ell$\\
+$1.5$&$2/5$&$0$&$|\delta|^{-1}=2000$&$0.891$&$0.473$&$10^{-8}$&$0.09\,\ell$\\
+$1.5$&$2/5$&$0.2137$&$0.2|\delta|^{-1}=400$&$0.911$&$0.686$&$0.115$&$0.27\,\ell$\\
+$2$&$2/5$&$0.2137$&$|\delta|^{-1}\approx6667$&$0.951$&$0.743$&$0.002$&$0.26\,\ell$\\
+$2.5$&$2/5$&$0.2137$&$|\delta|^{-1}=20000$&$0.954$&$0.747$&$10^{-6}$&$0.27\,\ell$\\
+$1.5$&$3/8$&$0.2137$&$|\delta|^{-1}=6250$&$0.869$&$0.498$&$10^{-25}$&$0.10\,\ell$\\
+$1.2$&$2/5$&$0.2137$&$|\delta|^{-1}=300\lambda^5$&$0.925$&$0.563$&$10^{-23}$&$0.12\,\ell$\\
+$1.2$&$3/8$&$0.2137$&$|\delta|^{-1}=300\lambda^8$&$0.859$&$0.452$&$10^{-11}$&$0.08\,\ell$\\
+$1.2$&$5/13$&$0.2137$&$|\delta|^{-1}=300\lambda^{13}$&$0.789$&$0.361$&$10^{-19}$&$0.08\,\ell$\\
+$1.2$&$8/21$&$0.2137$&$|\delta|^{-1}=300\lambda^{21}$&$0.927$&$0.698$&$0.114$&$0.24\,\ell$
+\end{tabular}
+\end{center}
+So the Abel-averaged distribution of $|j|$ lives on the scale $T\lambda^{-q}$, with a profile that depends on $\lambda$, $q$ and $\theta$ (for $\lambda=1.2$ the median moved non-monotonically in $q$, between $0.08\,\ell$ and $0.24\,\ell$), and the fraction beyond a fixed multiple $c\,T\lambda^{-q}$ is far from $1$ unless $c$ is small. This is consistent with Theorem~\ref{thm:B}, whose threshold $Te^{-hq_n}$ is smaller than $T\lambda^{-q_n}$ by the factor $e^{-(h-\log\lambda)q_n}\to0$, and indicates that some such vanishing factor is needed for a fraction tending to $1$. At these denominators $e^{-(h-\log\lambda)q/2}$ is not small, so the computation illustrates the theorem but does not test its rate.
+
 \end{remark}
 
 \subsection{Every moment}\label{sec:everymoment}
@@ -296,14 +353,14 @@ a(0,T)=\iint\frac{2/T}{2/T+i(E-E')}\,d\mu^\theta(E)\,d\mu^\theta(E'),
 \]
 and the integrand has modulus at most one and tends to $\un_{E=E'}$, so $a(0,T)\to\sum_E\mu^\theta(\{E\})^2$ by dominated convergence. Hence $M_p(T)\ge P(0,T)=1-a(0,T)$ is bounded below for large $T$, and $\beta^+(p)\ge0$.
 
-\emph{The main bound.} Assume $\beta(\alpha)>L$. Fix $h\in(L,\beta(\alpha))$ and $c\in(h,\beta(\alpha))$. Since $\limsup b_n=\beta(\alpha)$, there are $n_j\to\infty$ with $b_{n_j}\ge c$ and $b_{n_j}\to\beta(\alpha)$. Apply Theorem~\ref{thm:fraction} with $\eta=1/4$ at $T_j=|\delta_{n_j}|^{-1}$, and put $N_j=T_je^{-hq_{n_j}}=e^{(b_{n_j}-h)q_{n_j}}$. By Lemma~\ref{lem:arcsine}, $\mu^\theta(\{|\Delta_{n_j}|\le5/4\})\to\frac2\pi\arcsin\frac58>\frac14$, so $P(N_j,T_j)\ge c_0:=f_0/4$ for large $j$. Hence
+\emph{The main bound.} Assume $\beta(\alpha)>L$. Fix $h\in(L,\beta(\alpha))$ and $c\in(h,\beta(\alpha))$. Since $\limsup b_n=\beta(\alpha)$, there are $n_j\to\infty$ with $b_{n_j}\ge c$ and $b_{n_j}\to\beta(\alpha)$. Apply Theorem~\ref{thm:fraction} with $\eta=1/4$ at $T_j=|\delta_{n_j}|^{-1}$, and put $N_j=T_je^{-hq_{n_j}}=e^{(b_{n_j}-h)q_{n_j}}$. By Lemma~\ref{lem:arcsine}, $\mu^\theta(\{|\Delta_{n_j}|\le5/4\})\to\frac2\pi\arcsin\frac58>\frac25$, and the factor $1-Cq_{n_j}e^{-(h-L)q_{n_j}/2}$ tends to $1$, so $P(N_j,T_j)\ge c_0:=1/4$ for large $j$. Hence
 \[
 M_p(T_j)\ge N_j^p\,P(N_j,T_j)\ge c_0N_j^p,\qquad\frac{\log N_j}{\log T_j}=\frac{b_{n_j}-h}{b_{n_j}}\to1-\frac h{\beta(\alpha)},
 \]
 with limit $1$ if $\beta(\alpha)=\infty$. So $\beta^+(p)\ge1-h/\beta(\alpha)$, and letting $h\downarrow L$ proves the bound. If $a<1-L/\beta(\alpha)$, choose $h$ with $a<1-h/\beta(\alpha)$; then $T_j^a\le N_j$ for large $j$, so $P(T_j^a,T_j)\ge c_0$.
 \end{proof}
 
-Damanik and Tcheremchantsev~\cite{DT2007} also use the exponent $\alpha_l^+$, the supremum of the $a$ for which $P(T^a,T)$ decays at no polynomial rate along some sequence of times; always $\alpha_l^+\le\au$. The second statement of Corollary~\ref{cor:moments} gives $\alpha_l^+\ge1-\log\lambda/\beta(\alpha)$. So for $\theta\in\Ga$ and $\beta(\alpha)<\infty$, $\alpha_l^+=\au$: the fastest tail is carried by a fixed fraction of the packet.
+Damanik and Tcheremchantsev~\cite{DT2007} also use the exponent $\alpha_l^+$, the supremum of the $a$ for which $P(T^a,T)$ decays at no polynomial rate along some sequence of times; always $\alpha_l^+\le\au$. The second statement of Corollary~\ref{cor:moments} gives $\alpha_l^+\ge1-\log\lambda/\beta(\alpha)$. Thus, for $\theta\in\Ga^*$ and $\beta(\alpha)<\infty$, $\alpha_l^+=\au$. When $\gamma:=1-\log\lambda/\beta(\alpha)>0$, Theorem~\ref{thm:B} in fact gives, for every $0<a<\gamma$, Abel-averaged outside probability tending to one beyond $T^a$ along a sequence of averaging times. This does not assert a positive limsup for $P(T^\gamma,T)$ at the exact critical radius.
 
 \begin{proof}[Proof of Theorem~\ref{thm:A}]
 Part~1. Theorem~\ref{thm:upper} gives $P(T^a,T)=O(T^{-m})$ for every $a>\max\{0,1-L/\beta(\alpha)\}$ and every $m>0$, and $\au\le\max\{0,1-L/\beta(\alpha)\}$. Since $\beta^+(p)\le\au$ by~\eqref{eq:exponents}, the same bound holds for every $\beta^+(p)$. Corollary~\ref{cor:moments} gives the reverse inequality $\beta^+(p)\ge\max\{0,1-L/\beta(\alpha)\}$ at every phase, and $\au\ge\beta^+(p)$.
@@ -312,12 +369,16 @@ Part~2. Corollary~\ref{cor:moments} gives $\beta^+(p)\ge1$ at every phase, and L
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:B}]
-Take $\eta=1/4$ in Theorem~\ref{thm:fraction}, so $f_0=2^{-30}/(4\pi\lambda+1)$. By Lemma~\ref{lem:arcsine}, along the indices with $b_n\ge c$ we have $\mu^\theta(\{|\Delta_n|\le5/4\})\to\frac2\pi\arcsin\frac58\ge\frac5{4\pi}>\frac14$. So for all large such $n$ and all $T\in[e^{hq_n},|\delta_n|^{-1}]$, $P(Te^{-hq_n},T)\ge f_0/4=2^{-32}/(1+4\pi\lambda)$.
+Let $\mathcal N=\{n:b_n\ge c\}$; if it is finite there is nothing to prove. Fix $\tau\in(0,1)$ and choose $\eta\in(0,1/4]$ with $\frac2\pi\arcsin(1-\frac{3\eta}2)\ge1-\tau/2$. By Lemma~\ref{lem:arcsineunif}, for large $n\in\mathcal N$ and every phase, $\mu^\theta(\{|\Delta_n|\le2-3\eta\})\ge1-3\tau/4$. Theorem~\ref{thm:fraction} with this $\eta$ gives, for large $n\in\mathcal N$, every phase and every $T\in[e^{hq_n},|\delta_n|^{-1}]$,
+\[
+P_\theta\bigl(Te^{-hq_n},T\bigr)\ge\bigl(1-Cq_ne^{-(h-L)q_n/2}\bigr)(1-3\tau/4)\ge1-\tau .
+\]
+For a packet started at $\delta_j$, the translation $U^j$ of the proof of Proposition~\ref{prop:packupper} conjugates $H_{\lambda,\alpha,\theta}$ to $H_{\lambda,\alpha,\theta+j\alpha}$ and maps $\delta_j$ to $\delta_0$ and $\{|k-j|>N\}$ to $\{|k|>N\}$; so the bound for the phase $\theta+j\alpha$ is the bound for the start $\delta_j$.
 \end{proof}
 
 \subsection{Local dimensions}
 
-A lower bound on transport does not by itself bound packing dimensions from below: the inequalities of Guarneri and Schulz-Baldes go the other way. The lower bound on dimensions comes instead from a pointwise estimate on the resolvent, which the elliptic runs also provide.
+A lower bound on transport does not by itself bound packing dimensions from below: the inequalities of Guarneri and Schulz-Baldes go the other way. The lower bound on dimensions comes instead from a pointwise estimate on the resolvent, which the elliptic propagation estimates also provide.
 
 \begin{lemma}[Local mass]\label{lem:localmass}
 Let $\theta$, $h$, $c$ and $\eta$ be as in Theorem~\ref{thm:fraction}, and put $h_0=(L+h)/2$. There are $C$ and $n_0$, depending only on $\lambda$, $\alpha$, $h$, $c$ and $\eta$, such that for every $n\ge n_0$ with $b_n\ge c$ and every $E\in U_{h_0}$ with $|\Delta_n(E)|\le2-2\eta$,
@@ -356,13 +417,13 @@ along those $j$, with limit $1$ if $\beta=\infty$. Thus $d^+_\nu\ge1-h/\beta$ on
 \]
 which tends to $2=\nu(\R)$ as $\eta\to0$. So $\bigcup_{k\ge8}\Lambda_{1/k}$ has full $\nu$-measure, and $d^+_\nu\ge1-h/\beta$ holds $\nu$-almost everywhere. Letting $h\downarrow L$ along a sequence gives $d^+_\nu\ge\max\{0,1-L/\beta\}$ $\nu$-almost everywhere.
 
-\emph{Every spectral measure.} Since $\delta_{k+1}=(H-v(\theta+k\alpha))\delta_k-\delta_{k-1}$, the vectors $\delta_0,\delta_1$ generate $\ell^2(\Z)$ under $H$, and every spectral measure $\mu_\varphi$ is absolutely continuous with respect to $\nu$. Let $f=d\mu_\varphi/d\nu$. By the differentiation theorem for Radon measures~\cite[Theorem~2.12]{Mattila1995}, $\mu_\varphi([E-r,E+r])/\nu([E-r,E+r])\to f(E)$ as $r\downarrow0$ for $\nu$-almost every $E$, and $0<f(E)<\infty$ for $\mu_\varphi$-almost every $E$. At such points $\log\mu_\varphi([E-r,E+r])=\log\nu([E-r,E+r])+O(1)$, so $d^+_{\mu_\varphi}(E)=d^+_\nu(E)$. Since $\mu_\varphi\ll\nu$, the bound $d^+_\nu\ge\max\{0,1-L/\beta\}$ holds $\mu_\varphi$-almost everywhere.
+\emph{Every spectral measure.} Since $\delta_{k+1}=(H-v(\theta+k\alpha))\delta_k-\delta_{k-1}$, the vectors $\delta_0,\delta_1$ generate $\ell^2(\Z)$ under $H$, and every spectral measure $\mu_\varphi$ is absolutely continuous with respect to $\nu$. Let $f=d\mu_\varphi/d\nu$. By differentiation of integrals for Radon measures~\cite[Theorem~2.12 and Corollary~2.14(2)]{Mattila1995}, $\mu_\varphi([E-r,E+r])/\nu([E-r,E+r])\to f(E)$ as $r\downarrow0$ for $\nu$-almost every $E$, and $0<f(E)<\infty$ for $\mu_\varphi$-almost every $E$. At such points $\log\mu_\varphi([E-r,E+r])=\log\nu([E-r,E+r])+O(1)$, so $d^+_{\mu_\varphi}(E)=d^+_\nu(E)$. Since $\mu_\varphi\ll\nu$, the bound $d^+_\nu\ge\max\{0,1-L/\beta\}$ holds $\mu_\varphi$-almost everywhere.
 \end{proof}
 
 The upper bound in part~2 is a consequence of the upper transport bound, Theorem~\ref{thm:upper}.
 
 \begin{proposition}\label{prop:packupper}
-Let $\lambda>1$ and let $\alpha$ be irrational with $\beta(\alpha)<\infty$. For every $\theta\in\Ga\cap(\Ga-\alpha)$ and every $\varphi\in\ell^2(\Z)$, the spectral measure $\mu_\varphi$ of $H_{\lambda,\alpha,\theta}$ satisfies $\dim_P^+(\mu_\varphi)\le\max\{0,1-\log\lambda/\beta(\alpha)\}$.
+Let $\lambda>1$ and let $\alpha$ be irrational with $\beta(\alpha)<\infty$. For every $\theta\in\Ga^*$ and every $\varphi\in\ell^2(\Z)$, the spectral measure $\mu_\varphi$ of $H_{\lambda,\alpha,\theta}$ satisfies $\dim_P^+(\mu_\varphi)\le\max\{0,1-\log\lambda/\beta(\alpha)\}$.
 \end{proposition}
 
 \begin{proof}
@@ -370,11 +431,11 @@ Guarneri and Schulz-Baldes~\cite[Theorem~1]{GSB1999} proved that for every $q>0$
 \[
 \limsup_{T\to\infty}\frac{\log\langle\langle|X|^p\rangle\rangle_\psi(T)}{\log T}\ge p\,D^+_{\mu_\psi}\Bigl(\frac1{1+p}\Bigr)\ge p\dim_P^+(\mu_\psi)\qquad(p>0),
 \]
-where $D^+_\mu$ is the upper generalized R\'enyi dimension. Since $(2/T)e^{-2t/T}\ge(2/T)e^{-2}$ for $0\le t\le T$, the Abel-averaged moment $M_q(T)$ dominates $2e^{-2}$ times the Ces\`aro-averaged one. So the Ces\`aro exponents are at most $\beta^+(q)\le\au$, and Theorem~\ref{thm:upper} gives $\dim_P^+(\mu_{\delta_0})\le\max\{0,1-L/\beta\}$ for $\theta\in\Ga$.
+where $D^+_\mu$ is the upper generalized R\'enyi dimension. Since $(2/T)e^{-2t/T}\ge(2/T)e^{-2}$ for $0\le t\le T$, the Abel-averaged moment $M_q(T)$ dominates $2e^{-2}$ times the Ces\`aro-averaged one. So the Ces\`aro exponents are at most $\beta^+(q)\le\au$, and Theorem~\ref{thm:upper} gives $\dim_P^+(\mu_{\delta_0})\le\max\{0,1-L/\beta\}$ for $\theta\in\Ga^*$.
 
-The translation $(Uu)(n)=u(n+1)$ satisfies $UH_{\lambda,\alpha,\theta}U^{-1}=H_{\lambda,\alpha,\theta+\alpha}$ and $U\delta_1=\delta_0$. Hence the spectral measure of $\delta_1$ for the phase $\theta$ equals that of $\delta_0$ for the phase $\theta+\alpha$, and the same bound holds when $\theta+\alpha\in\Ga$. For a Jacobi operator every spectral measure $\mu_\varphi$ is absolutely continuous with respect to $\nu=\mu_{\delta_0}+\mu_{\delta_1}$. The upper packing dimension of a measure is the infimum of the packing dimensions of its full-measure Borel sets~\cite[Appendix]{GSB1999}. Packing dimension of sets is countably stable, so $\dim_P^+(\nu)=\max\{\dim_P^+(\mu_{\delta_0}),\dim_P^+(\mu_{\delta_1})\}$, and absolute continuity gives $\dim_P^+(\mu_\varphi)\le\dim_P^+(\nu)$.
+The translation $(Uu)(n)=u(n+1)$ satisfies $UH_{\lambda,\alpha,\theta}U^{-1}=H_{\lambda,\alpha,\theta+\alpha}$ and $U\delta_1=\delta_0$. Hence the spectral measure of $\delta_1$ for the phase $\theta$ equals that of $\delta_0$ for the phase $\theta+\alpha$, and the same bound holds because $\theta+\alpha\in\Ga^*$ by Lemma~\ref{lem:Gastar}(2). For a Jacobi operator every spectral measure $\mu_\varphi$ is absolutely continuous with respect to $\nu=\mu_{\delta_0}+\mu_{\delta_1}$. The upper packing dimension of a measure is the infimum of the packing dimensions of its full-measure Borel sets~\cite[Appendix]{GSB1999}. Packing dimension of sets is countably stable, so $\dim_P^+(\nu)=\max\{\dim_P^+(\mu_{\delta_0}),\dim_P^+(\mu_{\delta_1})\}$, and absolute continuity gives $\dim_P^+(\mu_\varphi)\le\dim_P^+(\nu)$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:C}, part~2]
-By Proposition~\ref{prop:packupper}, the $\mu_\varphi$-essential supremum of $d^+_{\mu_\varphi}$ is at most $\max\{0,1-L/\beta(\alpha)\}$. By part~1, $d^+_{\mu_\varphi}$ is at least this number $\mu_\varphi$-almost everywhere. So $d^+_{\mu_\varphi}$ equals it $\mu_\varphi$-almost everywhere, and its essential infimum $\dim_P^-(\mu_\varphi)$ and essential supremum $\dim_P^+(\mu_\varphi)$ both equal it. The set $\Ga\cap(\Ga-\alpha)$ has full measure by Lemma~\ref{lem:Ga}.
+By Proposition~\ref{prop:packupper}, the $\mu_\varphi$-essential supremum of $d^+_{\mu_\varphi}$ is at most $\max\{0,1-L/\beta(\alpha)\}$. By part~1, $d^+_{\mu_\varphi}$ is at least this number $\mu_\varphi$-almost everywhere. So $d^+_{\mu_\varphi}$ equals it $\mu_\varphi$-almost everywhere, and its essential infimum $\dim_P^-(\mu_\varphi)$ and essential supremum $\dim_P^+(\mu_\varphi)$ both equal it. The set $\Ga^*$ has full measure by Lemma~\ref{lem:Gastar}.
 \end{proof}

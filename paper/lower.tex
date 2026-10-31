@@ -1,6 +1,6 @@
 \section{A lower bound for Lipschitz potentials}\label{sec:lower}
 
-This section proves a lower bound for the fastest exponent $\au$. It holds for every phase and for general Lipschitz sampling functions. For the almost Mathieu operator, Section~\ref{sec:moments} strengthens it to every moment. In this section only, let $v:\T\to\R$ be Lipschitz, let $H_\theta u(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)u(n)$, and let $T(E,x)$, $A_r(E,x)$, $L(E)$ and $\Sigma$ be defined as in Section~\ref{sec:prelim} with this $v$.
+This section proves a lower bound for the fastest exponent $\au$, for every phase, under the arithmetic and Lyapunov-continuity hypotheses of Theorem~\ref{thm:L}. The sampling function may be any Lipschitz function satisfying those hypotheses. For the almost Mathieu operator, Section~\ref{sec:moments} strengthens the lower bound to every positive moment. In this section only, let $v:\T\to\R$ be Lipschitz, let $H_\theta u(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)u(n)$, and let $T(E,x)$, $A_r(E,x)$, $L(E)$ and $\Sigma$ be defined as in Section~\ref{sec:prelim} with this $v$.
 
 \begin{theorem}\label{thm:L}
 Let $\alpha$ be irrational with $0<\beta(\alpha)<\infty$. Assume that $L(\cdot)$ is continuous on a neighborhood of a point $E_*\in\Sigma$ with $L(E_*)=\ell:=\min_\Sigma L$. Then for every phase $\theta$,
@@ -9,9 +9,11 @@ Let $\alpha$ be irrational with $0<\beta(\alpha)<\infty$. Assume that $L(\cdot)$
 \]
 \end{theorem}
 
-For the almost Mathieu operator with $\lambda>1$, $L(E)$ is continuous in $E$ and equals $\log\lambda$ on $\Sigma$~\cite[Theorem~1 and Corollary~2]{BourgainJitomirskaya2002}, so $\ell=\log\lambda$ and $\au\ge1-\log\lambda/\beta(\alpha)$ for every phase.
+For the almost Mathieu operator with $\lambda>1$, $L(E)$ is continuous in $E$ and equals $\log\lambda$ on $\Sigma$~\cite[Theorem~1 and Corollary~2]{BourgainJitomirskaya2002}, so $\ell=\log\lambda$ and, for $0<\beta(\alpha)<\infty$, Theorem~\ref{thm:L} gives $\au\ge\max\{0,1-\log\lambda/\beta(\alpha)\}$ at every phase.
 
 \subsection{Elliptic blocks}
+
+Let $e_1=(1,0)^{\mathsf T}$ and $e_2=(0,1)^{\mathsf T}$. A real determinant-one matrix is elliptic when its trace has modulus less than $2$; it is then conjugate over $\R$ to a rotation. We call the coordinates after this conjugation the rotation frame. The direction of a nonzero vector in that frame is its polarization.
 
 For a finite sequence of energies $E-v_r$, $0\le r<q$, let $T_r=\begin{pmatrix}E-v_r&-1\\1&0\end{pmatrix}$, $C_0=I$, $C_r=T_{r-1}\cdots T_0$ and $\mathcal A=C_q$. Suppose $\mathcal A$ is real and elliptic, $|\tr\mathcal A|<2$. Choose $B\in SL(2,\R)$ with $B^{-1}\mathcal AB=R_\varrho$, the rotation by angle $\varrho$, and put $u_r=e_1^{\mathsf T}C_rB$, the first row of $C_rB$, and
 \[
@@ -31,6 +33,7 @@ S_{\mathcal A}=\sum_{r=0}^{q-1}\|u_r\|^2,\qquad N_\kappa=\begin{pmatrix}0&0\\-1&
 \end{lemma}
 
 \begin{proof}
+The insertion identity is the common source of the derivative and complex-energy estimates in parts~1--3; part~4 controls how the conjugating frame changes.
 Put $Q_r=B^{-1}C_r^{-1}N_\kappa C_rB$. Since $T_r(E+z)=T_r(E)(I+zN_\kappa)$, telescoping gives
 \[
 B^{-1}\mathcal A(E+z)B=R_\varrho\prod_{r=q-1}^{0}(I+zQ_r),

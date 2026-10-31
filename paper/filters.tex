@@ -1,21 +1,21 @@
 \section{Exact slow dynamics at strongly resonant scales}\label{sec:filters}
 
-This section treats scales where $|\delta_n|$ is much smaller than $\lambda^{-q_n}$, that is, $b_n\ge L+\eta$ for a fixed $\eta>0$. On such scales the conserved polynomial gives an exact description of the dynamics on most of the spectral measure of $\delta_0$, with velocity $\lambda^{-q}$.
+This section treats scales with $b_n\ge L+\eta$ for a fixed $\eta>0$, so $|\delta_n|$ is exponentially smaller than $\lambda^{-q_n}$. At phases satisfying $|\sin(2\pi q_n\theta)|\ge e^{-\zeta_1q_n}$, with $\zeta_1>0$ chosen sufficiently small for the parameters of Theorem~\ref{thm:window}, spectral filters express most of the initial vector as pieces with an exact slow generator. Their commutator bounds give an upper velocity of exponential order $\lambda^{-q_n}$.
 
-Throughout the section $q=q_n$, $A=\lambda^q$, $s=|\sin2\pi q\theta|\ge q^{-2}$, and $F=P_q/A$. Put
+Throughout the section $q=q_n$, $A=\lambda^q$, $s=|\sin2\pi q\theta|\ge e^{-\zeta_1q}$, where $\zeta_1\in(0,1]$ is a parameter fixed before $n$, and $F=P_q/A$. Put
 \[
 y_0=2\cos(2\pi q\theta),\qquad d=2-|y_0|,\qquad \rho=d/16,\qquad J_{\mathrm{big}}=[y_0-4\rho,\,y_0+4\rho].
 \]
-Since $1-|\cos x|\ge\frac12\sin^2x$ and $1-|\cos x|\le\sin^2x$, we have $q^{-4}\le s^2\le d\le2s^2$. We fix $h>L$ and write $E_h=e^{(h-L)q}$. By Proposition~\ref{prop:poly}, $|F^{(k)}|\le C_{k,h}q^kE_h$ on $U_h$ for each fixed $k$. By Lemma~\ref{lem:ratspec}, $\Sigma_{p/q}\subset U_h$ for all large $n$, and we assume this.
+Since $1-|\cos x|\ge\frac12\sin^2x$ and $1-|\cos x|\le\sin^2x$, we have $e^{-2\zeta_1q}\le s^2\le d\le2s^2$. We fix $h>L$ and write $E_h=e^{(h-L)q}$. By Proposition~\ref{prop:poly}, $|F^{(k)}|\le C_{k,h}q^kE_h$ on $U_h$ for each fixed $k$. By Lemma~\ref{lem:ratspec}, $\Sigma_{p/q}\subset U_h$ for all large $n$, and we assume this.
 
 \subsection{Inverse branches and filters}
 
 \begin{lemma}\label{lem:branches}
-For all large $n$ and every phase with $s\ge q^{-2}$:
+For all sufficiently large $n$ and every phase with $s\ge e^{-\zeta_1q}$, with $\zeta_1$ fixed as above:
 \begin{enumerate}
 \item For each $y\in(-2,2)$ the equation $F(E)=y$ has $q$ simple real roots, all in $\Sigma_{p/q}$. They define $q$ smooth monotone branches $e_1(y)<\dots<e_q(y)$ on $J_{\mathrm{big}}$.
 \item For $b\ne b'$ the arcs $e_b(J_{\mathrm{big}})$ and $e_{b'}(J_{\mathrm{big}})$ are at distance at least $12\rho/(C_{1,h}qE_h)$.
-\item $|e_b'(y)|\le2\lambda/(qs)$ on $J_{\mathrm{big}}$, and for each $k\ge1$ there are $C_{k,h}$ and $c_k$, depending only on $k$, with $|e_b^{(k)}(y)|\le C_{k,h}\,q^{c_k}E_h^{k-1}$ on $J_{\mathrm{big}}$.
+\item $|e_b'(y)|\le2\lambda/(qs)$ on $J_{\mathrm{big}}$, and for each $k\ge1$ there are $C_{k,h}$, depending only on $k$, $h$, $\lambda$ and $\alpha$, and $c_k$, depending only on $k$, with $|e_b^{(k)}(y)|\le C_{k,h}\,q^{c_k}e^{c_k\zeta_1q}E_h^{k-1}$ on $J_{\mathrm{big}}$.
 \end{enumerate}
 \end{lemma}
 
@@ -28,7 +28,7 @@ For all large $n$ and every phase with $s\ge q^{-2}$:
 \begin{equation}\label{eq:Pprime}
 |P_q'(E)|\ge\frac{qA|\sin(2\pi q\varphi)|}{\lambda}.
 \end{equation}
-For $y\in J_{\mathrm{big}}$, $\sin^2(2\pi q\varphi)=1-y^2/4\ge(2-|y|)/2\ge6\rho\ge3s^2/8$, so $|\sin(2\pi q\varphi)|\ge s/2$ and $|e_b'(y)|=1/|F'(E)|\le2\lambda/(qs)\le2\lambda q$. Differentiating $F(e_b(y))=y$ repeatedly expresses $F'(e_b)e_b^{(k)}$ as a sum of products of $F^{(j)}(e_b)$, $2\le j\le k$, with lower derivatives of $e_b$ whose orders add up to $k$. Each such product contains exactly one factor $F^{(j)}$, bounded by $C q^jE_h$, and induction on $k$ gives the stated bound.
+For $y\in J_{\mathrm{big}}$, $\sin^2(2\pi q\varphi)=1-y^2/4\ge(2-|y|)/2\ge6\rho\ge3s^2/8$, so $|\sin(2\pi q\varphi)|\ge s/2$ and $|e_b'(y)|=1/|F'(E)|\le2\lambda/(qs)\le2\lambda e^{\zeta_1q}$. Differentiating $F(e_b(y))=y$ repeatedly expresses $F'(e_b)e_b^{(k)}$ as a sum of products of $F^{(j)}(e_b)$, $2\le j\le k$, with lower derivatives of $e_b$ whose orders add up to $k$. Each such product contains exactly one factor $F^{(j)}$, bounded by $C q^jE_h$, and induction on $k$ gives the stated bound.
 \end{proof}
 
 Fix a smooth $f_0:\R\to[0,1]$ with $f_0=1$ on $[-1,1]$ and $f_0=0$ outside $[-2,2]$, and put $f(y)=f_0((y-y_0)/\rho)$. For each branch $b$ choose a smooth $\chi_b:\R\to[0,1]$ equal to $1$ on $e_b([y_0-2\rho,y_0+2\rho])$ and supported in $e_b((y_0-3\rho,y_0+3\rho))$. By Lemma~\ref{lem:branches}, the transition regions have length at least $\rho/\max|F'|\ge\rho/(C_{1,h}qE_h)$, and the supports of different $\chi_b$ are disjoint. Define
@@ -41,8 +41,8 @@ where $\kappa$ is a smooth cutoff equal to $1$ on $[y_0-2\rho,y_0+2\rho]$ and su
 \begin{enumerate}
 \item $\sum_bg_b(E)=f(F(E))$ for every real $E$.
 \item $G_b(F(E))=E$ for every $E\in\supp g_b$.
-\item For every $r\ge0$ there are $C_{r,h}$ and $c_r$ with $\|g_b\|_{C^r}+\|G_b\|_{C^r}\le C_{r,h}q^{c_r}E_h^{r}$. All supports lie in a fixed bounded interval.
-\item For every $r\ge1$, $\|X^rg_b(H)\delta_0\|\le C_{r,h}\,q^{c_{r+2}}E_h^{r+2}$.
+\item For every $r\ge0$ there are $C_{r,h}$ and $c_r$ with $\|g_b\|_{C^r}+\|G_b\|_{C^r}\le C_{r,h}q^{c_r}e^{c_r\zeta_1q}E_h^{r}$. All supports lie in a fixed bounded interval.
+\item For every $r\ge1$, $\|X^rg_b(H)\delta_0\|\le C_{r,h}\,q^{c_{r+2}}e^{c_{r+2}\zeta_1q}E_h^{r+2}$.
 \end{enumerate}
 \end{lemma}
 
@@ -51,7 +51,7 @@ where $\kappa$ is a smooth cutoff equal to $1$ on $[y_0-2\rho,y_0+2\rho]$ and su
 
 2. On $\supp g_b$, $E$ lies on the $b$-th arc and $F(E)\in\supp f$, where $\kappa=1$; hence $G_b(F(E))=e_b(F(E))=E$.
 
-3. This follows from $|f^{(k)}|\le C_k\rho^{-k}\le C_k16^kq^{4k}$, the bounds on $F^{(k)}$ on $U_h$, the length of the transition regions of $\chi_b$, and Lemma~\ref{lem:branches}(3).
+3. This follows from $|f^{(k)}|\le C_k\rho^{-k}\le C_k16^ke^{2k\zeta_1q}$, the bounds on $F^{(k)}$ on $U_h$, the length of the transition regions of $\chi_b$, and Lemma~\ref{lem:branches}(3).
 
 4. Since $X\delta_0=0$, $X^rg_b(H)\delta_0=\ad_X^r(g_b(H))\delta_0$. Write $g(H)=(2\pi)^{-1}\int\hat g(t)e^{itH}\,dt$ and $H_u=e^{iuX}He^{-iuX}$. Then $\ad_X^r(e^{itH})=(-i\partial_u)^re^{itH_u}|_{u=0}$, and all $u$-derivatives of $H_u$ have norm at most $2$. Repeated Duhamel expansion gives $\|\ad_X^r(e^{itH})\|\le C_r(1+|t|)^r$. Hence $\|\ad^r_X(g(H))\|\le C_r\int(1+|t|)^r|\hat g(t)|\,dt\le C_r\|g\|_{C^{r+2}}$ for $g$ supported in a fixed bounded interval. Apply part~3.
 \end{proof}
@@ -64,9 +64,9 @@ Assume $\|K\|\le3$ and $9q^{r+1}\le A$. Put $B=Q/A=F(H)$ and $H_b=G_b(B)$. Then:
 \item $e^{-itH}g_b(H)=e^{-itH_b}g_b(H)$ for every $t\in\R$.
 \item $\|\ad_X^kB\|\le3(2q+1)q^k/A$ for every $k\ge1$.
 \item $\|\ad_X^kH_b\|\le C_k\,q^{k+1}A^{-1}\int(1+|t|)^k|\hat G_b(t)|\,dt$ for $1\le k\le r$.
-\item If $\gamma\ge\max_{1\le k\le r}\|\ad_X^kH_b\|$ and $M_0\ge\max_{0\le k\le r}\|X^kg_b(H)\delta_0\|$, then
+\item If $\omega\ge\max_{1\le k\le r}\|\ad_X^kH_b\|$ and $M_0\ge\max_{0\le k\le r}\|X^kg_b(H)\delta_0\|$, then
 \[
-\|X^re^{-itH_b}g_b(H)\delta_0\|\le C_rM_0(1+\gamma|t|)^r\qquad\text{for all }t.
+\|X^re^{-itH_b}g_b(H)\delta_0\|\le C_rM_0(1+\omega|t|)^r\qquad\text{for all }t.
 \]
 \end{enumerate}
 \end{proposition}
@@ -84,7 +84,7 @@ has $\|K_m\|\le\|K\|$, and $\ad_XK_m=mK_m$. The diagonal $V$ commutes with $X$. 
 
 4. Let $\phi_t=e^{-itH_b}g_b(H)\delta_0$. The identity $X^kY=\sum_{j=0}^k\binom kj(\ad_X^jY)X^{k-j}$ gives $[X^k,H_b]=\sum_{j=1}^k\binom kj(\ad_X^jH_b)X^{k-j}$. Duhamel's formula then yields
 \[
-\|X^k\phi_t\|\le\|X^k\phi_0\|+\gamma\sum_{j=1}^k\binom kj\int_0^{|t|}\|X^{k-j}\phi_\tau\|\,d\tau,
+\|X^k\phi_t\|\le\|X^k\phi_0\|+\omega\sum_{j=1}^k\binom kj\int_0^{|t|}\|X^{k-j}\phi_\tau\|\,d\tau,
 \]
 and induction on $k\le r$ gives the claim. Truncating $X$ to bounded regions and passing to strong limits justifies these manipulations.
 \end{proof}
@@ -92,7 +92,7 @@ and induction on $k\le r$ gives the claim. Truncating $X$ to bounded regions and
 \subsection{The window theorem}
 
 \begin{theorem}\label{thm:window}
-Fix $\eta>0$, $\eps>0$, $\Lambda\ge1$ and $M>0$. There are $C$ and $n_0$ such that for every $n\ge n_0$ with $b_n\ge L+\eta$, every phase with $|\sin2\pi q_n\theta|\ge q_n^{-2}$, and every $1\le T\le e^{\Lambda q_n}$,
+Fix $\eta>0$, $\eps>0$, $\Lambda\ge1$ and $M>0$. There are $\zeta_1>0$, $C$ and $n_0$ such that for every $n\ge n_0$ with $b_n\ge L+\eta$, every phase with $|\sin2\pi q_n\theta|\ge e^{-\zeta_1q_n}$, and every $1\le T\le e^{\Lambda q_n}$,
 \[
 P\bigl(R_n(T),T\bigr)\le Ce^{-Mq_n},\qquad R_n(T)=e^{\eps q_n}\Bigl[1+\min\Bigl(\frac{T}{\lambda^{q_n}},\frac{1}{\lambda^{q_n}|\delta_n|}\Bigr)\Bigr].
 \]
@@ -101,32 +101,32 @@ P\bigl(R_n(T),T\bigr)\le Ce^{-Mq_n},\qquad R_n(T)=e^{\eps q_n}\Bigl[1+\min\Bigl(
 \begin{proof}
 Write $q=q_n$, $A=\lambda^q$, $\delta=\delta_n$, $b=b_n$, and note $A|\delta|=e^{(L-b)q}\le e^{-\eta q}$.
 
-\emph{The barrier radius.} Apply Proposition~\ref{prop:local} with $c=L+\eta$ and $\eps'=\min(\eps/2,L/8)$. Since $(b-L)_+=b-L$ and $e^{(b-L)q}=1/(A|\delta|)$, it gives $N_n\le2e^{\eps'q}/(A|\delta|)\le e^{\eps q}/(A|\delta|)=:R_a$ for large $q$, and
+\emph{The barrier radius.} Apply Proposition~\ref{prop:local} with $c=L+\eta$ and $\eps'=\min(\eps/4,L/8)$, and require $\zeta_1\le\eps'$. Then $\mu_n=L$, and since $|\sin2\pi q\theta|\ge e^{-\eps'q}$, the last assertion of Proposition~\ref{prop:local} gives $N_n\le3e^{(b-L+3\eps')q}\le e^{\eps q}/(A|\delta|)=:R_a$ for large $q$, and
 \[
 P(R_a,T)\le P(N_n,T)\le C(1+T^2)e^{-\eps'N_n/900}\le Ce^{2\Lambda q}\exp\bigl(-\eps'e^{\eps'q/2}/900\bigr)\le e^{-Mq}.
 \]
 
-\emph{The filtered evolution.} Fix $\zeta=\eps/8$ and integers $k>M/L+1$ and $r>M/\eps$. Choose $h\in(L,L+\eta)$ so close to $L$ that the bounds of Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow} for orders up to $r+2$ are at most $e^{\zeta q}$ after absorbing powers of $q$; this is possible since they are polynomial in $q$ times powers of $E_h=e^{(h-L)q}$ of bounded order. Since $h<L+\eta$, Proposition~\ref{prop:poly} gives $\|R\|\le C_hq^{5/2}e^{(h-L-\eta)q}\to0$, so $\|K\|\le3$ for large $q$.
+\emph{The filtered evolution.} Fix $\zeta=\eps/8$ and integers $k>M/L+1$ and $r>M/\eps+1$. Then fix $\zeta_1=\min\{\eps',\,L/(2k),\,\zeta/c_*\}$, where $c_*$ is the largest exponent of $e^{\zeta_1q}$ appearing in Lemmas~\ref{lem:branches} and~\ref{lem:filters} and Proposition~\ref{prop:slow}(3) for orders up to $r+2$. Choose $h\in(L,L+\eta)$ so close to $L$ that the bounds of Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow} for orders up to $r+2$ are at most $e^{2\zeta q}$ after absorbing powers of $q$ and the factors $e^{c\zeta_1q}$, $c\le c_*$; this is possible since they are polynomial in $q$ times powers of $E_h=e^{(h-L)q}$ of bounded order. Since $h<L+\eta$, Proposition~\ref{prop:poly} gives $\|R\|\le C_hq^{5/2}e^{(h-L-\eta)q}\to0$, so $\|K\|\le3$ for large $q$.
 
 By Lemma~\ref{lem:filters}(1), $f(B)=\sum_bg_b(H)$, so $\delta_0=\sum_bg_b(H)\delta_0+(1-f(B))\delta_0$.
 
 \emph{The remainder.} Since $0\le1-f\le1$ and $1-f(y)=0$ for $|y-y_0|<\rho$, the spectral theorem gives $\|(1-f(B))\delta_0\|\le\rho^{-k}\|(B-y_0)^k\delta_0\|$. If $v$ is supported in $[-jq,jq]$ with $j<k$, then $(B-y_0)v$ is supported in $[-(j+1)q,(j+1)q]$, and on that set $|V(i)/A-y_0|\le4\pi kq|\delta|$. Hence $\|(B-y_0)v\|\le(4\pi kq|\delta|+3/A)\|v\|$. For large $q$, $q|\delta|\le qe^{-(L+\eta)q}\le1/A$, so
 \[
-\|(1-f(B))\delta_0\|\le\Bigl(\frac{C_k}{\rho A}\Bigr)^k\le\bigl(16C_kq^4e^{-Lq}\bigr)^k\le e^{-Mq}.
+\|(1-f(B))\delta_0\|\le\Bigl(\frac{C_k}{\rho A}\Bigr)^k\le\bigl(16C_ke^{(2\zeta_1-L)q}\bigr)^k\le e^{-Mq},
 \]
 This vector evolves unitarily, so its contribution to $P(\cdot,T)$ is at most $2e^{-2Mq}$ at every radius.
 
-\emph{The retained part.} By Proposition~\ref{prop:slow}(1), $\sum_be^{-itH}g_b(H)\delta_0=\sum_be^{-itH_b}g_b(H)\delta_0=:\Phi_t$. By Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow}, each branch satisfies the hypotheses of Proposition~\ref{prop:slow}(4) with $M_0\le e^{\zeta q}$ and $\gamma\le e^{2\zeta q}/A$. Summing over $q$ branches,
+\emph{The retained part.} By Proposition~\ref{prop:slow}(1), $\sum_be^{-itH}g_b(H)\delta_0=\sum_be^{-itH_b}g_b(H)\delta_0=:\Phi_t$. By Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow}, each branch satisfies the hypotheses of Proposition~\ref{prop:slow}(4) with $M_0\le e^{2\zeta q}$ and $\omega\le e^{3\zeta q}/A$. Summing over $q$ branches,
 \[
-\|X^r\Phi_t\|\le C_rqe^{\zeta q}\bigl(1+|t|e^{2\zeta q}/A\bigr)^r.
+\|X^r\Phi_t\|\le C_rqe^{2\zeta q}\bigl(1+|t|e^{3\zeta q}/A\bigr)^r.
 \]
 Let $R_b=e^{\eps q}(1+T/A)$. By Markov's inequality $\|\un_{|X|>R_b}\Phi_t\|\le R_b^{-r}\|X^r\Phi_t\|$. Averaging against $(2/T)e^{-2t/T}$, whose moments satisfy $\int t^{j}(2/T)e^{-2t/T}dt\le C_jT^j$,
 \[
-\frac2T\int_0^\infty e^{-2t/T}\|\un_{|X|>R_b}\Phi_t\|^2\,dt\le C\,q^2e^{2\zeta q}\,\frac{(1+Te^{2\zeta q}/A)^{2r}}{R_b^{2r}}\le Cq^2e^{(2\zeta+4r\zeta-2r\eps)q}\le e^{-Mq}.
+\frac2T\int_0^\infty e^{-2t/T}\|\un_{|X|>R_b}\Phi_t\|^2\,dt\le C\,q^2e^{4\zeta q}\,\frac{(1+Te^{3\zeta q}/A)^{2r}}{R_b^{2r}}\le Cq^2e^{(4\zeta+6r\zeta-2r\eps)q}\le e^{-Mq},
 \]
 Combining the two parts with $\|x+y\|^2\le2\|x\|^2+2\|y\|^2$ gives $P(R_b,T)\le Ce^{-Mq}$.
 
 \emph{Conclusion.} $R_n(T)\ge\min(R_a,R_b)$, and $P(\cdot,T)$ is nonincreasing, so $P(R_n(T),T)\le\max\bigl(P(R_a,T),P(R_b,T)\bigr)\le Ce^{-Mq}$. Every constant was fixed before $n$, $\theta$ and $T$ vary.
 \end{proof}
 
-The radius $R_n(T)$ describes the motion at the scale $q_n$. Up to the factor $e^{\eps q}$, the packet moves with speed $\lambda^{-q}$ until it reaches the barrier radius $1/(\lambda^q|\delta_n|)$, where the drift of the diagonal stops it.
+For the phases and scales in Theorem~\ref{thm:window}, the radius $R_n(T)$ bounds the location of all but an exponentially small Abel-averaged mass, for $1\le T\le e^{\Lambda q_n}$ with fixed $\Lambda$. Up to the factor $e^{\eps q_n}$ and the additive $1$, this upper radius grows at rate $\lambda^{-q_n}$ until it saturates at the barrier radius $1/(\lambda^{q_n}|\delta_n|)$. The theorem bounds the packet from outside; it does not by itself prove motion at that speed or stopping at that radius.

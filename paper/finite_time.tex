@@ -1,0 +1,169 @@
+\section{Individual times and finite-volume approximation}\label{sec:finitetime}
+
+The transport theorems concern Abel averages. Two elementary deductions clarify what those averages imply at individual times and how their finite-time predictions can be computed. The first uses positivity of probabilities; the second uses only nearest-neighbor hopping.
+
+\subsection{A positive duration of instantaneous escape}
+
+\begin{lemma}\label{lem:duration}
+Let $f:[0,\infty)\to[0,1]$ be measurable and suppose
+\[
+\frac2T\int_0^\infty e^{-2t/T}f(t)\,dt\ge c,\qquad 0<c\le1.
+\]
+Set $\tau=(T/2)\log(4/c)$. Then
+\[
+\left|\{t\in[0,\tau]:f(t)\ge c/2\}\right|\ge cT/8.
+\]
+Here $|\cdot|$ denotes Lebesgue measure.
+\end{lemma}
+\begin{proof}
+The weight of $[\tau,\infty)$ is $c/4$, so the weighted integral over $[0,\tau]$ is at least $3c/4$. Its part where $f<c/2$ is at most $c/2$. Thus the remaining set has weighted measure at least $c/4$. The weight is at most $2/T$, giving the claimed duration.
+\end{proof}
+
+\begin{corollary}\label{cor:instant}
+Use the hypotheses of Theorem~\ref{thm:B}, fix $c_\lambda\in(0,1)$, and write $N=Te^{-hq_n}$.
+For every sufficiently large permitted scale and every
+$e^{hq_n}\le T\le|\delta_n|^{-1}$, the set
+\[
+\left\{t\in\left[0,\frac T2\log\frac4{c_\lambda}\right]:
+\sum_{|j|>N}|\langle\delta_j,e^{-itH}\delta_0\rangle|^2
+\ge c_\lambda/2\right\}
+\]
+has measure at least $c_\lambda T/8$.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:duration} to the instantaneous outside probability and use Theorem~\ref{thm:B}.
+\end{proof}
+
+\begin{corollary}[Escape at almost all times of the window]\label{cor:almostalltimes}
+Use the hypotheses of Theorem~\ref{thm:B}, put $N=Te^{-hq_n}$, and fix $b>0$ and $s\in(0,1)$. Then
+\[
+\lim_{\substack{n\to\infty\\ b_n\ge c}}\ \sup_{\theta\in\T}\ \sup_{e^{hq_n}\le T\le|\delta_n|^{-1}}\ \frac1T\Bigl|\Bigl\{t\in[0,bT]:\sum_{|j|\le N}|\langle\delta_j,e^{-itH_{\lambda,\alpha,\theta}}\delta_0\rangle|^2>s\Bigr\}\Bigr|=0 .
+\]
+If $\theta\in\Ga^*$ and $\beta(\alpha)<\infty$, the same holds, for this fixed $\theta$, with $\sum_{|j|\le N}$ replaced by the probability outside the annulus $N_-<|j|\le N_+$ of Corollary~\ref{cor:instantannulus}.
+\end{corollary}
+\begin{proof}
+Let $f(t)=\sum_{|j|\le N}|\langle\delta_j,e^{-itH}\delta_0\rangle|^2\in[0,1]$. Then $\frac2T\int_0^\infty e^{-2t/T}f(t)\,dt=1-P(N,T)=:\tau_n$, and $\tau_n\to0$ uniformly in $\theta$ and $T$ by Theorem~\ref{thm:B}. On $[0,bT]$ the weight $\frac2Te^{-2t/T}$ is at least $\frac2Te^{-2b}$, so Chebyshev's inequality gives $|\{t\in[0,bT]:f(t)>s\}|\le\frac T2e^{2b}\tau_n/s$. For the annulus, the Abel average of the probability outside $N_-<|j|\le N_+$ is $1-P(N_-,T)+P(N_+,T)$, which tends to $0$ by Remark~\ref{rem:burst}; argue in the same way.
+\end{proof}
+
+
+For good phases the upper estimate also places a positive fraction in a specified annulus at individual times.
+\begin{corollary}\label{cor:instantannulus}
+Let $\theta\in\Ga^*$ and $\beta(\alpha)<\infty$. Fix $h>L$, $c>h$, $\zeta>0$ and $c_\lambda\in(0,1)$.
+At every sufficiently large scale with $b_n\ge c$, and every
+$T\in[e^{hq_n},|\delta_n|^{-1}]$, set
+\[
+N_-=Te^{-hq_n},\qquad
+N_+=e^{\zeta q_n}(1+T\lambda^{-q_n}).
+\]
+There is a measurable set of times of measure at least $c_\lambda T/16$ inside
+$[0,(T/2)\log(8/c_\lambda)]$ on which the probability in
+$N_-<|j|\le N_+$ is at least $c_\lambda/4$.
+\end{corollary}
+\begin{proof}
+Remark~\ref{rem:burst}, with $\eps=\zeta$, bounds the Abel-averaged annulus probability below by $1-o(1)$, hence by $c_\lambda/2$ for large $n$.
+Use Lemma~\ref{lem:duration} with $c=c_\lambda/2$.
+\end{proof}
+
+The annulus is fixed by the selected averaging scale $T$. These statements do not say that its radius follows an instantaneous power law, that the indicated times are close to $T$, or that such times have positive asymptotic density over the whole half-line.
+
+\subsection{Dependence on frequency and phase}
+
+\begin{proposition}\label{prop:continuity}
+Let $v$ be a real Lipschitz sampling function with constant $K$, and let
+$H_{\alpha,\theta}$ be its nearest-neighbor Schr\"odinger operator.
+For representatives of the frequencies and phases,
+\[
+\|(e^{-itH_{\alpha,\theta}}-e^{-itH_{\alpha',\theta'}})\delta_0\|
+\le K\bigl(|\theta-\theta'|\,|t|+|\alpha-\alpha'|\,t^2\bigr).
+\]
+Consequently the Abel-averaged position distributions satisfy
+\[
+\operatorname{TV}(a_{\alpha,\theta}(\cdot,T),a_{\alpha',\theta'}(\cdot,T))
+\le\min\left\{1,\frac K2
+\bigl(T|\theta-\theta'|+T^2|\alpha-\alpha'|\bigr)\right\}.
+\]
+One may minimize phase differences over integer translates.
+\end{proposition}
+\begin{proof}
+The bounded commutator $[X,H]=S^{-1}-S$ has norm at most two.
+Duhamel's formula, first with bounded position cutoffs and then by a strong limit, gives
+$\|Xe^{-isH}\delta_0\|\le2|s|$.
+The difference of the two potentials at site $j$ has modulus at most
+$K(|\theta-\theta'|+|j|\,|\alpha-\alpha'|)$.
+Apply the propagator Duhamel identity to $\delta_0$ and integrate from zero to $|t|$.
+For unit vectors, the total variation distance of the outcome distributions of a measurement is at most their trace distance, which is at most their Hilbert-space distance. Convexity and
+\[
+\frac2T\int_0^\infty te^{-2t/T}\,dt=T/2,\qquad
+\frac2T\int_0^\infty t^2e^{-2t/T}\,dt=T^2/2
+\]
+prove the second assertion.
+\end{proof}
+
+For almost Mathieu, $K=4\pi\lambda$. At fixed frequency and phase, changing the coupling adds the propagator bound $2|\lambda-\lambda'||t|$ and the Abel-distribution bound $|\lambda-\lambda'|T$. These estimates concern evolution from a localized vector. They do not assert operator-norm continuity of the infinite-volume Hamiltonian in its frequency.
+
+\begin{corollary}\label{cor:finitehorizon}
+Fix $\lambda=2$, $\theta=1/4$, a reference frequency $\alpha_0$, a finite
+time horizon $T_*>0$, and an accuracy $\eta>0$.
+For every $\gamma\in[0,1]$ that is right-c.e.\ relative to $\mathbf0'$,
+there is a computable irrational $\alpha$ with eventually odd denominators
+and upper transport exponent $\gamma$ such that
+\[
+ \sup_{|t|\le T_*}
+ \|(e^{-itH_{2,\alpha,1/4}}-e^{-itH_{2,\alpha_0,1/4}})\delta_0\|<\eta.
+\]
+The outcome distributions of any measurement of these evolved states
+then differ in total variation by less than $\eta$ throughout that interval.
+\end{corollary}
+\begin{proof}
+By Corollary~\ref{cor:dense}, choose a frequency realizing $\gamma$ within
+$\eta/(8\pi T_*^2)$ of $\alpha_0$.
+Proposition~\ref{prop:continuity} gives the uniform norm estimate.
+Measurement cannot increase trace distance, which is at most the norm
+distance of the two unit vectors.
+\end{proof}
+
+Thus finite-time data with nonzero error tolerance cannot give a uniform
+restriction on the asymptotic exponent without an additional arithmetic
+promise. This is a statement about finite precision. It does not identify
+distinct frequencies with exactly identical evolution, and it does not
+rule out inference within a more restricted frequency class.
+
+\subsection{An explicit finite-volume certificate}
+
+Let $H$ have an arbitrary bounded real potential. Let $H_N$ be its restriction to
+$[-N,N]$, with the two boundary bonds removed, and extend its evolved vector by zero outside that interval.
+Write $a_N(\cdot,T)$ for its Abel-averaged distribution. Define
+\[
+R_N(\tau)=2\sum_{k=N+1}^\infty\frac{(2\tau)^k}{k!}.
+\]
+\begin{proposition}\label{prop:finitevolume}
+For $N\ge0$ and $t\ge0$,
+\[
+\|e^{-itH}\delta_0-e^{-itH_N}\delta_0\|\le\min\{2,R_N(t)\}.
+\]
+For every $\tau>0$,
+\[
+\operatorname{TV}(a(\cdot,T),a_N(\cdot,T))
+\le\min\{1,R_N(\tau)+e^{-2\tau/T}\}.
+\]
+The same bound controls the error in the probability of any prescribed set of sites.
+\end{proposition}
+\begin{proof}
+Write $H=V+K$, where $V$ is diagonal and $K=S+S^{-1}$.
+Remove the boundary bonds to obtain an operator on all of $\ell^2(\mathbb Z)$ whose evolution from $\delta_0$ is the zero extension of the finite-volume evolution.
+In the interaction picture for $V$, both hopping operators have norm at most two.
+Their Dyson terms of orders $k\le N$ agree on $\delta_0$: a path starting at zero cannot cross a removed bond with fewer than $N+1$ nearest-neighbor steps.
+Each term of order $k$ has norm at most $(2t)^k/k!$.
+The difference of the remaining terms is therefore at most $R_N(t)$.
+The norm difference of two unit vectors is at most two.
+For the averaged distributions, use this estimate up to time $\tau$ and the trivial total variation bound one afterwards.
+\end{proof}
+
+The series is explicit; for example
+$R_N(\tau)\le2e^{2\tau}(2\tau)^{N+1}/(N+1)!$.
+Given an error tolerance $0<\eta<1$, take
+$\tau=(T/2)\log(2/\eta)$ and then choose $N$ so that $R_N(\tau)\le\eta/2$.
+Finite-matrix exponentiation and integration then give a certified approximation to the infinite-volume distribution, with any additional numerical error accounted for separately.
+
+For computable $\lambda,\alpha,\theta,T$, all entries of the finite matrix are computable. Matrix exponentials on the compact interval $[0,\tau]$ can be approximated with explicit Taylor remainders, and their integrals by uniform approximation. The proposition thus proves effective computability of the finite-time Abel probabilities without extracting a rate from the asymptotic transport theorem. It does not supply an effective onset scale for Theorem~\ref{thm:B}.
+

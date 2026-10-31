@@ -1,12 +1,13 @@
 \documentclass[11pt]{article}
-\usepackage[T1]{fontenc}
+\IfFileExists{lmodern.sty}{\usepackage[T1]{fontenc}}{}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage{amsmath,amssymb,amsthm,mathtools,graphicx}
 \usepackage[margin=1in]{geometry}
-\usepackage{xurl}
+\PassOptionsToPackage{hyphens}{url}\usepackage{url}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
-\hypersetup{pdftitle={Exact transport and packing dimension for the almost Mathieu operator},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\hypersetup{pdftitle={Exact transport and spectral dimensions for the almost Mathieu operator},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
 \newcommand{\C}{\mathbb C}
 \newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -33,18 +34,19 @@
 \newtheorem{remark}[theorem]{Remark}
 \setlength{\emergencystretch}{2em}
 \raggedbottom
-\title{Exact transport and packing dimension\\ for the almost Mathieu operator\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done is described at the end of the paper.}}
+\title{Exact transport and spectral dimensions\\ for the almost Mathieu operator\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done is described at the end of the paper.}}
 \author{Seth Douglas \and Nidhal Mghirbi}
-\date{Version 1.0.0, October 2026}
+\date{Version 2.0.0, October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We determine the transport exponents and packing dimension of the almost Mathieu operator $(Hu)(n)=u(n+1)+u(n-1)+2\lambda\cos 2\pi(\theta+n\alpha)\,u(n)$ for every $\lambda>1$ and every irrational $\alpha$. Let $\beta(\alpha)=\limsup_n q_n^{-1}\log q_{n+1}$ and $\gamma=\max\{0,1-\log\lambda/\beta(\alpha)\}$ ($\gamma=0$ if $\beta(\alpha)=0$, $\gamma=1$ if $\beta(\alpha)=\infty$). For almost every phase, every moment of a packet started at one site has upper growth exponent $\gamma$, and so does its fastest polynomial tail. Transport thus switches on at the spectral transition $\lambda=e^{\beta}$ of Avila, You and Zhou. The lower bound holds at every phase. If $\beta(\alpha)>\log\lambda$ it is carried by a fixed fraction of the packet: for $c>h>\log\lambda$ and large $n$ with $T=|q_n\alpha-p_n|^{-1}\ge e^{cq_n}$, a fraction at least $2^{-32}/(1+4\pi\lambda)$ lies beyond distance $T^{1-h/b_n}$, $b_n=q_n^{-1}\log T$; these exponents tend to $\gamma$ as $b_n\to\beta(\alpha)$ and $h\downarrow\log\lambda$. For almost every phase, every nonzero spectral measure has upper local dimension $\gamma$ almost everywhere, so both its packing dimensions equal $\gamma$; at every phase they are at least $\gamma$. For $0<\log\lambda<\beta<\infty$ this makes the packing bound $2(1-\log\lambda/\beta)$ of Jitomirskaya, Liu and Tcheremchantsev sharp with factor $1$, for almost every phase. The proofs use an exactly conserved polynomial of $H$, an arcsine law for the rational discriminant, and long elliptic runs of the Weyl solution. As $\beta(\alpha)$ can be noncomputable for computable $\alpha$, so can $\gamma$: at $\lambda=2$, $\theta=1/4$, the exponents realized by computable frequencies with eventually odd denominators are exactly the reals in $[0,1]$ that are right-computably enumerable relative to the halting problem, and one explicit computable operator has exponent of Turing degree $\mathbf 0''$.
+For the almost Mathieu operator with coupling $\lambda>1$ and irrational frequency $\alpha$, let $\beta(\alpha)=\limsup_nq_n^{-1}\log q_{n+1}$ and $\gamma=\max\{0,1-\log\lambda/\beta(\alpha)\}$, read as $0$ if $\beta=0$ and $1$ if $\beta=\infty$. For almost every phase, the upper Abel-averaged transport exponent of every positive moment, normalized by its order, the fastest-tail exponent, and both packing dimensions of every nonzero spectral measure equal $\gamma$. For finite $\beta$ the phase set is an explicit set $G_\alpha^*$, invariant under $\theta\mapsto\theta+\alpha$, that allows subexponential decay of $|\sin2\pi q_n\theta|$ along resonant scales; for $\beta=\infty$ the equalities hold at every phase. The lower bounds hold at every phase. Moreover, for fixed $c>h>\log\lambda$, along scales with $b_n=q_n^{-1}\log|q_n\alpha-p_n|^{-1}\ge c$, the Abel-averaged mass beyond distance $Te^{-hq_n}$ from the launch site tends to one, uniformly in the phase, the launch site and $e^{hq_n}\le T\le|q_n\alpha-p_n|^{-1}$; for a packet launched at the origin and fixed $b>0$, $s\in(0,1)$, the instantaneous mass within that distance exceeds $s$ at only $o(T)$ times in $[0,bT]$. For phases in $G_\alpha^*$, and at every phase if $\beta=\infty$, the upper generalized R\'enyi dimensions of orders $0<r<1$ of the single-site spectral measure equal $\gamma$; the lower ones vanish at every phase. For $1<\lambda<e^\beta$ the packing formula replaces the factor two in the bound of Jitomirskaya, Liu and Tcheremchantsev by the sharp factor one. The proof combines an exactly conserved polynomial with elliptic transfer-matrix estimates; its confining barrier holds at every phase. We give explicit finite-time and finite-volume comparison bounds. At coupling $2$ and phase $1/4$, computable frequencies with eventually odd convergent denominators realize exactly the exponents in $[0,1]$ that are right-c.e.\ relative to the halting problem. One computable frequency has exponent of Turing degree $\mathbf0''$ for every computable coupling in $(1,2^{23/12})$, although finite-time predictions at nonzero error tolerance do not determine it.
 \end{abstract}
 
-{\small\tableofcontents}
+
 
 \input{intro}
+
 \input{prelim}
 \input{polynomial}
 \input{barriers}
@@ -53,9 +55,11 @@ We determine the transport exponents and packing dimension of the almost Mathieu
 \input{upper}
 \input{lower}
 \input{moments}
+\input{renyi}
 \input{consequences}
+\input{finite_time}
 \input{discussion}
 
-\bibliographystyle{plainurl}
+\bibliographystyle{plain}
 \bibliography{references}
 \end{document}
