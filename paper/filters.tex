@@ -1,0 +1,132 @@
+\section{Exact slow dynamics at strongly resonant scales}\label{sec:filters}
+
+This section treats scales where $|\delta_n|$ is much smaller than $\lambda^{-q_n}$, that is, $b_n\ge L+\eta$ for a fixed $\eta>0$. On such scales the conserved polynomial gives an exact description of the dynamics on most of the spectral measure of $\delta_0$, with velocity $\lambda^{-q}$.
+
+Throughout the section $q=q_n$, $A=\lambda^q$, $s=|\sin2\pi q\theta|\ge q^{-2}$, and $F=P_q/A$. Put
+\[
+y_0=2\cos(2\pi q\theta),\qquad d=2-|y_0|,\qquad \rho=d/16,\qquad J_{\mathrm{big}}=[y_0-4\rho,\,y_0+4\rho].
+\]
+Since $1-|\cos x|\ge\frac12\sin^2x$ and $1-|\cos x|\le\sin^2x$, we have $q^{-4}\le s^2\le d\le2s^2$. We fix $h>L$ and write $E_h=e^{(h-L)q}$. By Proposition~\ref{prop:poly}, $|F^{(k)}|\le C_{k,h}q^kE_h$ on $U_h$ for each fixed $k$. By Lemma~\ref{lem:ratspec}, $\Sigma_{p/q}\subset U_h$ for all large $n$, and we assume this.
+
+\subsection{Inverse branches and filters}
+
+\begin{lemma}\label{lem:branches}
+For all large $n$ and every phase with $s\ge q^{-2}$:
+\begin{enumerate}
+\item For each $y\in(-2,2)$ the equation $F(E)=y$ has $q$ simple real roots, all in $\Sigma_{p/q}$. They define $q$ smooth monotone branches $e_1(y)<\dots<e_q(y)$ on $J_{\mathrm{big}}$.
+\item For $b\ne b'$ the arcs $e_b(J_{\mathrm{big}})$ and $e_{b'}(J_{\mathrm{big}})$ are at distance at least $12\rho/(C_{1,h}qE_h)$.
+\item $|e_b'(y)|\le2\lambda/(qs)$ on $J_{\mathrm{big}}$, and for each $k\ge1$ there are $C_{k,h}$ and $c_k$, depending only on $k$, with $|e_b^{(k)}(y)|\le C_{k,h}\,q^{c_k}E_h^{k-1}$ on $J_{\mathrm{big}}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+1. Let $y=2\cos(2\pi q\varphi)$. By Lemma~\ref{lem:chambers}, $F(E)=y$ exactly when $\Delta_\varphi(E)=0=2\cos(\pi/2)$, that is, when $E$ is an eigenvalue of the Floquet fiber of $H_{\lambda,p/q,\varphi}$ with Bloch phase $\pi/2$. This fiber is a $q\times q$ Hermitian matrix, so there are $q$ real roots counted with multiplicity, all in $\sigma(H_{\lambda,p/q,\varphi})\subset\Sigma_{p/q}$. A double root would give two independent Bloch solutions with multiplier $i$, forcing the real unimodular monodromy matrix to equal $iI$, which is impossible. Since the roots are simple, the implicit function theorem gives the smooth branches.
+
+2. Simplicity for every $y\in(-2,2)$ means that every critical value of $P_q$ has modulus at least $2A$. Between the arcs $e_b(J_{\mathrm{big}})$ and $e_{b+1}(J_{\mathrm{big}})$ there is exactly one critical point $E_c$ of $P_q$, because $P_q-Ay$ has $q$ simple real roots for each $y\in J_{\mathrm{big}}$ and $P_q'$ has degree $q-1$. Let $E_1$ be the endpoint of $e_b(J_{\mathrm{big}})$ facing $E_c$, with $F(E_1)=y_1\in J_{\mathrm{big}}$. On $[E_1,E_c]$ the function $P_q$ is monotone, and it moves from $Ay_1$ to a value of modulus at least $2A$. Let $E'$ be the first point where $|P_q|=2A$. On $[E_1,E']$ we have $|P_q|\le2A$, so this interval lies in $\Sigma_{p/q}\subset U_h$, where $|P_q'|\le C_{1,h}qe^{hq}$. Since $2-|y_1|\ge d-4\rho=12\rho$, the change of $P_q$ over $[E_1,E']$ is at least $12A\rho$, so $|E'-E_1|\ge12A\rho/(C_{1,h}qe^{hq})$.
+
+3. Let $E=e_b(y)$ and $y=2\cos(2\pi q\varphi)$. The eigenvalue $E(\varphi)$ of the Bloch-phase-$\pi/2$ fiber is simple, and differentiating $\Delta_\varphi(E(\varphi))=0$ gives $P_q'(E)E'(\varphi)=-4\pi qA\sin(2\pi q\varphi)$. By the Hellmann--Feynman formula, $|E'(\varphi)|$ is at most the norm of the phase derivative of the fiber, which is at most $4\pi\lambda$. Hence
+\begin{equation}\label{eq:Pprime}
+|P_q'(E)|\ge\frac{qA|\sin(2\pi q\varphi)|}{\lambda}.
+\end{equation}
+For $y\in J_{\mathrm{big}}$, $\sin^2(2\pi q\varphi)=1-y^2/4\ge(2-|y|)/2\ge6\rho\ge3s^2/8$, so $|\sin(2\pi q\varphi)|\ge s/2$ and $|e_b'(y)|=1/|F'(E)|\le2\lambda/(qs)\le2\lambda q$. Differentiating $F(e_b(y))=y$ repeatedly expresses $F'(e_b)e_b^{(k)}$ as a sum of products of $F^{(j)}(e_b)$, $2\le j\le k$, with lower derivatives of $e_b$ whose orders add up to $k$. Each such product contains exactly one factor $F^{(j)}$, bounded by $C q^jE_h$, and induction on $k$ gives the stated bound.
+\end{proof}
+
+Fix a smooth $f_0:\R\to[0,1]$ with $f_0=1$ on $[-1,1]$ and $f_0=0$ outside $[-2,2]$, and put $f(y)=f_0((y-y_0)/\rho)$. For each branch $b$ choose a smooth $\chi_b:\R\to[0,1]$ equal to $1$ on $e_b([y_0-2\rho,y_0+2\rho])$ and supported in $e_b((y_0-3\rho,y_0+3\rho))$. By Lemma~\ref{lem:branches}, the transition regions have length at least $\rho/\max|F'|\ge\rho/(C_{1,h}qE_h)$, and the supports of different $\chi_b$ are disjoint. Define
+\[
+g_b(E)=\chi_b(E)\,f(F(E)),\qquad G_b(y)=\kappa(y)\,e_b(y),
+\]
+where $\kappa$ is a smooth cutoff equal to $1$ on $[y_0-2\rho,y_0+2\rho]$ and supported in $[y_0-3\rho,y_0+3\rho]$, with $|\kappa^{(k)}|\le C_k\rho^{-k}$.
+
+\begin{lemma}\label{lem:filters}
+\begin{enumerate}
+\item $\sum_bg_b(E)=f(F(E))$ for every real $E$.
+\item $G_b(F(E))=E$ for every $E\in\supp g_b$.
+\item For every $r\ge0$ there are $C_{r,h}$ and $c_r$ with $\|g_b\|_{C^r}+\|G_b\|_{C^r}\le C_{r,h}q^{c_r}E_h^{r}$. All supports lie in a fixed bounded interval.
+\item For every $r\ge1$, $\|X^rg_b(H)\delta_0\|\le C_{r,h}\,q^{c_{r+2}}E_h^{r+2}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+1. If $f(F(E))\ne0$ then $F(E)\in(y_0-2\rho,y_0+2\rho)$, so by Lemma~\ref{lem:branches} $E=e_b(F(E))$ for exactly one $b$. On that arc $\chi_b=1$ and $\chi_{b'}=0$ for $b'\ne b$.
+
+2. On $\supp g_b$, $E$ lies on the $b$-th arc and $F(E)\in\supp f$, where $\kappa=1$; hence $G_b(F(E))=e_b(F(E))=E$.
+
+3. This follows from $|f^{(k)}|\le C_k\rho^{-k}\le C_k16^kq^{4k}$, the bounds on $F^{(k)}$ on $U_h$, the length of the transition regions of $\chi_b$, and Lemma~\ref{lem:branches}(3).
+
+4. Since $X\delta_0=0$, $X^rg_b(H)\delta_0=\ad_X^r(g_b(H))\delta_0$. Write $g(H)=(2\pi)^{-1}\int\hat g(t)e^{itH}\,dt$ and $H_u=e^{iuX}He^{-iuX}$. Then $\ad_X^r(e^{itH})=(-i\partial_u)^re^{itH_u}|_{u=0}$, and all $u$-derivatives of $H_u$ have norm at most $2$. Repeated Duhamel expansion gives $\|\ad_X^r(e^{itH})\|\le C_r(1+|t|)^r$. Hence $\|\ad^r_X(g(H))\|\le C_r\int(1+|t|)^r|\hat g(t)|\,dt\le C_r\|g\|_{C^{r+2}}$ for $g$ supported in a fixed bounded interval. Apply part~3.
+\end{proof}
+
+\subsection{The exact slow propagator}
+
+\begin{proposition}\label{prop:slow}
+Assume $\|K\|\le3$ and $9q^{r+1}\le A$. Put $B=Q/A=F(H)$ and $H_b=G_b(B)$. Then:
+\begin{enumerate}
+\item $e^{-itH}g_b(H)=e^{-itH_b}g_b(H)$ for every $t\in\R$.
+\item $\|\ad_X^kB\|\le3(2q+1)q^k/A$ for every $k\ge1$.
+\item $\|\ad_X^kH_b\|\le C_k\,q^{k+1}A^{-1}\int(1+|t|)^k|\hat G_b(t)|\,dt$ for $1\le k\le r$.
+\item If $\gamma\ge\max_{1\le k\le r}\|\ad_X^kH_b\|$ and $M_0\ge\max_{0\le k\le r}\|X^kg_b(H)\delta_0\|$, then
+\[
+\|X^re^{-itH_b}g_b(H)\delta_0\|\le C_rM_0(1+\gamma|t|)^r\qquad\text{for all }t.
+\]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+1. By Lemma~\ref{lem:filters}(2), $\phi(E)g_b(E)=\phi\bigl(G_b(F(E))\bigr)g_b(E)$ for every function $\phi$ and every real $E$. Taking $\phi(E)=e^{-itE}$ and applying the functional calculus of $H$ gives the identity, since $G_b(F(H))=H_b$. No error term appears: $B=P_q(H)/A$ includes the residual $R$ exactly.
+
+2. Write $K=\sum_{m=-q}^qK_m$, where $K_m$ keeps the entries $\langle\delta_i,K\delta_j\rangle$ with $i-j=m$. Each
+\[
+K_m=\frac1{2\pi}\int_0^{2\pi}e^{-imu}\,e^{iuX}Ke^{-iuX}\,du
+\]
+has $\|K_m\|\le\|K\|$, and $\ad_XK_m=mK_m$. The diagonal $V$ commutes with $X$. Hence $\|\ad_X^kB\|=\|\ad_X^kK\|/A\le3(2q+1)q^k/A$.
+
+3. Write $G_b(B)=(2\pi)^{-1}\int\hat G_b(t)e^{itB}\,dt$ and $B_u=e^{iuX}Be^{-iuX}$, so that $\|\partial_u^jB_u\|=\|\ad_X^jB\|\le9q^{j+1}/A\le1$. The derivative $\partial_u^ke^{itB_u}$ is a sum, over ordered partitions of $\{1,\dots,k\}$ into blocks, of time-ordered integrals containing one factor $\partial_u^{|\beta|}B_u$ per block $\beta$. A partition into $m$ blocks contributes at most $|t|^m\prod_\beta\|\partial_u^{|\beta|}B_u\|\le|t|^m\,9q^{k+1}/A$, since every factor is at most $1$ and one factor is at most $9q^{k+1}/A$. Summing gives $\|\ad_X^ke^{itB}\|\le C_k(1+|t|)^kq^{k+1}/A$, and integrating against $\hat G_b$ proves part~3.
+
+4. Let $\phi_t=e^{-itH_b}g_b(H)\delta_0$. The identity $X^kY=\sum_{j=0}^k\binom kj(\ad_X^jY)X^{k-j}$ gives $[X^k,H_b]=\sum_{j=1}^k\binom kj(\ad_X^jH_b)X^{k-j}$. Duhamel's formula then yields
+\[
+\|X^k\phi_t\|\le\|X^k\phi_0\|+\gamma\sum_{j=1}^k\binom kj\int_0^{|t|}\|X^{k-j}\phi_\tau\|\,d\tau,
+\]
+and induction on $k\le r$ gives the claim. Truncating $X$ to bounded regions and passing to strong limits justifies these manipulations.
+\end{proof}
+
+\subsection{The window theorem}
+
+\begin{theorem}\label{thm:window}
+Fix $\eta>0$, $\eps>0$, $\Lambda\ge1$ and $M>0$. There are $C$ and $n_0$ such that for every $n\ge n_0$ with $b_n\ge L+\eta$, every phase with $|\sin2\pi q_n\theta|\ge q_n^{-2}$, and every $1\le T\le e^{\Lambda q_n}$,
+\[
+P\bigl(R_n(T),T\bigr)\le Ce^{-Mq_n},\qquad R_n(T)=e^{\eps q_n}\Bigl[1+\min\Bigl(\frac{T}{\lambda^{q_n}},\frac{1}{\lambda^{q_n}|\delta_n|}\Bigr)\Bigr].
+\]
+\end{theorem}
+
+\begin{proof}
+Write $q=q_n$, $A=\lambda^q$, $\delta=\delta_n$, $b=b_n$, and note $A|\delta|=e^{(L-b)q}\le e^{-\eta q}$.
+
+\emph{The barrier radius.} Apply Proposition~\ref{prop:local} with $c=L+\eta$ and $\eps'=\min(\eps/2,L/8)$. Since $(b-L)_+=b-L$ and $e^{(b-L)q}=1/(A|\delta|)$, it gives $N_n\le2e^{\eps'q}/(A|\delta|)\le e^{\eps q}/(A|\delta|)=:R_a$ for large $q$, and
+\[
+P(R_a,T)\le P(N_n,T)\le C(1+T^2)e^{-\eps'N_n/900}\le Ce^{2\Lambda q}\exp\bigl(-\eps'e^{\eps'q/2}/900\bigr)\le e^{-Mq}.
+\]
+
+\emph{The filtered evolution.} Fix $\zeta=\eps/8$ and integers $k>M/L+1$ and $r>M/\eps$. Choose $h\in(L,L+\eta)$ so close to $L$ that the bounds of Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow} for orders up to $r+2$ are at most $e^{\zeta q}$ after absorbing powers of $q$; this is possible since they are polynomial in $q$ times powers of $E_h=e^{(h-L)q}$ of bounded order. Since $h<L+\eta$, Proposition~\ref{prop:poly} gives $\|R\|\le C_hq^{5/2}e^{(h-L-\eta)q}\to0$, so $\|K\|\le3$ for large $q$.
+
+By Lemma~\ref{lem:filters}(1), $f(B)=\sum_bg_b(H)$, so $\delta_0=\sum_bg_b(H)\delta_0+(1-f(B))\delta_0$.
+
+\emph{The remainder.} Since $0\le1-f\le1$ and $1-f(y)=0$ for $|y-y_0|<\rho$, the spectral theorem gives $\|(1-f(B))\delta_0\|\le\rho^{-k}\|(B-y_0)^k\delta_0\|$. If $v$ is supported in $[-jq,jq]$ with $j<k$, then $(B-y_0)v$ is supported in $[-(j+1)q,(j+1)q]$, and on that set $|V(i)/A-y_0|\le4\pi kq|\delta|$. Hence $\|(B-y_0)v\|\le(4\pi kq|\delta|+3/A)\|v\|$. For large $q$, $q|\delta|\le qe^{-(L+\eta)q}\le1/A$, so
+\[
+\|(1-f(B))\delta_0\|\le\Bigl(\frac{C_k}{\rho A}\Bigr)^k\le\bigl(16C_kq^4e^{-Lq}\bigr)^k\le e^{-Mq}.
+\]
+This vector evolves unitarily, so its contribution to $P(\cdot,T)$ is at most $2e^{-2Mq}$ at every radius.
+
+\emph{The retained part.} By Proposition~\ref{prop:slow}(1), $\sum_be^{-itH}g_b(H)\delta_0=\sum_be^{-itH_b}g_b(H)\delta_0=:\Phi_t$. By Lemma~\ref{lem:filters} and Proposition~\ref{prop:slow}, each branch satisfies the hypotheses of Proposition~\ref{prop:slow}(4) with $M_0\le e^{\zeta q}$ and $\gamma\le e^{2\zeta q}/A$. Summing over $q$ branches,
+\[
+\|X^r\Phi_t\|\le C_rqe^{\zeta q}\bigl(1+|t|e^{2\zeta q}/A\bigr)^r.
+\]
+Let $R_b=e^{\eps q}(1+T/A)$. By Markov's inequality $\|\un_{|X|>R_b}\Phi_t\|\le R_b^{-r}\|X^r\Phi_t\|$. Averaging against $(2/T)e^{-2t/T}$, whose moments satisfy $\int t^{j}(2/T)e^{-2t/T}dt\le C_jT^j$,
+\[
+\frac2T\int_0^\infty e^{-2t/T}\|\un_{|X|>R_b}\Phi_t\|^2\,dt\le C\,q^2e^{2\zeta q}\,\frac{(1+Te^{2\zeta q}/A)^{2r}}{R_b^{2r}}\le Cq^2e^{(2\zeta+4r\zeta-2r\eps)q}\le e^{-Mq}.
+\]
+Combining the two parts with $\|x+y\|^2\le2\|x\|^2+2\|y\|^2$ gives $P(R_b,T)\le Ce^{-Mq}$.
+
+\emph{Conclusion.} $R_n(T)\ge\min(R_a,R_b)$, and $P(\cdot,T)$ is nonincreasing, so $P(R_n(T),T)\le\max\bigl(P(R_a,T),P(R_b,T)\bigr)\le Ce^{-Mq}$. Every constant was fixed before $n$, $\theta$ and $T$ vary.
+\end{proof}
+
+The radius $R_n(T)$ describes the motion at the scale $q_n$. Up to the factor $e^{\eps q}$, the packet moves with speed $\lambda^{-q}$ until it reaches the barrier radius $1/(\lambda^q|\delta_n|)$, where the drift of the diagonal stops it.

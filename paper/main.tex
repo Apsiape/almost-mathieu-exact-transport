@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\hypersetup{pdftitle={Exact transport and packing dimension for the almost Mathieu operator},pdfauthor={Seth Douglas and Nidhal Mghirbi}}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathbb T}
+\newcommand{\un}{\mathbf 1}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ad}{\operatorname{ad}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Ga}{G_\alpha}
+\newcommand{\au}{\alpha_u^+}
+\newcommand{\eps}{\varepsilon}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{maintheorem}{Theorem}
+\renewcommand{\themaintheorem}{\Alph{maintheorem}}
+\newtheorem{maincorollary}[maintheorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\title{Exact transport and packing dimension\\ for the almost Mathieu operator\thanks{The authors developed this work with AI models from more than one developer and take responsibility for every claim. How the work was done is described at the end of the paper.}}
+\author{Seth Douglas \and Nidhal Mghirbi}
+\date{Version 1.0.0, October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the transport exponents and packing dimension of the almost Mathieu operator $(Hu)(n)=u(n+1)+u(n-1)+2\lambda\cos 2\pi(\theta+n\alpha)\,u(n)$ for every $\lambda>1$ and every irrational $\alpha$. Let $\beta(\alpha)=\limsup_n q_n^{-1}\log q_{n+1}$ and $\gamma=\max\{0,1-\log\lambda/\beta(\alpha)\}$ ($\gamma=0$ if $\beta(\alpha)=0$, $\gamma=1$ if $\beta(\alpha)=\infty$). For almost every phase, every moment of a packet started at one site has upper growth exponent $\gamma$, and so does its fastest polynomial tail. Transport thus switches on at the spectral transition $\lambda=e^{\beta}$ of Avila, You and Zhou. The lower bound holds at every phase. If $\beta(\alpha)>\log\lambda$ it is carried by a fixed fraction of the packet: for $c>h>\log\lambda$ and large $n$ with $T=|q_n\alpha-p_n|^{-1}\ge e^{cq_n}$, a fraction at least $2^{-32}/(1+4\pi\lambda)$ lies beyond distance $T^{1-h/b_n}$, $b_n=q_n^{-1}\log T$; these exponents tend to $\gamma$ as $b_n\to\beta(\alpha)$ and $h\downarrow\log\lambda$. For almost every phase, every nonzero spectral measure has upper local dimension $\gamma$ almost everywhere, so both its packing dimensions equal $\gamma$; at every phase they are at least $\gamma$. For $0<\log\lambda<\beta<\infty$ this makes the packing bound $2(1-\log\lambda/\beta)$ of Jitomirskaya, Liu and Tcheremchantsev sharp with factor $1$, for almost every phase. The proofs use an exactly conserved polynomial of $H$, an arcsine law for the rational discriminant, and long elliptic runs of the Weyl solution. As $\beta(\alpha)$ can be noncomputable for computable $\alpha$, so can $\gamma$: at $\lambda=2$, $\theta=1/4$, the exponents realized by computable frequencies with eventually odd denominators are exactly the reals in $[0,1]$ that are right-computably enumerable relative to the halting problem, and one explicit computable operator has exponent of Turing degree $\mathbf 0''$.
+\end{abstract}
+
+{\small\tableofcontents}
+
+\input{intro}
+\input{prelim}
+\input{polynomial}
+\input{barriers}
+\input{filters}
+\input{dt}
+\input{upper}
+\input{lower}
+\input{moments}
+\input{consequences}
+\input{discussion}
+
+\bibliographystyle{plainurl}
+\bibliography{references}
+\end{document}

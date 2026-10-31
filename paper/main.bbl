@@ -1,0 +1,142 @@
+\begin{thebibliography}{10}
+
+\bibitem{AubryAndre1980}
+Serge Aubry and Gilles Andr{\'e}.
+\newblock Analyticity breaking and {A}nderson localization in incommensurate
+  lattices.
+\newblock {\em Ann. Israel Phys. Soc.}, 3:133--164, 1980.
+
+\bibitem{AYZ2017}
+Artur Avila, Jiangong You, and Qi~Zhou.
+\newblock Sharp phase transitions for the almost {M}athieu operator.
+\newblock {\em Duke Math. J.}, 166(14):2697--2718, 2017.
+
+\bibitem{BGT2000}
+Jean-Marie Barbaroux, Fran{\c{c}}ois Germinet, and Serguei Tcheremchantsev.
+\newblock Quantum diffusion and generalized {R}{\'e}nyi dimensions of spectral
+  measures.
+\newblock In {\em Journ{\'e}es {\'E}quations aux D{\'e}riv{\'e}es Partielles
+  (Nantes, 2000)}, pages 1--16, 2000.
+\newblock Exp.\ No.\ I.
+\newblock URL: \url{http://www.numdam.org/item?id=JEDP_2000____A1_0}.
+
+\bibitem{BBS2016}
+Ver{\'o}nica Becher, Yann Bugeaud, and Theodore~A. Slaman.
+\newblock The irrationality exponents of computable numbers.
+\newblock {\em Proc. Amer. Math. Soc.}, 144:1509--1521, 2016.
+
+\bibitem{Billingsley1995}
+Patrick Billingsley.
+\newblock {\em Probability and Measure}.
+\newblock Wiley, New York, third edition, 1995.
+
+\bibitem{BourgainJitomirskaya2002}
+Jean Bourgain and Svetlana Jitomirskaya.
+\newblock Continuity of the {L}yapunov exponent for quasiperiodic operators
+  with analytic potential.
+\newblock {\em J. Statist. Phys.}, 108:1203--1218, 2002.
+\newblock \href {https://arxiv.org/abs/math-ph/0110040}
+  {\path{arXiv:math-ph/0110040}}.
+
+\bibitem{BdJLWWY2025}
+Matthew Bradshaw, Titus de~Jong, Wencai Liu, Audrey Wang, Xueyin Wang, and
+  Bingheng Yang.
+\newblock Quantum dynamical bounds for quasi-periodic operators with
+  {L}iouville frequencies.
+\newblock arXiv:2510.25603, 2025.
+\newblock \href {https://arxiv.org/abs/2510.25603} {\path{arXiv:2510.25603}}.
+
+\bibitem{Chambers1965}
+W.~G. Chambers.
+\newblock Linear-network model for magnetic breakdown in two dimensions.
+\newblock {\em Phys. Rev.}, 140:A135--A143, 1965.
+
+\bibitem{CPGW2015}
+Toby~S. Cubitt, David Perez-Garcia, and Michael~M. Wolf.
+\newblock Undecidability of the spectral gap.
+\newblock {\em Nature}, 528:207--211, 2015.
+\newblock \href {https://doi.org/10.1038/nature16059}
+  {\path{doi:10.1038/nature16059}}.
+
+\bibitem{DKS2010}
+David Damanik, Rowan Killip, and Barry Simon.
+\newblock Perturbations of orthogonal polynomials with periodic recursion
+  coefficients.
+\newblock {\em Ann. of Math.}, 171:1931--2010, 2010.
+
+\bibitem{DT2007}
+David Damanik and Serguei Tcheremchantsev.
+\newblock Upper bounds in quantum dynamics.
+\newblock {\em J. Amer. Math. Soc.}, 20:799--827, 2007.
+\newblock \href {https://arxiv.org/abs/math-ph/0502044}
+  {\path{arXiv:math-ph/0502044}}.
+
+\bibitem{DMuniversality}
+Seth Douglas and Nidhal Mghirbi.
+\newblock Universality of the transport law for supercritical quasi-periodic
+  operators.
+\newblock Companion paper, 2026.
+
+\bibitem{GSB1999}
+Italo Guarneri and Hermann Schulz-Baldes.
+\newblock Lower bounds on wave packet propagation by packing dimensions of
+  spectral measures.
+\newblock {\em Math. Phys. Electron. J.}, 5:Paper 1, 1999.
+
+\bibitem{Haeming2025}
+Lian Haeming.
+\newblock Quasiballistic transport for discrete one-dimensional quasiperiodic
+  {S}chr{\"o}dinger operators.
+\newblock {\em J. Spectr. Theory}, 15:1477--1502, 2025.
+\newblock \href {https://arxiv.org/abs/2407.14228} {\path{arXiv:2407.14228}}.
+
+\bibitem{JK2013}
+Svetlana Jitomirskaya and Helge Kr{\"u}ger.
+\newblock Exponential dynamical localization for the almost {M}athieu operator.
+\newblock {\em Comm. Math. Phys.}, 322:877--882, 2013.
+\newblock \href {https://arxiv.org/abs/1208.2674} {\path{arXiv:1208.2674}}.
+
+\bibitem{JL2000}
+Svetlana Jitomirskaya and Yoram Last.
+\newblock Power-law subordinacy and singular spectra. {II}. {L}ine operators.
+\newblock {\em Comm. Math. Phys.}, 211:643--658, 2000.
+
+\bibitem{JLT2025}
+Svetlana Jitomirskaya, Wencai Liu, and Serguei Tcheremchantsev.
+\newblock Lower bounds on concentration through {B}orel transforms and
+  quantitative singularity of spectral measures near the arithmetic transition.
+\newblock arXiv:2501.12153, 2025.
+\newblock \href {https://arxiv.org/abs/2501.12153} {\path{arXiv:2501.12153}}.
+
+\bibitem{JZ2022}
+Svetlana Jitomirskaya and Shiwen Zhang.
+\newblock Quantitative continuity of singular continuous spectral measures and
+  arithmetic criteria for quasiperiodic {S}chr{\"o}dinger operators.
+\newblock {\em J. Eur. Math. Soc.}, 24:1723--1767, 2022.
+\newblock \href {https://arxiv.org/abs/1510.07086} {\path{arXiv:1510.07086}}.
+
+\bibitem{Lahini2009}
+Yoav Lahini, Rami Pugatch, Francesca Pozzi, Marc Sorel, Roberto Morandotti, Nir
+  Davidson, and Yaron Silberberg.
+\newblock Observation of a localization transition in quasiperiodic photonic
+  lattices.
+\newblock {\em Phys. Rev. Lett.}, 103:013901, 2009.
+\newblock \href {https://doi.org/10.1103/PhysRevLett.103.013901}
+  {\path{doi:10.1103/PhysRevLett.103.013901}}.
+
+\bibitem{Mattila1995}
+Pertti Mattila.
+\newblock {\em Geometry of Sets and Measures in {E}uclidean Spaces}, volume~44
+  of {\em Cambridge Studies in Advanced Mathematics}.
+\newblock Cambridge University Press, Cambridge, 1995.
+
+\bibitem{Roati2008}
+Giacomo Roati, Chiara D'Errico, Leonardo Fallani, Marco Fattori, Chiara Fort,
+  Matteo Zaccanti, Giovanni Modugno, Michele Modugno, and Massimo Inguscio.
+\newblock Anderson localization of a non-interacting {B}ose--{E}instein
+  condensate.
+\newblock {\em Nature}, 453:895--898, 2008.
+\newblock \href {https://doi.org/10.1038/nature07071}
+  {\path{doi:10.1038/nature07071}}.
+
+\end{thebibliography}

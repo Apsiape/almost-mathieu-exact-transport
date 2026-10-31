@@ -1,0 +1,50 @@
+\section{A per-denominator estimate}\label{sec:dt}
+
+The barrier and slow-dynamics estimates need a definite Liouville ratio at the scale used. Times governed by scales with small ratios are handled by the complex-energy method of Damanik and Tcheremchantsev. We use it only in the following form.
+
+\begin{proposition}\label{prop:dt}
+There are constants $C_D\ge1$ and $C,c_D,\kappa>0$ such that for every phase $\theta$, every sufficiently large $n$, every $T\ge1$ and every $N\ge C_Dq_n$,
+\[
+P(N,T)\le Ce^{-c_DN}+CT^3e^{-\kappa q_n}.
+\]
+\end{proposition}
+
+No assumption on $q_{n+1}$ or on $\beta(\alpha)$ enters. The estimate confines the packet to distance of order $q_n$ up to times $e^{\kappa q_n/3}$.
+
+The proof combines two ingredients. The first is the general transport bound of Damanik and Tcheremchantsev~\cite[Theorem~7]{DT2007}. For a Schr\"odinger operator with bounded potential, choose $K_E\ge4$ with $\sigma(H)\subset[-K_E+1,K_E-1]$; here $K_E=\max(4,2\lambda+3)$ works, since $\|H\|\le2+2\lambda$. Their theorem bounds the right outside probability, for the initial state $\delta_1$ and the same exponential time average, by
+\[
+C\exp(-cN)+CT^3\int_{-K_E}^{K_E}\Bigl(\max_{1\le k\le N}\bigl\|\Phi(k,E+i/T)\bigr\|^2\Bigr)^{-1}dE,
+\]
+where $\Phi(k,z)$ is the transfer matrix from site $1$ to site $k$, and the left outside probability by the analogous expression for negative $k$. The constants depend only on $K_E$ and the bound on the potential. Changing the initial site from $\delta_1$ to $\delta_0$ shifts the phase by $\alpha$ and the radius by one, which is absorbed by enlarging $C_D$ and $C$.
+
+The second ingredient is a uniform lower bound for transfer matrices at complex energies. It follows the argument of~\cite[Section~5]{DT2007}, with a slightly smaller auxiliary block, which gives an orbit-hitting step with room to spare.
+
+\begin{lemma}\label{lem:herman}
+There is $\gamma>0$ such that for all sufficiently large $n$, every phase $x$ and every $z$ with $|\operatorname{Re}z|\le K_E$ and $0\le\operatorname{Im}z\le1$,
+\[
+\max_{1\le k\le2q_n}\|A_k(z,x)\|\ge e^{\gamma q_n}.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $\Gamma>L$ satisfy $\|A_r(z,x)\|_{\mathrm{HS}}\le e^{\Gamma r}$ for all $r\ge1$, $x\in\T$ and $z$ in the strip; this is possible because the one-step matrices are uniformly bounded there.
+
+\emph{Herman's bound.} With $w=e^{2\pi ix}$, the entry $(A_r(z,x))_{11}$ is a Laurent polynomial in $w$. Its term of lowest degree, $w^{-r}$, comes only from the product of the diagonal entries and has coefficient $\prod_{k<r}(-\lambda e^{-2\pi ik\alpha})$, of modulus $\lambda^r$. So $p(w)=w^r(A_r(z,x))_{11}$ is a polynomial with $|p(0)|=\lambda^r$, and Jensen's formula gives
+\[
+\int_\T\log\|A_r(z,x)\|\,dx\ge\int_\T\log|p(e^{2\pi ix})|\,dx\ge rL.
+\]
+
+\emph{A long good interval.} Let $\rho_0=L/(2\Gamma-L)$ and $G_r=\{x:\|A_r(z,x)\|_{\mathrm{HS}}>e^{rL/2}\}$. Splitting the integral over $G_r$ and its complement gives $rL\le|G_r|\Gamma r+(1-|G_r|)rL/2$, so $|G_r|\ge\rho_0$. The function $\|A_r(z,x)\|_{\mathrm{HS}}^2$ is a real trigonometric polynomial of degree at most $2r$ in $x$, so unless $G_r=\T$ it has at most $4r$ components, and one of them is an interval of length at least $\rho_0/(4r)$.
+
+\emph{Orbit hitting.} Let $q=q_n$ and $r=\lfloor\rho_0q/32\rfloor$. Then that interval has length at least $8/q$. The points $x+j\alpha$, $0\le j<q$, are within $1/q$ of a translate of the grid $q^{-1}\Z$, because $|j\alpha-jp_n/q|<j/q^2<1/q$. Hence they are $3/(2q)$-dense, and some $j<q$ has $x+j\alpha\in G_r$, so $\|A_r(z,x+j\alpha)\|\ge2^{-1/2}e^{rL/2}$.
+
+\emph{Conclusion.} Since $A_{j+r}(z,x)=A_r(z,x+j\alpha)A_j(z,x)$ and $\|M^{-1}\|=\|M\|$ for a $2\times2$ matrix of determinant one,
+\[
+2^{-1/2}e^{rL/2}\le\|A_{j+r}(z,x)\|\,\|A_j(z,x)\|.
+\]
+So one of $\|A_j\|$ (if $j\ge1$) or $\|A_{j+r}\|$ is at least $2^{-1/4}e^{rL/4}$, with $1\le j+r\le2q$. Since $r\ge\rho_0q/32-1$, this proves the lemma with any $\gamma<\rho_0L/128$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:dt}]
+For $T\ge1$ and $|E|\le K_E$, the point $E+i/T$ lies in the strip of Lemma~\ref{lem:herman}. For the right half-line, the transfer matrices from site $1$ are $A_k(z,\theta+\alpha)$, so the integrand in~\cite[Theorem~7]{DT2007} is at most $e^{-2\gamma q_n}$ once $N\ge2q_n$. For the left half-line, reflection $n\mapsto-n$ maps $H_{\lambda,\alpha,\theta}$ to $H_{\lambda,\alpha,-\theta}$, because the cosine is even; so the left transfer matrices are right transfer matrices for another phase, and the same bound holds. With the matrix conventions of~\cite{DT2007} one can equally use the identity $\Phi(n,z,\alpha,\theta)=R\,\Phi(-n,z,-\alpha,\alpha+\theta)\,R$ with $R=\begin{pmatrix}0&1\\1&0\end{pmatrix}$, which preserves norms. Integration over $|E|\le K_E$ gives the claim with $\kappa=2\gamma$ and $C_D=3$, the extra unit absorbing the change of initial site. Finitely many small $n$ are absorbed into $C$, since $P\le1\le T^3$.
+\end{proof}

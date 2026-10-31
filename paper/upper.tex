@@ -1,0 +1,67 @@
+\section{The upper bound}\label{sec:upper}
+
+In this section $\beta=\beta(\alpha)<\infty$ and $\theta\in\Ga$ is fixed. Let $n_G(\theta)$ be an index such that $|\sin(2\pi q_n\theta)|\ge q_n^{-2}$ for all $n\ge n_G(\theta)$. The thresholds $n_0$ below may depend on $\theta$ through $n_G(\theta)$, and the time threshold in Lemma~\ref{lem:covering} may depend on $\theta$ as well. The constants $C$ do not, since Proposition~\ref{prop:local} and Theorem~\ref{thm:window} are uniform over phases satisfying the sine condition at the scale used. All of these are fixed before $n$ and $T$ vary.
+
+\subsection{Logarithmic windows at scales with a definite ratio}
+
+\begin{proposition}\label{prop:selected}
+Let $0<a<1$, $m>0$, $c>0$ and $0<d<B$, and let $B_0>\beta$ satisfy $f_0:=\max\{0,1-L/B_0\}<a$. There are $C$ and $n_0$ such that for every $n\ge n_0$ with $b_n\ge c$ and every $T$ with $e^{dq_n}\le T\le e^{Bq_n}$,
+\[
+P(T^a,T)\le CT^{-m}.
+\]
+\end{proposition}
+
+\begin{proof}
+Choose $\eta>0$ with $2\eta<ad/4$, then $\eps>0$ with $\eps<ad/4$ and $\eps/d<(a-f_0)/2$. Since $\limsup b_n=\beta<B_0$, we may take $n_0\ge n_G(\theta)$ so large that $b_n\le B_0$ for $n\ge n_0$. Write $q=q_n$, $b=b_n$ and $\tau=\log T/q\in[d,B]$.
+
+\emph{Case $b\ge L+2\eta$.} Apply Theorem~\ref{thm:window} with this $\eta$ and $\eps$, $\Lambda=\max(1,B)$ and $M=mB$. It gives $P(R_n(T),T)\le Ce^{-mBq}\le CT^{-m}$. Moreover
+\[
+\frac{\log R_n(T)}{\log T}\le\frac{\eps}{d}+\frac{\log2}{dq}+\frac{\max\{0,\min(\tau-L,\,b-L)\}}{\tau}.
+\]
+The last term is at most $1-L/b\le f_0$, since $b>L$. Indeed, it equals $0$ if $\tau\le L$, equals $1-L/\tau\le1-L/b$ if $L<\tau\le b$, and equals $(b-L)/\tau\le(b-L)/b$ if $\tau\ge b$. Hence $\log R_n(T)/\log T<(a+f_0)/2+o(1)<a$ for large $n$, so $R_n(T)\le T^a$ and $P(T^a,T)\le P(R_n(T),T)\le CT^{-m}$.
+
+\emph{Case $c\le b<L+2\eta$.} Apply Proposition~\ref{prop:local} with $\eps_2=\min\{\eps,\min(L,c)/8\}$. It gives $N_n\le2e^{(2\eta+\eps_2)q}\le2e^{adq/2}\le T^a$ for large $q$, since $2\eta+\eps_2<ad/2$. Hence
+\[
+P(T^a,T)\le P(N_n,T)\le C(1+e^{2Bq})\exp\bigl(-\eps_2e^{\eps_2q/2}/900\bigr)\le e^{-mBq}\le T^{-m}
+\]
+for large $q$. All parameters were fixed before $n$ and $T$ vary.
+\end{proof}
+
+When $\beta\le L$ one may take $B_0<L+2\eta$, and then only the second case occurs.
+
+\subsection{Covering every time}
+
+\begin{lemma}\label{lem:covering}
+Let $a\in(0,1)$ with $a>\max\{0,1-L/\beta\}$ and let $m>0$. Then $P(T^a,T)=O(T^{-m})$ as $T\to\infty$.
+\end{lemma}
+
+\begin{proof}
+Let $C_D,\kappa$ be as in Proposition~\ref{prop:dt}. Fix $K\ge1$ with $\kappa K>m+3$, and put $d=1/K$ and $c=a/(2K)$. Fix $B_0>\beta$ with $\max\{0,1-L/B_0\}<a$, and put $B=\max\{2B_0/a,2d\}$. Let $C$ and $n_0$ be given by Proposition~\ref{prop:selected} for these parameters and the fixed phase $\theta$.
+
+For large $T$ let $j$ be the least index with $q_j\ge K\log T$. Two cases exhaust all possibilities.
+
+\emph{Case A: $q_j\le T^a/(2C_D)$.} Let $N=\lfloor T^a\rfloor$, so $N\ge C_Dq_j$ for large $T$. Proposition~\ref{prop:dt} gives
+\[
+P(T^a,T)\le P(N,T)\le Ce^{-c_D(T^a-1)}+CT^3e^{-\kappa q_j}\le Ce^{-c_D(T^a-1)}+CT^{3-\kappa K}=O(T^{-m}).
+\]
+This case uses no information about the phase and allows arbitrarily long stretches of scales with small ratios.
+
+\emph{Case B: $q_j>T^a/(2C_D)$.} Let $q=q_{j-1}$. By the choice of $j$, $q<K\log T$, so $\tau=\log T/q>d$. By~\eqref{eq:bn}, $q_j<D_{j-1}=e^{b_{j-1}q}$, so
+\[
+a\log T-\log(2C_D)<\log q_j<b_{j-1}q.
+\]
+Along a sequence of times in this case, $q_j\to\infty$, hence $j\to\infty$ and $q\to\infty$. Dividing by $q<K\log T$ gives $b_{j-1}>a/K-\log(2C_D)/q\ge a/(2K)=c$ for large $T$. Also $b_{j-1}\le B_0$ for large $j$, so $\tau<(B_0+\log(2C_D)/q)/a\le B$. Thus $T\in[e^{dq},e^{Bq}]$ and $b_{j-1}\ge c$. Since $\theta\in\Ga$ and $j-1\ge n_0$ for large $T$, Proposition~\ref{prop:selected} gives $P(T^a,T)\le CT^{-m}$.
+\end{proof}
+
+The covering needs no information about the scales between $q_{j-1}$ and $q_j$ other than the two inequalities above. In particular it allows $\liminf_n\beta_n=0$.
+
+\begin{theorem}\label{thm:upper}
+Let $\lambda>1$, let $\alpha$ be irrational with $\beta(\alpha)<\infty$, and let $\theta\in\Ga$. For every $a>\max\{0,1-L/\beta(\alpha)\}$ and every $m>0$, $P(T^a,T)=O(T^{-m})$. Consequently
+\[
+\au(H_{\lambda,\alpha,\theta})\le\max\Bigl\{0,\ 1-\frac{\log\lambda}{\beta(\alpha)}\Bigr\}.
+\]
+\end{theorem}
+
+\begin{proof}
+For $a<1$ this is Lemma~\ref{lem:covering}. For $a\ge1$ choose $a'\in(\max\{0,1-L/\beta\},1)$ and use $P(T^a,T)\le P(T^{a'},T)$. The bound on $\au$ follows from Lemma~\ref{lem:moments}(3), letting $a$ decrease to $\max\{0,1-L/\beta\}$.
+\end{proof}

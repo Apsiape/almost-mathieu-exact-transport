@@ -1,0 +1,81 @@
+\section{A lower bound for Lipschitz potentials}\label{sec:lower}
+
+This section proves a lower bound for the fastest exponent $\au$. It holds for every phase and for general Lipschitz sampling functions. For the almost Mathieu operator, Section~\ref{sec:moments} strengthens it to every moment. In this section only, let $v:\T\to\R$ be Lipschitz, let $H_\theta u(n)=u(n+1)+u(n-1)+v(\theta+n\alpha)u(n)$, and let $T(E,x)$, $A_r(E,x)$, $L(E)$ and $\Sigma$ be defined as in Section~\ref{sec:prelim} with this $v$.
+
+\begin{theorem}\label{thm:L}
+Let $\alpha$ be irrational with $0<\beta(\alpha)<\infty$. Assume that $L(\cdot)$ is continuous on a neighborhood of a point $E_*\in\Sigma$ with $L(E_*)=\ell:=\min_\Sigma L$. Then for every phase $\theta$,
+\[
+\au(H_\theta)\ge\max\Bigl\{0,\ 1-\frac{\ell}{\beta(\alpha)}\Bigr\}.
+\]
+\end{theorem}
+
+For the almost Mathieu operator with $\lambda>1$, $L(E)$ is continuous in $E$ and equals $\log\lambda$ on $\Sigma$~\cite[Theorem~1 and Corollary~2]{BourgainJitomirskaya2002}, so $\ell=\log\lambda$ and $\au\ge1-\log\lambda/\beta(\alpha)$ for every phase.
+
+\subsection{Elliptic blocks}
+
+For a finite sequence of energies $E-v_r$, $0\le r<q$, let $T_r=\begin{pmatrix}E-v_r&-1\\1&0\end{pmatrix}$, $C_0=I$, $C_r=T_{r-1}\cdots T_0$ and $\mathcal A=C_q$. Suppose $\mathcal A$ is real and elliptic, $|\tr\mathcal A|<2$. Choose $B\in SL(2,\R)$ with $B^{-1}\mathcal AB=R_\varrho$, the rotation by angle $\varrho$, and put $u_r=e_1^{\mathsf T}C_rB$, the first row of $C_rB$, and
+\[
+S_{\mathcal A}=\sum_{r=0}^{q-1}\|u_r\|^2,\qquad N_\kappa=\begin{pmatrix}0&0\\-1&0\end{pmatrix},\qquad J_0=\begin{pmatrix}0&-1\\1&0\end{pmatrix}.
+\]
+
+\begin{lemma}\label{lem:blocks}
+\begin{enumerate}
+\item $S_{\mathcal A}=|\partial_E\tr\mathcal A|/|\sin\varrho|$.
+\item For every $z\in\C$ and $0\le r\le q$, with $\mathcal A(E+z)$ and $C_r(E+z)$ the products at the energy $E+z$,
+\[
+\|B^{-1}\mathcal A(E+z)B\|\le e^{|z|S_{\mathcal A}},\qquad\|C_r(E+z)B\|\le\|C_r(E)B\|\,e^{|z|S_{\mathcal A}}.
+\]
+\item If $|\tr\mathcal A|\le3/2$ and the entries $v_r$ depend on a parameter $\phi$ with $|\partial_\phi v_r|\le\mathrm{Lip}$, then $\|B^{-1}(\partial_\phi\mathcal A)B\|\le C\,\mathrm{Lip}\,|\partial_E\tr\mathcal A|$ and $\|B^{-1}(\partial_E\mathcal A)B\|\le C|\partial_E\tr\mathcal A|$, with an absolute constant $C$.
+\item Let $z_{\mathcal A}$ be the fixed point of $\mathcal A$ in the upper half-plane. Any $B\in SL(2,\R)$ with $B(i)=z_{\mathcal A}$ conjugates $\mathcal A$ to a rotation, and $\|B\|^2=\|B^{-1}\|^2=e^{d(i,z_{\mathcal A})}$, where $d$ is the hyperbolic distance. If $|\tr\mathcal A|\le3/2$, then $e^{d(i,z_{\mathcal A})}\le C\|\mathcal A\|$, and $z_{\mathcal A}$ moves with hyperbolic speed at most $C\|B^{-1}\mathcal A'B\|$ under any parameter derivative $\mathcal A'$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Put $Q_r=B^{-1}C_r^{-1}N_\kappa C_rB$. Since $T_r(E+z)=T_r(E)(I+zN_\kappa)$, telescoping gives
+\[
+B^{-1}\mathcal A(E+z)B=R_\varrho\prod_{r=q-1}^{0}(I+zQ_r),
+\]
+with the factors ordered from $r=q-1$ on the left to $r=0$ on the right. A direct computation gives $Q_r=-J_0u_r^{\mathsf T}u_r$, a rank-one matrix with $\|Q_r\|=\|u_r\|^2$. Hence $\|B^{-1}\mathcal A(E+z)B\|\le\prod_r(1+|z|\|u_r\|^2)\le e^{|z|S_{\mathcal A}}$, and the same computation truncated at $r$ gives the second inequality in part~2. Differentiating at $z=0$, $B^{-1}(\partial_E\mathcal A)B=R_\varrho\sum_rQ_r$, and the trace of $R_\varrho(-J_0u_r^{\mathsf T}u_r)$ equals $\sin\varrho\,\|u_r\|^2$, because the symmetric part of $R_\varrho J_0$ is $-\sin\varrho\,I$ and the antisymmetric part has zero quadratic form. This proves part~1. A change of $v_r$ at rate $c_r$ gives in the same way $B^{-1}\mathcal A'B=R_\varrho\sum_rc_rQ_r$, so $\|B^{-1}\mathcal A'B\|\le\max_r|c_r|\,S_{\mathcal A}$. When $|\tr\mathcal A|\le3/2$, $|\sin\varrho|\ge\sqrt7/4$, and part~3 follows from part~1. For part~4, recall that every $M\in SL(2,\R)$ satisfies $\|M\|_{\mathrm{HS}}^2=2\cosh d(i,M(i))$; since its singular values are $\sigma$ and $\sigma^{-1}$, this gives $\|M\|^2=e^{d(i,M(i))}$. Apply this to $B$ and $B^{-1}$. If $B(i)=z_{\mathcal A}$, then $B^{-1}\mathcal AB$ fixes $i$ and is a rotation. Conjugating to that rotation and differentiating $\mathcal A(z_{\mathcal A})=z_{\mathcal A}$ shows that the fixed point moves at hyperbolic speed at most $|1-e^{-2i\varrho}|^{-1}\|B^{-1}\mathcal A'B\|$. Finally $\|\mathcal A\|_{\mathrm{HS}}^2=2+4\sinh^2\bigl(d(i,z_{\mathcal A})\bigr)\sin^2\varrho$, which with $|\sin\varrho|\ge\sqrt7/4$ gives $e^{d(i,z_{\mathcal A})}\le C\|\mathcal A\|$.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:L}}
+
+If $\beta(\alpha)\le\ell$ there is nothing to prove, so assume $\ell<\beta(\alpha)$. Fix $h$ with $\ell<h<\beta(\alpha)$.
+
+\emph{Uniform real growth.} By continuity of $L$ near $E_*$ there is a compact neighborhood $U$ of $E_*$ on which $L<h$. The argument of Lemma~\ref{lem:growth} gives $C_h$ with $\|A_r(E,x)\|\le C_he^{hr}$ for $E\in U$, $x\in\T$ and $r\ge0$. By the product rule, with $D_q=Cqe^{hq}$,
+\begin{equation}\label{eq:Dq}
+|\partial_E\tr A_q(E,x)|\le D_q,\qquad|\partial_x\tr A_q(E,x)|\le\mathrm{Lip}(v)\,D_q\qquad(E\in U),
+\end{equation}
+the second almost everywhere in $x$.
+
+\emph{A band near $E_*$.} Choose convergents with $\beta_n\to\beta(\alpha)$; write $q=q_n$, $\delta=\delta_n$. Fix a phase $x_0$ and let $H^{\mathrm{per}}$ be the $q$-periodic operator whose potential repeats $v(x_0+k\alpha)$, $0\le k<q$. Its monodromy is $A_q(E,x_0)$, and it differs in norm by at most $\mathrm{Lip}(v)|\delta|$ from the $p/q$-periodic operator at phase $x_0$. The proof of Lemma~\ref{lem:ratspec}, which uses only the Lipschitz bound on $v$, shows that the phase-union spectrum of the $p/q$-periodic operators converges to $\Sigma$ and lies within $\mathrm{Lip}(v)/(2q)$ of each fixed-phase spectrum. So $\sigma(H^{\mathrm{per}})$ has a point converging to $E_*$. Every band of a $q$-periodic operator with hopping one has width at most $2\pi/q$: distributing the Bloch phase over the $q$ bonds makes the Floquet matrices $2/q$-Lipschitz in the Bloch phase. Hence, for large $n$, an entire band of $H^{\mathrm{per}}$ lies in $U$. On that band $\tr A_q(E,x_0)$ is monotone and takes all values in $[-2,2]$, so the set
+\[
+S_q=\{E\text{ in the band}:|\tr A_q(E,x_0)|\le1\}
+\]
+is an interval of length at least $2/D_q$.
+
+\emph{Slowly drifting blocks.} The blocks of the actual operator starting at sites $mq$, for $\theta=x_0$, are $A^{(m)}(E)=A_q(E,x_0+mq\alpha)=A_q(E,x_0+m\delta)$, since $q\alpha=p+\delta$. Let
+\[
+K_q=\Bigl\lfloor\frac{c_0}{D_q|\delta|}\Bigr\rfloor,\qquad N_q=qK_q,\qquad T_q=C_0K_qD_q,
+\]
+with $c_0$ small and $C_0$ large fixed constants. Since $\log(1/|\delta|)=b_nq$ and $b_n\to\beta(\alpha)>h$, $K_q\to\infty$. For $E\in S_q$ and $0\le m<K_q$, \eqref{eq:Dq} gives $|\tr A^{(m)}(E)-\tr A_q(E,x_0)|\le\mathrm{Lip}(v)D_qK_q|\delta|\le\mathrm{Lip}(v)c_0\le1/2$, so every block satisfies $|\tr A^{(m)}|\le3/2$.
+
+By Lemma~\ref{lem:blocks}(3)--(4), the fixed points $z_m$ of the blocks $A^{(m)}$ move a total hyperbolic distance $\sum_md(z_m,z_{m+1})\le C\,\mathrm{Lip}(v)D_qK_q|\delta|\le C$. Choose any $B_m\in SL(2,\R)$ with $B_m(i)=z_m$. Since $B_{m+1}^{-1}B_m$ maps $i$ to a point at distance $d(z_m,z_{m+1})$ from $i$, Lemma~\ref{lem:blocks}(4) gives $\|B_{m+1}^{-1}B_m\|=e^{d(z_m,z_{m+1})/2}$, so $\prod_m\|B_{m+1}^{-1}B_m\|\le e^{C}$. By Lemma~\ref{lem:blocks}(1)--(2), each block at the energy $E+i/T_q$ satisfies $\|B_m^{-1}A^{(m)}(E+i/T_q)B_m\|\le e^{CD_q/T_q}$, and the product of $K_q$ such factors is at most $e^{CK_qD_q/T_q}\le e^{C/C_0}$. The endpoint lifts cost at most $Ce^{hq}$ by Lemma~\ref{lem:blocks}(4). A partial last block is handled by the second inequality in Lemma~\ref{lem:blocks}(2). Hence, writing $\Phi(x,z)$ for the transfer matrix of $H_{x_0}$ from site $0$ to site $x$,
+\begin{equation}\label{eq:L7}
+\max_{0\le x\le N_q}\|\Phi(x,E+i/T_q)\|\le Ce^{2hq}\qquad(E\in S_q).
+\end{equation}
+
+\emph{Resolvent.} Let $G(n;z)=\langle\delta_n,(H_{x_0}-z)^{-1}\delta_0\rangle$. For $n\ge1$ the vector $(G(n+1;z),G(n;z))$ is obtained from $(G(1;z),G(0;z))$ by the transfer matrices starting at site $1$, which are bounded as in~\eqref{eq:L7} after a shift of the starting site that changes only constants. Since these matrices have determinant one and $|G(0;E+i/T)|\ge\operatorname{Im}G(0;E+i/T)\ge c/T$ for bounded $E$,
+\[
+|G(n;E+i/T_q)|^2+|G(n+1;E+i/T_q)|^2\ge cT_q^{-2}e^{-4hq}\qquad(E\in S_q,\ 0\le n\le N_q).
+\]
+By Parseval's formula, $a(n,T)=(\pi T)^{-1}\int_\R|G(n;E+i/T)|^2\,dE$. Summing over the pairs of sites between $N_q/2$ and $N_q$ gives
+\begin{equation}\label{eq:L8}
+P(N_q/2,T_q)\ge c\,N_q\,|S_q|\,T_q^{-3}e^{-4hq}\ge T_q^{-C_*}
+\end{equation}
+for a finite constant $C_*$ depending only on $h$ and $\beta(\alpha)$, because $\log T_q=b_nq+O(\log q)$ and $|S_q|\ge2/D_q$.
+
+\emph{The exponent.} From $\log N_q=(b_n-h)q+O(\log q)$ and $\log T_q=b_nq+O(\log q)$ we get $\log N_q/\log T_q\to1-h/\beta(\alpha)$. By~\eqref{eq:L8}, $M_p(T_q)\ge(N_q/2)^pP(N_q/2,T_q)\ge c(N_q/2)^pT_q^{-C_*}$, so $\beta^+(p)\ge1-h/\beta(\alpha)-C_*/p$. Letting $p\to\infty$ and then $h\downarrow\ell$ proves the theorem for the phase $x_0$. The phase was arbitrary.
+\qed
+
+The mass in~\eqref{eq:L8} is only polynomially small, so this argument bounds $\au$ but not each fixed $\beta^+(p)$. The losses are the pointwise bound $|G(0)|\ge c/T$, the two frame changes at the ends of the run, and an energy window of small spectral weight. Section~\ref{sec:moments} removes all three for the almost Mathieu operator.

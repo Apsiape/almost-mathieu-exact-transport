@@ -1,0 +1,76 @@
+\section{The conserved polynomial}\label{sec:poly}
+
+\subsection{Rational input}
+
+For a rational $p/q$ in lowest terms, the operator $H_{\lambda,p/q,\varphi}$ is $q$-periodic. Its discriminant is $\Delta_\varphi(E)=\tr A^{(p/q)}_q(E,\varphi)$, and its spectrum is $\{E:|\Delta_\varphi(E)|\le2\}$.
+
+\begin{lemma}[Chambers' formula~\cite{Chambers1965}]\label{lem:chambers}
+There is a real monic polynomial $P_{p/q}$ of degree $q$ such that
+\[
+\Delta_\varphi(E)=P_{p/q}(E)-2\lambda^q\cos(2\pi q\varphi)\qquad\text{for all }E\in\C,\ \varphi\in\T.
+\]
+\end{lemma}
+
+\begin{proof}
+Each factor $T(E,\varphi+kp/q)$ is a trigonometric polynomial of degree one in $\varphi$, so $\Delta_\varphi(E)$ is a trigonometric polynomial of degree at most $q$ in $\varphi$. The shift $\varphi\mapsto\varphi+p/q$ cyclically permutes the factors and leaves the trace unchanged. Since $\gcd(p,q)=1$, the trace is invariant under $\varphi\mapsto\varphi+1/q$, so only the Fourier modes $0$ and $\pm q$ survive. The coefficient of $e^{2\pi iq\varphi}$ comes only from the product of the diagonal entries and equals $(-\lambda)^q e^{2\pi i p\,q(q-1)/(2q)}=(-1)^{q+p(q-1)}\lambda^q$. This is $-\lambda^q$ in all cases: if $q$ is odd then $(-1)^{q}=-1$ and $p(q-1)$ is even, and if $q$ is even then $p$ is odd and $(-1)^{p(q-1)}=-1$. The coefficient of $e^{-2\pi iq\varphi}$ is its complex conjugate. The constant mode is a monic polynomial of degree $q$ in $E$ with real coefficients.
+\end{proof}
+
+\begin{lemma}[Periodic magic formula~\cite{DKS2010}]\label{lem:magic}
+Let $H_{\mathrm{per}}$ be a $q$-periodic Schr\"odinger operator on $\ell^2(\Z)$ with hopping one and discriminant $\Delta$. Then $\Delta(H_{\mathrm{per}})=S^q+S^{-q}$.
+\end{lemma}
+
+This is the elementary direction of~\cite[Theorem~3.1]{DKS2010}, proved there by Floquet decomposition (equations (3.5)--(3.6)). The hypotheses hold: the operator is bounded, two-sided, periodic and has positive off-diagonal entries. Combining the two lemmas,
+\begin{equation}\label{eq:ratmagic}
+P_{p/q}(H_{\lambda,p/q,\varphi})=S^q+S^{-q}+2\lambda^q\cos(2\pi q\varphi).
+\end{equation}
+
+\subsection{The irrational operator}
+
+\begin{proposition}\label{prop:poly}
+Fix $h>L$. There is $C_h$ such that for all sufficiently large $n$ and every phase $\theta$ the following holds, with $q=q_n$, $p=p_n$, $\delta=\delta_n$ and $P_q=P_{p/q}$.
+\begin{enumerate}
+\item The operator $Q=P_q(H_{\lambda,\alpha,\theta})$ commutes with $H_{\lambda,\alpha,\theta}$ and decomposes as
+\[
+Q=V+K,\qquad V(j)=2\lambda^q\cos\bigl(2\pi(q\theta+j\delta)\bigr),\qquad K=S^q+S^{-q}+R,
+\]
+where $V$ is diagonal, $R$ is self-adjoint, $\langle\delta_i,R\,\delta_j\rangle=0$ for $|i-j|>q$, and
+\[
+\|R\|\le C_h\,q^{5/2}e^{hq}|\delta|.
+\]
+\item For every fixed integer $r\ge0$ there is $C_{r,h}$ with $\sup_{E\in U_h}|P_q^{(r)}(E)|\le C_{r,h}\,q^re^{hq}$, where $U_h$ is the neighborhood of Lemma~\ref{lem:growth}.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1: rational products.} Let $d=4\pi\lambda|\delta|$. For $0\le k<q$, the potentials $v(\varphi+kp/q)$ and $v(\varphi+k\alpha)$ differ by at most $4\pi\lambda k|\alpha-p/q|\le d$. Write each rational transfer matrix as the irrational one plus an error of norm at most $d$, and expand the product of $r\le q$ factors. A term with $k$ errors contains at most $k+1$ maximal irrational segments, each bounded by Lemma~\ref{lem:growth}. Hence for real $E\in U_h$ and every phase,
+\begin{equation}\label{eq:ratprod}
+\|A^{(p/q)}_r(E,\varphi)\|\le\sum_{k=0}^r\binom rk C_h^{k+1}e^{h(r-k)}d^k=C_he^{hr}\bigl(1+C_hde^{-h}\bigr)^r\le C_h'e^{hr},
+\end{equation}
+because $rd\le4\pi\lambda q|\delta|\le4\pi\lambda$. The same bound holds for every sub-block. Differentiating $A^{(p/q)}_q(E,\varphi)$ $r$ times in $E$ inserts the matrix $\begin{pmatrix}1&0\\0&0\end{pmatrix}$ at $r$ positions. There are at most $q^r$ ordered choices, and each resulting product is bounded by $C^{r+1}e^{hq}$ by~\eqref{eq:ratprod}. Since $P_q(E)=\Delta_\varphi(E)+2\lambda^q\cos(2\pi q\varphi)$ and $\lambda^q\le e^{hq}$, this proves part~2.
+
+\emph{Step 2: a smooth cutoff.} Let $U'$ be an open set with $\Sigma\subset U'\subset\overline{U'}\subset U_h$, and fix a smooth compactly supported $\chi$ with $\chi=1$ on $U'$ and $\supp\chi\subset U_h$. Put $f_q=\chi P_q$. By part~2, $\|f_q\|_{H^2(\R)}\le Cq^2e^{hq}$. For bounded self-adjoint operators $B,C$, Fourier inversion and $\|e^{itB}-e^{itC}\|\le|t|\,\|B-C\|$ give
+\[
+\|f_q(B)-f_q(C)\|\le\frac{\|B-C\|}{2\pi}\int_\R|t|\,|\hat f_q(t)|\,dt\le c\,\|B-C\|\,\|f_q\|_{H^2(\R)},
+\]
+by the Cauchy--Schwarz inequality and $\int t^2(1+t^2)^{-2}\,dt<\infty$.
+
+\emph{Step 3: rows.} Fix $j\in\Z$. Let $\varphi_j=\theta+j(\alpha-p/q)$ and $B_j=H_{\lambda,p/q,\varphi_j}$, whose potential at site $k$ is $v(\theta+j\alpha+(k-j)p/q)$. Let $C_j$ be $B_j$ with its potential on $[j-q,j+q]$ replaced by that of $H_{\lambda,\alpha,\theta}$. Those potentials differ by at most $4\pi\lambda|k-j|\,|\alpha-p/q|\le d$, so $\|B_j-C_j\|\le d$. By Lemma~\ref{lem:ratspec}, $\sigma(B_j)\subset\Sigma_{p/q}$ lies within $C|\alpha-p/q|^{1/2}$ of $\Sigma$, and $\sigma(C_j)$ lies within $d$ of $\sigma(B_j)$. For all large $n$ both spectra lie in $U'$, uniformly in $j$ and $\theta$, so $f_q(B_j)=P_q(B_j)$ and $f_q(C_j)=P_q(C_j)$.
+
+A path of length at most $q$ starting at $j$ stays in $[j-q,j+q]$, so the $j$-th row of $P_q(C_j)$ equals the $j$-th row of $P_q(H_{\lambda,\alpha,\theta})$. By~\eqref{eq:ratmagic} the $j$-th row of $P_q(B_j)$ equals the $j$-th row of $S^q+S^{-q}+2\lambda^q\cos(2\pi q\varphi_j)$, and $q\varphi_j=q\theta+j(q\alpha-p)=q\theta+j\delta$. Hence the $j$-th row of $R=Q-V-S^q-S^{-q}$ has $\ell^2$ norm at most $\|f_q(C_j)-f_q(B_j)\|\le Cq^2e^{hq}|\delta|$. It has at most $2q+1$ nonzero entries, so its $\ell^1$ norm is at most $\sqrt{2q+1}$ times that. Since $Q$, $V$ and $S^q+S^{-q}$ are self-adjoint, so is $R$, and the Schur test gives $\|R\|\le C_hq^{5/2}e^{hq}|\delta|$. Finally $Q$ is a polynomial in $H$, so it commutes with $H$.
+\end{proof}
+
+Only rows are compared in Step 3. The full irrational and rational operators are not close in norm, and $R$ need not have a sign.
+
+The proposition gives two regimes. When $b_n\ge L+\eta$ for a fixed $\eta>0$, choosing $h<L+\eta$ makes $\|R\|\to0$, so $\|K\|\le3$ eventually. At all scales, the useful quantity is the size of $K$ relative to $\lambda^q$:
+\begin{equation}\label{eq:sigma}
+\|K\|\le J_n:=3+C_hq^{5/2}e^{hq}|\delta|,\qquad \sigma_n:=\frac{J_n}{\lambda^{q}}.
+\end{equation}
+\begin{lemma}\label{lem:sigma}
+Fix $c>0$ and $0<\xi<\min(L,c)/2$, and use $h=L+\xi$ in~\eqref{eq:sigma}. Then $|\delta_n|\le\sigma_n\le e^{-(\min(L,b_n)-2\xi)q_n}$ for all sufficiently large $n$ with $b_n\ge c$.
+\end{lemma}
+
+\begin{proof}
+Enlarging $C_h$, we may assume $C_h\ge1$. Then $\sigma_n\ge C_hq^{5/2}e^{\xi q}|\delta|\ge|\delta|$. For the upper bound, $3\lambda^{-q}=3e^{-Lq}$ and $C_hq^{5/2}e^{hq}|\delta|\lambda^{-q}=C_hq^{5/2}e^{\xi q}e^{-b_nq}$. Each is at most $\frac12e^{-(\min(L,b_n)-2\xi)q}$ once $q$ is large, uniformly in $b_n\ge c$.
+\end{proof}
+
+Thus $K$ may be exponentially large when $b_n<L$, but it is exponentially small compared with $\lambda^q$ at every scale with $b_n\ge c$.

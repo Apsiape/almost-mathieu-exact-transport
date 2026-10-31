@@ -1,0 +1,45 @@
+\section{Computability}\label{sec:consequences}
+
+We use standard notions for reals: a real is computable from an oracle if the oracle computes a sequence of rationals converging to it with a known rate, and two reals have the same Turing degree if each is computable from the other. A real $x$ is right-c.e.\ relative to $\mathbf 0'$ if $\{r\in\Q:r>x\}$ is c.e.\ relative to $\mathbf 0'$. We use one external lemma.
+
+\begin{lemma}[{Becher, Bugeaud and Slaman~\cite[Lemma~4]{BBS2016}}]\label{lem:bbs}
+A real $x$ is the $\limsup$ of a computable sequence of rationals if and only if $x$ is right-c.e.\ relative to $\mathbf 0'$.
+\end{lemma}
+
+\begin{proof}[Proof of Theorem~\ref{thm:D}]
+1. By Theorem~\ref{thm:A}, $\au=\max\{0,1-L/\beta\}$, a computable function of $\beta$ when $\lambda$ is computable. If $\beta>L$ then $\beta=L/(1-\au)$, so $\beta$ is computable from $\au$.
+
+2. Let $\lambda=2$, so $L=\log2$, and $\theta=1/4$. If the denominators of $\alpha$ are eventually odd, then $|\sin(2\pi q_n/4)|=1$ eventually, so $1/4\in\Ga$ and Theorem~\ref{thm:A} applies.
+
+\emph{Every value is right-c.e.\ relative to $\mathbf 0'$.} For computable $\alpha$ the ratios $\beta_n$ form a computable sequence of reals, so rationals within $2^{-n}$ of them form a computable sequence with the same $\limsup$. If $\beta=\infty$ then $\au=1$. Otherwise $\beta$ is right-c.e.\ relative to $\mathbf 0'$ by Lemma~\ref{lem:bbs}, and so is $x=\max\{0,1-L/\beta\}$: for rational $r\in(0,1)$, $x<r$ holds if and only if some rational $s$ satisfies $\beta<s<L/(1-r)$, which is a $\mathbf 0'$-c.e.\ condition; $x<r$ never holds for $r\le0$ and always holds for $r\ge1$.
+
+\emph{Every such value occurs.} For $x=1$ take $a_1=1$ and $a_{n+1}=2^{q_n^2}$, so $\beta=\infty$. For $x=0$ take $a_1=1$ and $a_n=2$ for $n\ge2$, so $\beta=0$. Let $x\in(0,1)$ be right-c.e.\ relative to $\mathbf 0'$. Then $s=1/(1-x)>1$ is right-c.e.\ relative to $\mathbf 0'$, by the same monotonicity argument. Lemma~\ref{lem:bbs} gives a computable sequence of rationals $v_n$ with $\limsup v_n=s$; replacing $v_n$ by $\min\{\max\{v_n,1\},B\}$ for an integer $B>s$ does not change the $\limsup$. Define
+\[
+a_1=1,\qquad a_{n+1}=2^{\lceil v_nq_n\rceil}\quad(n\ge1).
+\]
+Since $a_{n+1}q_n\le q_{n+1}\le2a_{n+1}q_n$,
+\[
+0\le\beta_n-(\log2)v_n\le\frac{\log(4q_n)}{q_n},
+\]
+so $\beta=s\log2>L$ and $\au=1-L/\beta=1-1/s=x$. In all three constructions every partial quotient after $a_1$ is even, so $q_0=q_1=1$ and the recurrence $q_{n+1}=a_{n+1}q_n+q_{n-1}$ keeps every $q_n$ odd. The partial quotients are computable, and $|\alpha-p_n/q_n|<q_n^{-2}$ with $q_n\to\infty$, so $\alpha$ is computable.
+
+3. Let $K_2$ be the halting problem relative to $\mathbf 0'$, a set of degree $\mathbf 0''$ that is c.e.\ relative to $\mathbf 0'$, and put
+\[
+s=2-\sum_{e\in K_2}4^{-(e+2)}\in\Bigl[\frac{23}{12},2\Bigr].
+\]
+The sum is left-c.e.\ relative to $\mathbf 0'$, so $s$ is right-c.e.\ relative to $\mathbf 0'$, and part~2 produces a computable $\alpha$ with $\au(H_{2,\alpha,1/4})=x=1-1/s\in[11/23,1/2]$. The oracle $K_2$ computes $s$. Conversely, from $s$ one recovers $K_2$: the base-$4$ digits of $2-s$ are $0$ or $1$, and after the digits at positions below $e+2$ are subtracted, the remainder is at most $\frac13\cdot4^{-(e+2)}$ if $e\notin K_2$ and at least $4^{-(e+2)}$ if $e\in K_2$, so a sufficiently good rational approximation decides membership. Thus $s$, and hence $x=1-1/s$, has degree exactly $\mathbf 0''$.
+\end{proof}
+
+\begin{remark}
+When the ratios $\beta_n$ converge, their limit is computable from $\mathbf 0'$, and every nonnegative real $t$ computable from $\mathbf 0'$ arises as such a limit for a computable $\alpha$ with odd denominators. By the limit lemma there are computable rationals $w_n\to t/\log2$; put $a_1=1$ and $a_{n+1}=2^{\max\{1,\lceil q_n\max\{w_n,0\}\rceil\}}$, so that the partial quotients are even and $\beta_n\to t$, including $t=0$. In this regular class the exponent therefore has degree at most $\mathbf 0'$, and degree $\mathbf 0'$ occurs. For instance, with $h_K=\sum_{j\in K}2\cdot4^{-(j+1)}$ for the halting set $K$ and $v_n$ the stage-$n$ approximations of $3/2+h_K/4$, the exponent of $H_{2,\alpha,1/4}$ is $1-1/s\in[1/3,2/5]$ with $s=3/2+h_K/4$, of degree $\mathbf 0'$. Part~3 of Theorem~\ref{thm:D} needs ratios that oscillate: a convergent computable sequence cannot have a limit of degree $\mathbf 0''$.
+\end{remark}
+
+\begin{remark}
+All three parts of Theorem~\ref{thm:D} hold for every moment exponent: by Theorem~\ref{thm:A}, $\beta^+(p)=\au$ for every $p>0$ in parts~1--3. They also hold for packing dimensions, with the following phase conditions.
+
+In part~1, $\theta\in\Ga$. The first paragraph of the proof of Proposition~\ref{prop:packupper} gives $\dim_P^+(\mu_{\delta_0})\le\au$, and Theorem~\ref{thm:C}(1) gives $d^+_{\mu_{\delta_0}}\ge\au$ almost everywhere. So the spectral measure of $\delta_0$ has $\dim_P^-=\dim_P^+=\au$. For every nonzero spectral measure, Theorem~\ref{thm:C}(2) gives the same conclusion under the additional condition $\theta+\alpha\in\Ga$.
+
+In parts~2 and~3, $\theta=1/4$ and the denominators of $\alpha$ are eventually odd. Then $1/4\in\Ga$, as shown in the proof of part~2, and also $1/4\in\Ga-\alpha$: since $q_n\alpha=p_n+\delta_n$, we have $|\sin(2\pi q_n(1/4+\alpha))|=|\cos(2\pi\delta_n)|\ge1/2$ for large $n$. So, when $\beta(\alpha)<\infty$, Theorem~\ref{thm:C}(2) shows that the exponent is also the packing dimension of every nonzero spectral measure of $H_{2,\alpha,1/4}$. When $\beta(\alpha)=\infty$, the exponent is $1$, and so is every such packing dimension: Theorem~\ref{thm:C}(1) gives $d^+\ge1$ almost everywhere, and every finite Borel measure on $\R$ has upper packing dimension at most $1$, as noted after Theorem~\ref{thm:C}. Hence in parts~2 and~3 the packing dimensions of all nonzero spectral measures of $H_{2,\alpha,1/4}$ take exactly the values stated for $\au$. In particular the explicit operator of part~3 has spectral measures whose packing dimension has Turing degree $\mathbf 0''$.
+\end{remark}
+
+The noncomputability concerns infinite-time asymptotics of an infinite system. Finite-volume propagator entries and finite-time probabilities, at computable times and with specified computable data, can be approximated effectively to any prescribed accuracy. The theorem says that the long-time exponent cannot be extracted by any algorithm, even one with access to the halting problem.

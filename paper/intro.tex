@@ -1,0 +1,131 @@
+\section{Introduction}\label{sec:intro}
+
+The almost Mathieu operator
+\begin{equation}\label{eq:amo}
+(H_{\lambda,\alpha,\theta}u)(n)=u(n+1)+u(n-1)+2\lambda\cos\bigl(2\pi(\theta+n\alpha)\bigr)u(n)
+\end{equation}
+on $\ell^2(\Z)$ is the central model of quasi-periodic spectral theory. Physicists know it as the Aubry--Andr\'e model~\cite{AubryAndre1980}, and it is realized with cold atoms in bichromatic optical lattices~\cite{Roati2008} and with light in quasi-periodic waveguide arrays~\cite{Lahini2009}. Here $\lambda>0$ is the coupling, $\alpha$ is an irrational frequency and $\theta\in\T=\R/\Z$ is a phase. For $\lambda>1$ the Lyapunov exponent on the spectrum equals $\log\lambda>0$~\cite{BourgainJitomirskaya2002}, and the folklore physical picture is that every state is localized.
+
+That picture depends on the arithmetic of $\alpha$. Let $p_n/q_n$ be the continued-fraction convergents of $\alpha$ and
+\begin{equation}\label{eq:beta}
+\beta(\alpha)=\limsup_{n\to\infty}\frac{\log q_{n+1}}{q_n}\in[0,\infty].
+\end{equation}
+Avila, You and Zhou~\cite{AYZ2017} proved that the supercritical regime splits sharply at $\lambda=e^{\beta(\alpha)}$. For $\lambda>e^{\beta}$ the operator has Anderson localization for almost every phase. For $1<\lambda<e^{\beta}$ the spectrum is purely singular continuous for every phase. Strongly Liouville frequencies, those with $\beta(\alpha)>0$, thus destroy localization even though the Lyapunov exponent stays positive.
+
+What does a wave packet do in that window? This paper answers the question for every transport moment, and it determines the packing dimension of every spectral measure. All of these turn out to be one number.
+
+\subsection{Transport exponents}
+
+Let $\psi_t=e^{-itH}\delta_0$ and average in time with the exponential weight $(2/T)e^{-2t/T}$:
+\begin{equation}\label{eq:abel}
+a(j,T)=\frac2T\int_0^\infty e^{-2t/T}\,|\langle\delta_j,\psi_t\rangle|^2\,dt,\qquad
+P(N,T)=\sum_{|j|>N}a(j,T),\qquad M_p(T)=\sum_{j\in\Z}|j|^p a(j,T).
+\end{equation}
+$P(N,T)$ is the time-averaged probability of finding the particle beyond distance $N$, and $M_p(T)$ is the averaged $p$-th moment of the position. The upper transport exponents are
+\begin{equation}\label{eq:exponents}
+\beta^+(p)=\limsup_{T\to\infty}\frac{\log M_p(T)}{p\log T},\qquad
+\au=\sup_{p>0}\beta^+(p).
+\end{equation}
+The quantity $\au$ is the fastest upper exponent of Damanik and Tcheremchantsev~\cite{DT2007}. It sees even polynomially small tails: $\au\le a$ holds when $P(T^a,T)$ decays faster than every power of $T$, and conversely a tail of size $T^{-C}$ at distance $T^{a}$ already forces $\au\ge a$. Always $0\le\au\le1$, since hopping is bounded.
+
+Two endpoints were known. Damanik and Tcheremchantsev proved $\au=0$ for $\lambda>1$ when $\beta(\alpha)=0$~\cite{DT2007}, and Jitomirskaya and Zhang proved $\au=1$ for every phase when $\beta(\alpha)=\infty$~\cite{JZ2022}. Jitomirskaya and Kr\"uger proved exponential dynamical localization when $\beta(\alpha)$ is sufficiently small, including positive values~\cite{JK2013}, and Bradshaw, de Jong, Liu, Wang, Wang and Yang refined the growth rates for weakly Liouville frequencies with $\beta(\alpha)=0$~\cite{BdJLWWY2025}. In between, Jitomirskaya and Zhang obtained lower bounds of the form $1-C\log\lambda/\beta$, for every moment~\cite{JZ2022}. Haeming refined them, with an explicit constant, a logarithmic loss and one sequence of times common to all phases~\cite{Haeming2025}. Upper bounds on fractal dimensions of spectral measures near the transition were obtained by Jitomirskaya, Liu and Tcheremchantsev~\cite{JLT2025}. The exact value was open.
+
+\subsection{Main results}
+
+The answer depends on the phase only through a full-measure condition. Let
+\begin{equation}\label{eq:Ga}
+\Ga=\bigl\{\theta\in\T:\ |\sin(2\pi q_n\theta)|\ge q_n^{-2}\ \text{for all sufficiently large }n\bigr\}.
+\end{equation}
+This set has full Lebesgue measure for every irrational $\alpha$ (Lemma~\ref{lem:Ga}). Throughout, the number $\max\{0,1-\log\lambda/\beta(\alpha)\}$ is read as $0$ when $\beta(\alpha)=0$ and as $1$ when $\beta(\alpha)=\infty$.
+
+\begin{maintheorem}[The transport law]\label{thm:A}
+Let $\lambda>1$ and let $\alpha$ be irrational.
+\begin{enumerate}
+\item If $\beta(\alpha)<\infty$, then for every $\theta\in\Ga$ and every $p>0$,
+\[
+\beta^+(p)=\au=\max\Bigl\{0,\ 1-\frac{\log\lambda}{\beta(\alpha)}\Bigr\}
+\]
+for $H_{\lambda,\alpha,\theta}$, where the right side is read as $0$ when $\beta(\alpha)=0$.
+Moreover, for every $a>\max\{0,1-\log\lambda/\beta(\alpha)\}$ and every $m>0$, $P(T^a,T)=O(T^{-m})$ as $T\to\infty$.
+\item If $\beta(\alpha)=\infty$, then $\beta^+(p)=\au=1$ for every phase and every $p>0$.
+\end{enumerate}
+The lower bound $\beta^+(p)\ge\max\{0,1-\log\lambda/\beta(\alpha)\}$ in part~1 holds for every phase and every $p>0$.
+\end{maintheorem}
+
+Part~2 is due to Jitomirskaya and Zhang~\cite[Corollary~3]{JZ2022}, and the case $\beta(\alpha)=0$ of part~1 to Damanik and Tcheremchantsev~\cite{DT2007}; we include them so that the statement covers every frequency. The new content is part~1 for $0<\beta(\alpha)<\infty$: the upper bound throughout, and the matching lower bound for every moment when $\beta(\alpha)>\log\lambda$. For the fastest exponent $\au$ alone, the lower bound also holds for any Lipschitz sampling function whose Lyapunov exponent is continuous near a point of the spectrum where it is minimal, with $\log\lambda$ replaced by that minimum (Theorem~\ref{thm:L}).
+
+Theorem~\ref{thm:A} says that transport is governed by a competition between two exponential rates: the localization strength $\log\lambda$ and the Liouville strength $\beta(\alpha)$. The exponent vanishes for $\lambda\ge e^{\beta}$, including the transition point itself. When $\beta(\alpha)>0$ it rises continuously to $1$ as $\lambda\downarrow1$; when $\beta(\alpha)=0$ it vanishes for every $\lambda>1$. For every moment and almost every phase, the arithmetic spectral transition of~\cite{AYZ2017} is therefore also a sharp dynamical transition, and the theorem gives the exact exponents on the singular continuous side.
+
+The formula has a simple heuristic origin. At a resonant scale $q=q_n$ the potential is almost $q$-periodic: a shift by $q$ sites moves the phase by $\delta=q\alpha-p$, a drift of $|\delta|\approx e^{-\beta q}$ per period, so the periodic structure changes only over the slow spatial scale $|\delta|^{-1}\approx e^{\beta q}$. On that scale the packet moves like a particle in a nearly periodic band of width about $\lambda^{-q}$, so its speed is about $e^{-q\log\lambda}$. The slow drift turns this into a Bloch-type oscillation that lasts for a time about $T=e^{\beta q}$. In that time the packet covers a distance about $T e^{-q\log\lambda}=T^{1-\log\lambda/\beta}$. The theorem shows that no other mechanism moves any polynomial fraction of the packet faster, at any time. The next theorem shows that this mechanism moves a fixed fraction of the packet, not just a small tail. Write $\delta_n=q_n\alpha-p_n$ and $b_n=q_n^{-1}\log|\delta_n|^{-1}$, so that $\limsup_nb_n=\beta(\alpha)$.
+
+\begin{maintheorem}[A fixed fraction moves]\label{thm:B}
+Let $\lambda>1$, let $\alpha$ be irrational and let $\theta$ be any phase. Let $h>\log\lambda$ and $c>h$. There is $n_0$ such that for every $n\ge n_0$ with $b_n\ge c$ and every $T$ with $e^{hq_n}\le T\le|\delta_n|^{-1}$,
+\[
+P\bigl(Te^{-hq_n},T\bigr)\ge\frac{2^{-32}}{1+4\pi\lambda}.
+\]
+\end{maintheorem}
+
+At the resonant time $T=|\delta_n|^{-1}$ the distance is $e^{(b_n-h)q_n}=T^{1-h/b_n}$. Along scales with $b_n\to\beta(\alpha)$ this gives the lower bound in Theorem~\ref{thm:A} for every moment at once. The constant is crude, but it depends only on $\lambda$. For earlier times the theorem says that a fixed fraction is beyond $Te^{-hq_n}$. For $\theta\in\Ga$ and $\beta(\alpha)<\infty$, the window estimate of Section~\ref{sec:filters} makes the Abel-averaged mass beyond $2e^{\eps q_n}T\lambda^{-q_n}$ exponentially small in $q_n$, for any fixed $\eps>0$. Together they show that at each strongly resonant scale and for $e^{hq_n}\le T\le|\delta_n|^{-1}$, the annulus $Te^{-hq_n}<|j|\le2e^{\eps q_n}T\lambda^{-q_n}$ carries Abel-averaged mass at least $2^{-32}/(1+4\pi\lambda)-Ce^{-q_n}$ (Remark~\ref{rem:burst}). So a fixed positive fraction of the packet lies at distance $T\lambda^{-q_n}$, up to factors $e^{(h-\log\lambda)q_n}$ and $2e^{\eps q_n}$ whose exponents can be fixed as small as we like, and it moves out with speed $\lambda^{-q_n}$ in this sense. The estimates say nothing about how the rest of the packet, up to mass $1-2^{-32}/(1+4\pi\lambda)$, is distributed within distance $Te^{-hq_n}$.
+
+The same number governs the spectral measures. For a finite Borel measure $\mu$ on $\R$ and $E\in\R$, the upper local dimension is
+\[
+d^+_\mu(E)=\limsup_{r\downarrow0}\frac{\log\mu([E-r,E+r])}{\log r}.
+\]
+The lower and upper packing dimensions $\dim_P^-(\mu)$ and $\dim_P^+(\mu)$ are its $\mu$-essential infimum and supremum. Let $\mu_\varphi$ be the spectral measure of $\varphi\in\ell^2(\Z)$ for $H_{\lambda,\alpha,\theta}$.
+
+\begin{maintheorem}[Packing dimension]\label{thm:C}
+Let $\lambda>1$ and let $\alpha$ be irrational.
+\begin{enumerate}
+\item For every phase $\theta$ and every nonzero $\varphi\in\ell^2(\Z)$, $d^+_{\mu_\varphi}(E)\ge\max\{0,1-\log\lambda/\beta(\alpha)\}$ for $\mu_\varphi$-almost every $E$, with the right side read as $0$ when $\beta(\alpha)=0$ and as $1$ when $\beta(\alpha)=\infty$. In particular $\dim_P^-(\mu_\varphi)$ is at least this number.
+\item If $\beta(\alpha)<\infty$ and $\theta\in\Ga\cap(\Ga-\alpha)$, then for every nonzero $\varphi\in\ell^2(\Z)$,
+\[
+d^+_{\mu_\varphi}(E)=\max\Bigl\{0,\ 1-\frac{\log\lambda}{\beta(\alpha)}\Bigr\}\quad\text{for $\mu_\varphi$-a.e.\ $E$},
+\]
+so that $\dim_P^-(\mu_\varphi)=\dim_P^+(\mu_\varphi)=\max\{0,1-\log\lambda/\beta(\alpha)\}$, read as $0$ when $\beta(\alpha)=0$.
+\end{enumerate}
+\end{maintheorem}
+
+When $\beta(\alpha)=\infty$, part~1 gives $d^+_{\mu_\varphi}\ge1$ almost everywhere at every phase. Every finite Borel measure on $\R$ has upper packing dimension at most $1$, since this dimension is the infimum of the packing dimensions of its full-measure Borel sets~\cite[Appendix]{GSB1999}. So all these packing dimensions equal $1$; this endpoint is due to Jitomirskaya and Zhang~\cite[Corollary~3]{JZ2022}.
+
+The set $\Ga\cap(\Ga-\alpha)$ has full measure (Lemma~\ref{lem:Ga}). So for this model the fastest-tail exponent, every moment exponent and the packing dimension coincide: if $\beta(\alpha)<\infty$ and $\theta\in\Ga\cap(\Ga-\alpha)$, then for all $p>0$ and all nonzero $\varphi$,
+\[
+\au=\beta^+(p)=\dim_P^-(\mu_\varphi)=\dim_P^+(\mu_\varphi)=\max\Bigl\{0,\ 1-\frac{\log\lambda}{\beta(\alpha)}\Bigr\}.
+\]
+
+For $1<\lambda<e^{\beta}$, Jitomirskaya, Liu and Tcheremchantsev proved the bound $2(1-\log\lambda/\beta)$ for every $\alpha$-Diophantine phase, a full-measure set, and noted that the factor $2$ may not be sharp~\cite[Theorem~1.1]{JLT2025}. Theorem~\ref{thm:C} shows that on $\Ga\cap(\Ga-\alpha)$ the sharp factor is $1$, and that the bound is attained: the upper and lower packing dimensions both equal $1-\log\lambda/\beta$. Their phase set and ours are both of full measure, but neither is shown to contain the other. For $\lambda\ge e^{\beta}$ their theorem already gives dimension zero. In the other direction, Jitomirskaya and Zhang proved lower bounds of the form $1-C\log\lambda/\beta$ for packing dimensions~\cite{JZ2022}. Part~1 gives this bound with $C=1$ at every phase, and part~2 shows that $C=1$ cannot be improved.
+
+The upper bound in part~2 follows from Theorem~\ref{thm:A} and the inequality between moment growth and packing dimension of Guarneri and Schulz-Baldes~\cite{GSB1999}, in the form of Barbaroux, Germinet and Tcheremchantsev~\cite{BGT2000}. Part~1 does not follow from transport bounds, since those inequalities go the other way. It comes from a pointwise bound on the resolvent at the resonant scales (Lemma~\ref{lem:localmass}), which the proof of Theorem~\ref{thm:B} also provides.
+
+The last result concerns computability. The exponent in Theorem~\ref{thm:A} is an explicit function of $\beta(\alpha)$, and $\beta(\alpha)$ is an asymptotic quantity of the continued fraction: it can be noncomputable even when $\alpha$ is computable. A real $x$ is \emph{right-c.e.\ relative to $\mathbf 0'$} if the set of rationals $r>x$ is computably enumerable relative to the halting problem.
+
+\begin{maintheorem}[Computability]\label{thm:D}
+\begin{enumerate}
+\item Let $\lambda>1$ be computable, let $\alpha$ be a computable irrational with $\beta(\alpha)<\infty$, and let $\theta\in\Ga$ be computable. Then $\au(H_{\lambda,\alpha,\theta})$ is computable from $\beta(\alpha)$. If moreover $\beta(\alpha)>\log\lambda$, then $\au$ and $\beta(\alpha)$ have the same Turing degree.
+\item Take $\lambda=2$ and $\theta=1/4$. As $\alpha$ ranges over the computable irrationals whose convergent denominators are eventually odd, $\au(H_{2,\alpha,1/4})$ ranges over exactly the reals in $[0,1]$ that are right-c.e.\ relative to $\mathbf 0'$.
+\item There is an explicit computable irrational $\alpha$ such that $\au(H_{2,\alpha,1/4})\in[11/23,1/2]$ has Turing degree $\mathbf 0''$.
+\end{enumerate}
+\end{maintheorem}
+
+All Hamiltonian data in part~3 are computable: the coupling $2$, the phase $1/4$ and every digit of $\alpha$. Yet the transport exponent of this explicit operator cannot be computed even with an oracle for the halting problem. Undecidability of physical quantities is known for families of Hamiltonians, most prominently the spectral gap of Cubitt, Perez-Garcia and Wolf~\cite{CPGW2015}. Here a single explicit instance of a textbook one-dimensional model has an exponent of exactly known, high Turing degree. Part~2 identifies the exact set of values, the reals that are right-c.e.\ relative to $\mathbf 0'$. All of them are computable from $\mathbf 0''$, and part~3 shows that degree $\mathbf 0''$ is attained.
+
+\subsection{How the proof works}
+
+The lower bound for $\au$ (Section~\ref{sec:lower}) constructs, at a resonant scale $q=q_n$ and for any $h$ slightly above $\log\lambda$, a band of energies on which complex-energy transfer matrices stay bounded by $e^{2hq}$ over a distance $N_q=e^{(b_n-h)q+O(\log q)}$, at times $T_q=e^{b_nq+O(\log q)}$. The resolvent then sends a polynomially small mass to distance $N_q/2$ at time $T_q$. It applies to any Lipschitz sampling function whose Lyapunov exponent is continuous near a spectral minimizer. A polynomially small mass does not determine any fixed moment; Section~\ref{sec:moments} replaces it by a fixed fraction.
+
+The upper bound is the main work. Its key object is an exactly conserved quantity at each scale. Chambers' formula~\cite{Chambers1965} says that the discriminant of the periodic approximant with frequency $p/q$ depends on the phase only through a constant term $2\lambda^q\cos 2\pi q\theta$. Combined with the periodic magic formula of Damanik, Killip and Simon~\cite{DKS2010}, this gives a degree-$q$ polynomial $P_q$ with
+\[
+P_q(H)=V+K,\qquad V(j)=2\lambda^q\cos\bigl(2\pi(q\theta+j\,\delta)\bigr),\qquad \delta=q\alpha-p,
+\]
+where $K$ has range $q$ (Proposition~\ref{prop:poly}). At every denominator with $|q\alpha-p|\le e^{-cq}$ for a fixed $c>0$, $K$ is exponentially small compared with $\lambda^q$ (Lemma~\ref{lem:sigma}). The operator $P_q(H)$ commutes with $H$ exactly, so no error accumulates in time. Its diagonal $V$ is a cosine of amplitude $2\lambda^q$ that drifts slowly in space. Three estimates are built on it.
+\begin{enumerate}
+\item \emph{Barriers} (Section~\ref{sec:barriers}). On the spectral subspace where $P_q(H)$ is near its initial value, the monotone part of the drifting cosine acts as a wall. A Sylvester-equation argument bounds the mass that crosses it, at all times. Dividing $P_q(H)$ by the size of $K$ makes this work at every scale where $|q\alpha-p|$ is exponentially small, even where $K$ itself is large.
+\item \emph{Exact slow dynamics} (Section~\ref{sec:filters}). At scales with $|q\alpha-p|\le e^{-(\log\lambda+\eta)q}$, smooth filters on the inverse branches of $P_q$ turn the energy into a smooth function of $P_q(H)/\lambda^q$. On each filtered piece the evolution is exactly generated by an operator whose position commutators are of size $\lambda^{-q}$ up to subexponential factors. This gives the velocity $\lambda^{-q}$ for all time.
+\item \emph{A per-denominator estimate} (Section~\ref{sec:dt}). The complex-energy method of Damanik and Tcheremchantsev~\cite{DT2007} confines the packet to distance $O(q)$ up to times $e^{\kappa q}$, at every denominator $q$.
+\end{enumerate}
+The final step (Section~\ref{sec:upper}) is a covering argument. For each large time $T$, look at the first denominator $q_j\ge K\log T$. If it is not too large, the per-denominator estimate confines the packet. If it is very large, the preceding denominator has a definite Liouville ratio and $T$ lies in a fixed logarithmic window of that scale, where the barrier and slow-dynamics estimates apply. No assumption on how the ratios $\log q_{n+1}/q_n$ behave between these scales is needed.
+
+The fixed fraction (Section~\ref{sec:moments}) uses the conserved polynomial a second time. Near the origin, $P_q(H)-2\lambda^q\cos2\pi q\theta$ acts like $S^q+S^{-q}$, whose diagonal matrix elements are the moments of the arcsine law on $[-2,2]$. So under the spectral measure of $\delta_0$ the rational discriminant becomes arcsine distributed (Lemma~\ref{lem:arcsine}), and most of the spectral mass sits at energies where the first $q$-blocks on both sides of the origin are elliptic with a definite margin. At such an energy $E$, for a fixed $h>\log\lambda$ and $e^{hq}\le T\le|q\alpha-p|^{-1}$, the resolvent column $k\mapsto\langle\delta_k,(H-E-i/T)^{-1}\delta_0\rangle$ stays spread over a run of consecutive blocks that reaches beyond distance $Te^{-hq}$. Two elementary facts make this work for every polarization of the solution: the sum of the masses of two adjacent blocks is bounded below, uniformly in the polarization, by a constant times the squared norm of the solution in the rotation frame, weighted by the block sum $S_0$ of Lemma~\ref{lem:run}, although one block alone can carry little mass, and a flux identity bounds the mass beyond the run (Lemma~\ref{lem:run}). Parseval's formula turns a fixed fraction of the resolvent column into a fixed fraction of the packet. At the same energies, the runs bound $|\langle\delta_0,(H-E-i|q\alpha-p|)^{-1}\delta_0\rangle|$ by $e^{(\log\lambda+o(1))q}$, hence the spectral mass of intervals of length $|q\alpha-p|$, and this gives the lower bound on local dimensions.
+
+\subsection{Organization}
+
+Section~\ref{sec:prelim} fixes notation and collects elementary facts. Section~\ref{sec:poly} constructs the conserved polynomial. Section~\ref{sec:barriers} proves the barrier estimates and Section~\ref{sec:filters} the window theorem for slow dynamics. Section~\ref{sec:dt} records the per-denominator estimate. Section~\ref{sec:upper} proves the upper bound in Theorem~\ref{thm:A}, and Section~\ref{sec:lower} a lower bound for $\au$ that holds for Lipschitz potentials. Section~\ref{sec:moments} proves the fixed-fraction lower bound and Theorems~\ref{thm:A}, \ref{thm:B} and~\ref{thm:C}. Section~\ref{sec:consequences} proves Theorem~\ref{thm:D}. Section~\ref{sec:discussion} discusses what remains open.

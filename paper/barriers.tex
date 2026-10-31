@@ -1,0 +1,121 @@
+\section{Spectral barriers}\label{sec:barriers}
+
+\subsection{An abstract barrier lemma}
+
+In this subsection $Q=V+K$ is a bounded self-adjoint operator on $\ell^2(\Z)$, $V$ is a real diagonal operator, $K$ has range at most $q$ (that is, $\langle\delta_i,K\delta_j\rangle=0$ for $|i-j|>q$), and $\|K\|\le J$. Fix $d_0\in\R$ and $W>0$, and let $\Pi=\un_{[d_0-W,d_0+W]}(Q)$. For an interval $I\subset\Z$ write $\partial_qI=\{i\in I:\dist(i,\Z\setminus I)\le q\}$.
+
+\begin{lemma}[Outer barrier]\label{lem:outer}
+Let $I\subset\Z$ be an interval on which either $V-d_0\ge V_0$ or $V-d_0\le-V_0$, where $V_0\ge W+2J$. If $B\subset I$ and $\dist(B,\Z\setminus I)>(\ell+1)q$ for an integer $\ell\ge0$, then
+\[
+\|\un_B\Pi\|\le2\Bigl(\frac{J}{V_0-W}\Bigr)^{\ell+2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Assume $V-d_0\ge V_0$ on $I$; the other case follows by replacing $Q$ and $d_0$ with $-Q$ and $-d_0$. Let $Q_I=\un_IQ\un_I$ acting on $\ell^2(I)$, let $A$ be the restriction of $Q$ to $\operatorname{Ran}\Pi$, and let $Y=-\un_IQ\un_{\Z\setminus I}\Pi$. Since $\Pi$ commutes with $Q$, the operator $X=\un_I\Pi$ solves the Sylvester equation
+\[
+(Q_I-d_0)X-X(A-d_0)=Y.
+\]
+Here $Q_I-d_0\ge V_0-J$ and $\|A-d_0\|\le W<V_0-J$, so
+\[
+X=\int_0^\infty e^{-s(Q_I-d_0)}\,Y\,e^{s(A-d_0)}\,ds,
+\]
+as one checks by differentiating the integrand. Since $V$ is diagonal, $Y=-\un_IK\un_{\Z\setminus I}\Pi$, so $\|Y\|\le J$ and the range of $Y$ lies in $\ell^2(\partial_qI)$.
+
+Expand $e^{-s(Q_I-d_0)}$ in a Dyson series around the diagonal part $V_I-d_0\ge V_0$. The term with $k$ factors of $K_I=\un_IK\un_I$ has norm at most $e^{-sV_0}(sJ)^k/k!$ and moves supports by at most $kq$. Since $\dist(B,\partial_qI)>\ell q$, only terms with $k\ge\ell+1$ connect $\ell^2(\partial_qI)$ to $\ell^2(B)$. Therefore
+\[
+\|\un_BX\|\le J\int_0^\infty e^{-s(V_0-W)}\sum_{k\ge\ell+1}\frac{(sJ)^k}{k!}\,ds=\sum_{k\ge\ell+1}\Bigl(\frac{J}{V_0-W}\Bigr)^{k+1}\le2\Bigl(\frac{J}{V_0-W}\Bigr)^{\ell+2},
+\]
+using $J/(V_0-W)\le\frac12$.
+\end{proof}
+
+\begin{lemma}[Inner core]\label{lem:inner}
+Let $I_0\subset\Z$ be an interval with $|V-d_0|\le W/4$ on $I_0$, and assume $W\ge4J$. If $0\in I_0$ and $\dist(0,\Z\setminus I_0)>(\ell+1)q$, then
+\[
+\|(1-\Pi)\delta_0\|\le3\Bigl(\frac{4J}{3W}\Bigr)^{\ell+2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $\Pi_+=\un_{(d_0+W,\infty)}(Q)$ and let $A_+$ be the restriction of $Q$ to its range, so $A_+-d_0\ge W$. With $Q_{I_0}=\un_{I_0}Q\un_{I_0}$ we have $Q_{I_0}-d_0\le W/4+J$, and $X_+=\un_{I_0}\Pi_+$ solves $(Q_{I_0}-d_0)X_+-X_+(A_+-d_0)=Y_+$ with $Y_+=-\un_{I_0}K\un_{\Z\setminus I_0}\Pi_+$. Hence
+\[
+X_+=-\int_0^\infty e^{s(Q_{I_0}-d_0)}\,Y_+\,e^{-s(A_+-d_0)}\,ds.
+\]
+Expanding $e^{s(Q_{I_0}-d_0)}$ around its diagonal part, which has norm at most $W/4$, only terms with at least $\ell+1$ factors of $K$ connect $\partial_qI_0$ to the site $0$. As in Lemma~\ref{lem:outer},
+\[
+\|\Pi_+\delta_0\|=\|\delta_0^*X_+\|\le J\int_0^\infty e^{-3sW/4}\sum_{k\ge\ell+1}\frac{(sJ)^k}{k!}\,ds\le2\Bigl(\frac{4J}{3W}\Bigr)^{\ell+2}.
+\]
+The same bound holds for $\Pi_-=\un_{(-\infty,d_0-W)}(Q)$, applying the argument to $-Q$. Since $1-\Pi=\Pi_++\Pi_-$ with orthogonal ranges, the claim follows.
+\end{proof}
+
+\begin{lemma}[Cutoff]\label{lem:cutoff}
+Let $\Pi$ be a spectral projection of an operator that commutes with $H$, let $N\ge1$ be an integer, and put $B_N=\{-N-1,-N,N,N+1\}$. Then for every $T>0$,
+\[
+P(N,T)\le8\|(1-\Pi)\delta_0\|^2+T^2\|\un_{B_N}\Pi\|^2.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $\chi=\un_{[-N,N]}$. The commutator $[H,\chi]=[S+S^{-1},\chi]$ is supported on the two bonds $\{N,N+1\}$ and $\{-N-1,-N\}$, has norm one, and satisfies $[H,\chi]=[H,\chi]\un_{B_N}$. Since $\Pi$ commutes with $H$, Duhamel's formula gives
+\[
+(1-\chi)e^{-itH}\Pi\delta_0=e^{-itH}(1-\chi)\Pi\delta_0-i\int_0^te^{-i(t-s)H}[H,\chi]\,\Pi\,e^{-isH}\delta_0\,ds.
+\]
+As $(1-\chi)\delta_0=0$, we have $\|(1-\chi)\Pi\delta_0\|\le\|(1-\Pi)\delta_0\|$. Hence
+\[
+\|(1-\chi)\psi_t\|\le2\|(1-\Pi)\delta_0\|+|t|\,\|\un_{B_N}\Pi\|.
+\]
+Square, use $(x+y)^2\le2x^2+2y^2$, and average with $(2/T)e^{-2t/T}$, for which the mean of $t^2$ is $T^2/2$.
+\end{proof}
+
+The time factor $T$ cannot be removed. Mass that crosses the barrier does so at a small but nonzero rate, and the estimate only shows that the rate is tiny.
+
+\subsection{The local barrier at a scale}
+
+We now apply these lemmas to $Q=P_q(H)$ from Proposition~\ref{prop:poly}, divided by $J_n$.
+
+\begin{proposition}\label{prop:local}
+Fix $c>0$ and $0<\eps<\min(L,c)/4$. There are $C$ and $n_0$ such that the following holds for every $n\ge n_0$ with $b_n\ge c$ and every phase $\theta$ with $|\sin(2\pi q_n\theta)|\ge q_n^{-2}$. There is an integer $N_n$ with
+\[
+e^{\eps q_n/2}\le N_n\le 2e^{((b_n-L)_++\eps)q_n}
+\qquad\text{and}\qquad
+P(N_n,T)\le C(1+T^2)\exp\Bigl(-\frac{\eps N_n}{900}\Bigr)\quad\text{for all }T>0.
+\]
+\end{proposition}
+
+\begin{proof}
+Write $q=q_n$, $\delta=\delta_n$, $b=b_n$, $A=\lambda^q$, $s=|\sin 2\pi q\theta|\ge q^{-2}$ and $\mu=\min(L,b)\ge\mu_0=\min(L,c)$. Take $\xi=\eps/8$ in Lemma~\ref{lem:sigma}, so that $|\delta|\le\sigma\le e^{-(\mu-\eps/4)q}$ with $\sigma=J_n/A$. Put
+\[
+N=\Bigl\lceil e^{\eps q/2}\,\frac{\sigma}{|\delta|}\Bigr\rceil .
+\]
+Then $N\ge e^{\eps q/2}$, and $N\le 2e^{(b-\mu+3\eps/4)q}\le2e^{((b-L)_++\eps)q}$, because $b-\mu=(b-L)_+$.
+
+\emph{The drifting diagonal.} We have $2\pi|\delta|N\le2\pi(e^{\eps q/2}\sigma+|\delta|)\le e^{-\eps q}$ for large $q$, since $\mu_0-\eps/4-\eps/2>\eps$. For large $q$ this is at most $s/50$. Write $x=2\pi q\theta$ and $y_j=2\pi j\delta$. For $|j|\le N$ the mean value theorem gives
+\[
+V(j)-V(0)=2A\bigl(\cos(x+y_j)-\cos x\bigr)=-2A\,y_j\sin(x+\vartheta_jy_j),\qquad\vartheta_j\in(0,1),
+\]
+and $|\sin(x+\vartheta_jy_j)-\sin x|\le|y_j|\le s/50$. So $\sin(x+\vartheta_jy_j)$ has the sign of $\sin x$ and modulus between $0.98s$ and $1.02s$. Consequently $V(j)-V(0)$ has a fixed sign on $I_+=[N/2,N]$, the opposite fixed sign on $I_-=[-N,-N/2]$, and on both intervals
+\[
+|V(j)-V(0)|\ge V_0:=A|\delta|Ns.
+\]
+On $I_0=[-r,r]$ with $r=\lfloor N/500\rfloor$ we have $|V(j)-V(0)|\le4\pi\cdot1.02\,A|\delta|rs\le V_0/32$.
+
+\emph{Normalization.} Apply the lemmas to $Q'=Q/J_n=V'+K'$, with $V'=V/J_n$ and $\|K'\|\le1$. The operator $Q'$ commutes with $H$, and its spectral projections are those of $Q$. Put $d_0=V'(0)$, $V_0'=V_0/J_n$ and $W'=V_0'/8$. By the choice of $N$,
+\[
+V_0'=\frac{A|\delta|Ns}{J_n}\ge\frac{A|\delta|s}{J_n}\cdot\frac{e^{\eps q/2}J_n}{A|\delta|}=e^{\eps q/2}s\ge e^{\eps q/2}q^{-2}.
+\]
+In particular $\log(7V_0'/8)\ge\eps q/3$ for large $q$, and the hypotheses $V_0'\ge W'+2$ and $W'\ge4$ hold.
+
+\emph{Outer barriers.} Let $R=\lfloor3N/4\rfloor$. The sites $R,R+1$ lie in $I_+$ at distance at least $N/4-2$ from its complement, and similarly for $-R-1,-R$ in $I_-$. Lemma~\ref{lem:outer} with $\ell=\lfloor(N/4-2)/q\rfloor-2\ge N/(5q)$ gives
+\[
+\|\un_{B_R}\Pi\|\le4\Bigl(\frac{8}{7V_0'}\Bigr)^{\ell}\le4\exp\Bigl(-\frac{N}{5q}\cdot\frac{\eps q}{3}\Bigr)=4e^{-\eps N/15}.
+\]
+
+\emph{Initial leakage.} On $I_0$ we have $|V'-d_0|\le V_0'/32=W'/4$. Lemma~\ref{lem:inner} with $\ell_0=\lfloor r/q\rfloor-2\ge N/(600q)$ gives
+\[
+\|(1-\Pi)\delta_0\|\le3\Bigl(\frac{4}{3W'}\Bigr)^{\ell_0}\le3\Bigl(\frac{32}{3V_0'}\Bigr)^{\ell_0}\le3e^{-\eps N/1800}.
+\]
+
+\emph{Conclusion.} Lemma~\ref{lem:cutoff} gives $P(R,T)\le72e^{-\eps N/900}+16T^2e^{-2\eps N/15}$. Since $R\le N$ and $P(\cdot,T)$ is nonincreasing, the same bound holds for $P(N,T)$. All thresholds depend only on $\lambda,\alpha,c,\eps$. Take $N_n=N$.
+\end{proof}
+
+Two features matter later. The physical evolution is never rescaled; only $Q$ is divided by $J_n$, which changes neither its spectral projections nor its commutation with $H$. And the proposition needs only $b_n\ge c$: at scales with $b_n<L$ the operator $K$ is large, but it is small compared with $\lambda^q$.

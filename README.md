@@ -1,0 +1,21 @@
+# Exact transport and packing dimension for the almost Mathieu operator
+
+Seth Douglas and Nidhal Mghirbi
+
+Version 1.0.0, October 2026. A preprint; it has not been peer reviewed.
+
+## Abstract
+
+We determine the transport exponents and packing dimension of the almost Mathieu operator (Hu)(n) = u(n+1) + u(n−1) + 2λ cos 2π(θ + nα) u(n) for every λ > 1 and every irrational α. Let β(α) = limsup_n q_n^{−1} log q_{n+1} and γ = max{0, 1 − log λ/β(α)} (γ = 0 if β(α) = 0, γ = 1 if β(α) = ∞). For almost every phase, every moment of a packet started at one site has upper growth exponent γ, and so does its fastest polynomial tail. Transport thus switches on at the spectral transition λ = e^β of Avila, You and Zhou. The lower bound holds at every phase. If β(α) > log λ it is carried by a fixed fraction of the packet: for c > h > log λ and large n with T = |q_n α − p_n|^{−1} ≥ e^{c q_n}, a fraction at least 2^{−32}/(1 + 4πλ) lies beyond distance T^{1 − h/b_n}, b_n = q_n^{−1} log T; these exponents tend to γ as b_n → β(α) and h ↓ log λ. For almost every phase, every nonzero spectral measure has upper local dimension γ almost everywhere, so both its packing dimensions equal γ; at every phase they are at least γ. For 0 < log λ < β < ∞ this makes the packing bound 2(1 − log λ/β) of Jitomirskaya, Liu and Tcheremchantsev sharp with factor 1, for almost every phase. The proofs use an exactly conserved polynomial of H, an arcsine law for the rational discriminant, and long elliptic runs of the Weyl solution. As β(α) can be noncomputable for computable α, so can γ: at λ = 2, θ = 1/4, the exponents realized by computable frequencies with eventually odd denominators are exactly the reals in [0, 1] that are right-computably enumerable relative to the halting problem, and one explicit computable operator has exponent of Turing degree 0′′.
+
+## Contents
+
+The paper is paper/main.pdf (37 pages). Its LaTeX source is paper/main.tex with the section files and paper/references.bib; paper/main.bbl is included. Build with pdflatex and BibTeX. No computation is used in any proof.
+
+## Rights
+
+CC BY 4.0. See RIGHTS.md and LICENSE-CC-BY-4.0.txt.
+
+## Related
+
+- "Universality of the transport law for supercritical quasi-periodic operators" (Seth Douglas and Nidhal Mghirbi, 2026). The companion paper proves the same law for every supercritical type I analytic potential and reduces the general analytic case to one hypothesis.
