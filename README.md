@@ -2,7 +2,7 @@
 
 Seth Douglas and Nidhal Mghirbi
 
-Version 2.0.0, October 2026. A preprint; it has not been peer reviewed. Version 1.0.0 (titled "Exact transport and packing dimension for the almost Mathieu operator"): [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). Concept DOI (all versions): [10.5281/zenodo.23830304](https://doi.org/10.5281/zenodo.23830304).
+Version 2.0.0, October 2026. DOI: [10.5281/zenodo.23848977](https://doi.org/10.5281/zenodo.23848977). A preprint; it has not been peer reviewed. Version 1.0.0 (titled "Exact transport and packing dimension for the almost Mathieu operator"): [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). Concept DOI (all versions): [10.5281/zenodo.23830304](https://doi.org/10.5281/zenodo.23830304).
 
 ## Abstract
 
