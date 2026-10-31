@@ -2,7 +2,7 @@
 
 Seth Douglas and Nidhal Mghirbi
 
-Version 1.0.0, October 2026. A preprint; it has not been peer reviewed.
+Version 1.0.0, October 2026. DOI: [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). Concept DOI (all versions): [10.5281/zenodo.23830304](https://doi.org/10.5281/zenodo.23830304). A preprint; it has not been peer reviewed.
 
 ## Abstract
 
@@ -18,4 +18,4 @@ CC BY 4.0. See RIGHTS.md and LICENSE-CC-BY-4.0.txt.
 
 ## Related
 
-- "Universality of the transport law for supercritical quasi-periodic operators" (Seth Douglas and Nidhal Mghirbi, 2026). The companion paper proves the same law for every supercritical type I analytic potential and reduces the general analytic case to one hypothesis.
+- "Universality of the transport law for supercritical quasi-periodic operators" (Seth Douglas and Nidhal Mghirbi, 2026), [10.5281/zenodo.23830333](https://doi.org/10.5281/zenodo.23830333). The companion paper proves the same law for every supercritical type I analytic potential and reduces the general analytic case to one hypothesis.
