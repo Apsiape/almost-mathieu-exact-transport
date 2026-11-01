@@ -27,7 +27,7 @@ the discriminant of the periodic operator $H_{\lambda,p/q,\theta}$ (Lemma~\ref{l
 Let $\sigma$ be the arcsine law on $[-2,2]$, with density $1/(\pi\sqrt{4-x^2})$. Its moments are $m_k=\binom{k}{k/2}$ for even $k$ and $m_k=0$ for odd $k$, and $\sigma([-a,a])=\frac2\pi\arcsin(a/2)$ for $0\le a\le2$.
 
 \begin{lemma}[Arcsine law]\label{lem:arcsine}
-Let $c>L$ and let $\mathcal N$ be an infinite set of indices with $b_n\ge c$ for $n\in\mathcal N$. For every phase $\theta$ let $\nu_n$ be the image of $\mu^\theta$ under $\Delta_n$. Then $\int x^k\,d\nu_n\to m_k$ for every integer $k\ge0$, uniformly in $\theta$, as $n\to\infty$ in $\mathcal N$. Consequently $\nu_n$ converges weakly to $\sigma$, and for every $0\le\eta<2$,
+Let $c>L$ and let $\mathcal N$ be an infinite set of indices with $b_n\ge c$ for $n\in\mathcal N$. For every phase $\theta$ let $\nu_n$ be the image of $\mu^\theta$ under $\Delta_n$. Then $\int x^k\,d\nu_n\to m_k$ for every integer $k\ge0$, uniformly in $\theta$, as $n\to\infty$ in $\mathcal N$. Consequently $\nu_n$ converges weakly to $\sigma$, and for every $0\le\eta<2$, uniformly in $\theta$,
 \[
 \lim_{n\in\mathcal N}\mu^\theta\bigl(\{E:|\Delta_n(E)|\le2-\eta\}\bigr)=\frac2\pi\arcsin\Bigl(1-\frac\eta2\Bigr).
 \]
@@ -316,20 +316,20 @@ Theorem~\ref{thm:window}, whose time range contains $T\le|\delta_n|^{-1}\le e^{B
 \end{remark}
 
 \begin{remark}[Numerical illustration; not used in any proof]\label{rem:fractionnumerics}
-We propagated $\delta_0$ for $H_{\lambda,\alpha,\theta}$, $\alpha=p/q+\eta_\alpha$, by a Chebyshev expansion of $e^{-itH}$ on a box of half-width at least $6T\lambda^{-q}+300$ (the mass ever seen within $30$ sites of the box edge was below $10^{-150}$), and computed $a(j,T)$ by the trapezoid rule in $t$ on $[0,7T]$ with step $25$ (the neglected Abel weight is $e^{-14}$; the computed total mass was within $1.3\cdot10^{-3}$ of $1$). With $\delta=q\alpha-p$ and $\ell=T\lambda^{-q}$ we found:
+We propagated $\delta_0$ for $H_{\lambda,\alpha,\theta}$, $\alpha=p/q+\eta_\alpha$, by a Chebyshev expansion of $e^{-itH}$ on a box of half-width at least $6T\lambda^{-q}+300$ (the mass ever seen within $30$ sites of the box edge was below $10^{-150}$), and computed $a(j,T)$ by the trapezoid rule in $t$ on $[0,7T]$ with step $25$ (the neglected Abel weight is $e^{-14}$; the computed total mass was within $1.3\cdot10^{-3}$ of $1$). Each probability was checked against the finite-box Abel average evaluated from the eigendecomposition, using $P(N,T)=\sum_{|j|>N}a(j,T)$ with integer thresholds evaluated exactly. The table reports the latter values rounded to the displayed precision; powers of ten indicate orders of magnitude. The step-$25$ trapezoid approximation can differ at the $10^{-2}$ level for the shorter averaging times. With $\delta=q\alpha-p$ and $\ell=T\lambda^{-q}$ we found:
 \begin{center}
 \begin{tabular}{cccccccc}
 $\lambda$&$p/q$&$\theta$&$T$&$P(0.01\ell,T)$&$P(0.1\ell,T)$&$P(\ell,T)$&median of $|j|$\\\hline
 $1.5$&$2/5$&$0.2137$&$|\delta|^{-1}=2000$&$0.945$&$0.674$&$0.049$&$0.21\,\ell$\\
 $1.5$&$2/5$&$0$&$|\delta|^{-1}=2000$&$0.891$&$0.473$&$10^{-8}$&$0.09\,\ell$\\
-$1.5$&$2/5$&$0.2137$&$0.2|\delta|^{-1}=400$&$0.911$&$0.686$&$0.115$&$0.27\,\ell$\\
-$2$&$2/5$&$0.2137$&$|\delta|^{-1}\approx6667$&$0.951$&$0.743$&$0.002$&$0.26\,\ell$\\
+$1.5$&$2/5$&$0.2137$&$0.2|\delta|^{-1}=400$&$0.921$&$0.688$&$0.115$&$0.27\,\ell$\\
+$2$&$2/5$&$0.2137$&$|\delta|^{-1}\approx6667$&$0.951$&$0.740$&$0.002$&$0.26\,\ell$\\
 $2.5$&$2/5$&$0.2137$&$|\delta|^{-1}=20000$&$0.954$&$0.747$&$10^{-6}$&$0.27\,\ell$\\
 $1.5$&$3/8$&$0.2137$&$|\delta|^{-1}=6250$&$0.869$&$0.498$&$10^{-25}$&$0.10\,\ell$\\
-$1.2$&$2/5$&$0.2137$&$|\delta|^{-1}=300\lambda^5$&$0.925$&$0.563$&$10^{-23}$&$0.12\,\ell$\\
-$1.2$&$3/8$&$0.2137$&$|\delta|^{-1}=300\lambda^8$&$0.859$&$0.452$&$10^{-11}$&$0.08\,\ell$\\
-$1.2$&$5/13$&$0.2137$&$|\delta|^{-1}=300\lambda^{13}$&$0.789$&$0.361$&$10^{-19}$&$0.08\,\ell$\\
-$1.2$&$8/21$&$0.2137$&$|\delta|^{-1}=300\lambda^{21}$&$0.927$&$0.698$&$0.114$&$0.24\,\ell$
+$1.2$&$2/5$&$0.2137$&$|\delta|^{-1}=300\lambda^5$&$0.918$&$0.548$&$10^{-23}$&$0.12\,\ell$\\
+$1.2$&$3/8$&$0.2137$&$|\delta|^{-1}=300\lambda^8$&$0.859$&$0.453$&$10^{-11}$&$0.08\,\ell$\\
+$1.2$&$5/13$&$0.2137$&$|\delta|^{-1}=300\lambda^{13}$&$0.772$&$0.356$&$10^{-19}$&$0.08\,\ell$\\
+$1.2$&$8/21$&$0.2137$&$|\delta|^{-1}=300\lambda^{21}$&$0.928$&$0.698$&$0.114$&$0.24\,\ell$
 \end{tabular}
 \end{center}
 So the Abel-averaged distribution of $|j|$ lives on the scale $T\lambda^{-q}$, with a profile that depends on $\lambda$, $q$ and $\theta$ (for $\lambda=1.2$ the median moved non-monotonically in $q$, between $0.08\,\ell$ and $0.24\,\ell$), and the fraction beyond a fixed multiple $c\,T\lambda^{-q}$ is far from $1$ unless $c$ is small. This is consistent with Theorem~\ref{thm:B}, whose threshold $Te^{-hq_n}$ is smaller than $T\lambda^{-q_n}$ by the factor $e^{-(h-\log\lambda)q_n}\to0$, and indicates that some such vanishing factor is needed for a fraction tending to $1$. At these denominators $e^{-(h-\log\lambda)q/2}$ is not small, so the computation illustrates the theorem but does not test its rate.
@@ -423,7 +423,7 @@ which tends to $2=\nu(\R)$ as $\eta\to0$. So $\bigcup_{k\ge8}\Lambda_{1/k}$ has 
 The upper bound in part~2 is a consequence of the upper transport bound, Theorem~\ref{thm:upper}.
 
 \begin{proposition}\label{prop:packupper}
-Let $\lambda>1$ and let $\alpha$ be irrational with $\beta(\alpha)<\infty$. For every $\theta\in\Ga^*$ and every $\varphi\in\ell^2(\Z)$, the spectral measure $\mu_\varphi$ of $H_{\lambda,\alpha,\theta}$ satisfies $\dim_P^+(\mu_\varphi)\le\max\{0,1-\log\lambda/\beta(\alpha)\}$.
+Let $\lambda>1$ and let $\alpha$ be irrational with $\beta(\alpha)<\infty$. For every $\theta\in\Ga^*$ and every nonzero $\varphi\in\ell^2(\Z)$, the spectral measure $\mu_\varphi$ of $H_{\lambda,\alpha,\theta}$ satisfies $\dim_P^+(\mu_\varphi)\le\max\{0,1-\log\lambda/\beta(\alpha)\}$.
 \end{proposition}
 
 \begin{proof}

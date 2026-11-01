@@ -2,11 +2,23 @@
 
 Seth Douglas and Nidhal Mghirbi
 
-Version 2.0.0, October 2026. DOI: [10.5281/zenodo.23848977](https://doi.org/10.5281/zenodo.23848977). A preprint; it has not been peer reviewed. Version 1.0.0 (titled "Exact transport and packing dimension for the almost Mathieu operator"): [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). Concept DOI (all versions): [10.5281/zenodo.23830304](https://doi.org/10.5281/zenodo.23830304).
+Version 2.0.1, November 2026. A preprint; it has not been peer reviewed. Version 2.0.0: [10.5281/zenodo.23848977](https://doi.org/10.5281/zenodo.23848977). Version 1.0.0 (titled "Exact transport and packing dimension for the almost Mathieu operator"): [10.5281/zenodo.23830305](https://doi.org/10.5281/zenodo.23830305). Concept DOI (all versions): [10.5281/zenodo.23830304](https://doi.org/10.5281/zenodo.23830304).
 
 ## Abstract
 
 For the almost Mathieu operator with coupling λ>1 and irrational frequency α, let β(α)=limsup_n q_n^{-1} log q_{n+1} and γ=max{0,1−log λ/β(α)}, read as 0 if β=0 and 1 if β=∞. For almost every phase, the upper Abel-averaged transport exponent of every positive moment, normalized by its order, the fastest-tail exponent, and both packing dimensions of every nonzero spectral measure equal γ. For finite β the phase set is an explicit set G_α*, invariant under θ↦θ+α, that allows subexponential decay of |sin 2πq_nθ| along resonant scales; for β=∞ the equalities hold at every phase. The lower bounds hold at every phase. Moreover, for fixed c>h>log λ, along scales with b_n=q_n^{-1} log|q_nα−p_n|^{-1}≥c, the Abel-averaged mass beyond distance Te^{−hq_n} from the launch site tends to one, uniformly in the phase, the launch site and e^{hq_n}≤T≤|q_nα−p_n|^{-1}; for a packet launched at the origin and fixed b>0, s∈(0,1), the instantaneous mass within that distance exceeds s at only o(T) times in [0,bT]. For phases in G_α*, and at every phase if β=∞, the upper generalized Rényi dimensions of orders 0<r<1 of the single-site spectral measure equal γ; the lower ones vanish at every phase. For 1<λ<e^β the packing formula replaces the factor two in the bound of Jitomirskaya, Liu and Tcheremchantsev by the sharp factor one. The proof combines an exactly conserved polynomial with elliptic transfer-matrix estimates; its confining barrier holds at every phase. We give explicit finite-time and finite-volume comparison bounds. At coupling 2 and phase 1/4, computable frequencies with eventually odd convergent denominators realize exactly the exponents in [0,1] that are right-c.e. relative to the halting problem. One computable frequency has exponent of Turing degree 0'' for every computable coupling in (1,2^{23/12}), although finite-time predictions at nonzero error tolerance do not determine it.
+
+## Changes in version 2.0.1
+
+- The phase set of Jitomirskaya, Liu and Tcheremchantsev (the alpha-Diophantine phases) is contained in G_alpha^*, with a short
+  proof in the introduction, so the sharp packing formula holds at every phase their theorem covers.
+- The caption of Figure 1 states exactly what the worst-case companion proves at the phase 1/4: for 1 < lambda <= e^beta (when
+  beta_e = beta) the exponent there and the supremum over phases; for lambda > e^beta only a lower bound at the phase 1/4.
+- Remark 9.11: table entries corrected to the strict outside probability, and the method of computation stated.
+- Precision fixes: uniformity in the phase stated where it is used; nonzero spectral measures; numerical ranges in Section 4; the
+  finite-time indeterminacy holds at every lambda > 1; the companion's Theorem C is cited as unconditional.
+- Citation locators: Damanik and Tcheremchantsev for the fastest exponent; Jitomirskaya, Liu and Tcheremchantsev, Theorem 1.1
+  and Remark 1.1. arXiv identifiers are shown for preprints.
 
 ## Changes in version 2.0.0
 
@@ -25,7 +37,7 @@ For the almost Mathieu operator with coupling λ>1 and irrational frequency α, 
 
 ## Contents
 
-The paper is paper/main.pdf (49 pages). Its LaTeX source is paper/main.tex with the section files, paper/references.bib and the three figure PDFs; paper/main.bbl is included. Build with pdflatex and BibTeX. paper/figure_scripts/ regenerates the figures (Python with NumPy and Matplotlib); the burst figure is a numerical illustration and is not used in any proof. No computation is used in any proof.
+The paper is paper/main.pdf (50 pages). Its LaTeX source is paper/main.tex with the section files, paper/references.bib and the three figure PDFs; paper/main.bbl is included. Build with pdflatex and BibTeX. paper/figure_scripts/ regenerates the figures (Python with NumPy and Matplotlib); the burst figure is a numerical illustration and is not used in any proof. No computation is used in any proof.
 
 ## Rights
 
